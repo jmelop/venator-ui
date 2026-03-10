@@ -1,0 +1,27 @@
+{
+  "name": "venator",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A React + TypeScript UI infrastructure for building modern web interfaces, data-driven tools and AI-assisted applications.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=docs",
+    "build": "npm run build:packages && npm run build --workspace=docs",
+    "build:packages": "npm run build --workspace=@venator/tokens && npm run build --workspace=@venator/ui && npm run build --workspace=@venator/patterns",
+    "lint": "npm run lint --workspaces --if-present",
+    "type-check": "npm run type-check --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
