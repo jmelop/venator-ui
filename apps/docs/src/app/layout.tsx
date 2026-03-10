@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Venator UI - Component Library',
-  description: 'A React + TypeScript UI infrastructure library for data dashboards, admin panels and AI-assisted interfaces',
+  title: 'Venator - React UI Infrastructure',
+  description: 'A React + TypeScript UI infrastructure for building modern web interfaces, data-driven tools and AI-assisted applications.',
 }
 
 export default function RootLayout({
