@@ -1,37 +1,22 @@
 import * as React from 'react';
 
 export interface DashboardLayoutProps {
-  /**
-   * Content for the sidebar
-   */
+  /** Content for the sidebar */
   sidebar?: React.ReactNode;
 
-  /**
-   * Content for the header
-   */
+  /** Content for the header */
   header?: React.ReactNode;
 
-  /**
-   * Main content area
-   */
+  /** Main content area */
   children: React.ReactNode;
 
-  /**
-   * Whether the sidebar should be collapsed (desktop only)
-   * @default false
-   */
+  /** Collapse the sidebar to icon-width (desktop only) */
   sidebarCollapsed?: boolean;
 
-  /**
-   * Controls the mobile drawer in controlled mode.
-   * When omitted the component manages its own open/close state.
-   */
+  /** Controls the mobile drawer (controlled mode); omit to let the component manage its own state */
   mobileOpen?: boolean;
 
-  /**
-   * Called when the component wants to change the mobile drawer state.
-   * Required when `mobileOpen` is provided (controlled mode).
-   */
+  /** Called when the component wants to open or close the mobile drawer */
   onMobileOpenChange?: (open: boolean) => void;
 }
 
@@ -79,7 +64,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
     <div className="flex h-screen bg-gray-50">
       {sidebar && (
         <>
-          {/* Mobile backdrop */}
           {isMobileOpen && (
             <div
               className="fixed inset-0 z-20 bg-black/50 lg:hidden"
@@ -88,7 +72,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             />
           )}
 
-          {/* Sidebar — drawer on mobile, static on desktop */}
           <aside
             className={[
               'bg-white border-r border-gray-200 transition-all duration-300',
@@ -101,7 +84,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               'lg:translate-x-0',
             ].join(' ')}
           >
-            {/* Close button — mobile only */}
             <button
               type="button"
               aria-label="Close sidebar"
