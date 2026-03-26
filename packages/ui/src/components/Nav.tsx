@@ -10,7 +10,6 @@ export interface NavItemProps {
   active?: boolean;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
-  /** Renders as <a> when provided, otherwise renders as <button> */
   href?: string;
 }
 
