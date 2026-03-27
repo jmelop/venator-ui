@@ -28,3 +28,6 @@ export type { SelectProps, SelectSize } from './components/Select';
 
 export { Tooltip } from './components/Tooltip';
 export type { TooltipProps, TooltipSide } from './components/Tooltip';
+
+export { Modal, ModalHeader, ModalContent, ModalFooter } from './components/Modal';
+export type { ModalProps, ModalSize, ModalHeaderProps, ModalContentProps, ModalFooterProps } from './components/Modal';
