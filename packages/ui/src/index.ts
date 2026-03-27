@@ -10,3 +10,6 @@ export type { CardProps, CardHeaderProps, CardContentProps, CardFooterProps } fr
 
 export { Input, Label } from './components/Input';
 export type { InputProps, LabelProps } from './components/Input';
+
+export { NavItem, NavGroup } from './components/Nav';
+export type { NavItemProps, NavGroupProps } from './components/Nav';

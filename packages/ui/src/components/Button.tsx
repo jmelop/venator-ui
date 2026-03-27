@@ -1,22 +1,8 @@
 import * as React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * The variant of the button
-   * @default 'primary'
-   */
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  
-  /**
-   * The size of the button
-   * @default 'md'
-   */
   size?: 'sm' | 'md' | 'lg';
-  
-  /**
-   * Whether the button should take full width
-   * @default false
-   */
   fullWidth?: boolean;
 
   /** Show a loading spinner and disable the button */

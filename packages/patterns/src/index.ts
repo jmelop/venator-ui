@@ -7,3 +7,6 @@
 
 export { DashboardLayout } from './layouts/DashboardLayout';
 export type { DashboardLayoutProps } from './layouts/DashboardLayout';
+
+export { PageHeader } from './components/PageHeader';
+export type { PageHeaderProps } from './components/PageHeader';
