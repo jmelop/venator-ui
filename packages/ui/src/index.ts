@@ -13,3 +13,6 @@ export type { InputProps, LabelProps } from './components/Input';
 
 export { NavItem, NavGroup } from './components/Nav';
 export type { NavItemProps, NavGroupProps } from './components/Nav';
+
+export { Badge } from './components/Badge';
+export type { BadgeProps, BadgeVariant, BadgeSize } from './components/Badge';
