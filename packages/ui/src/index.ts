@@ -16,3 +16,6 @@ export type { NavItemProps, NavGroupProps } from './components/Nav';
 
 export { Badge } from './components/Badge';
 export type { BadgeProps, BadgeVariant, BadgeSize } from './components/Badge';
+
+export { Avatar } from './components/Avatar';
+export type { AvatarProps, AvatarSize, AvatarShape } from './components/Avatar';
