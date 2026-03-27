@@ -22,3 +22,6 @@ export type { AvatarProps, AvatarSize, AvatarShape } from './components/Avatar';
 
 export { Separator } from './components/Separator';
 export type { SeparatorProps, SeparatorOrientation } from './components/Separator';
+
+export { Select } from './components/Select';
+export type { SelectProps, SelectSize } from './components/Select';
