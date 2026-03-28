@@ -52,3 +52,6 @@ export type { TableProps, TableHeaderProps, TableBodyProps, TableFooterProps, Ta
 
 export { Alert, AlertTitle, AlertDescription } from './components/Alert';
 export type { AlertProps, AlertVariant, AlertTitleProps, AlertDescriptionProps } from './components/Alert';
+
+export { ToastProvider, useToast } from './components/Toast';
+export type { ToastData, ToastVariant } from './components/Toast';
