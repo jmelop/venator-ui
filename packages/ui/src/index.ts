@@ -49,3 +49,6 @@ export type { ToggleProps, ToggleSize, SwitchProps } from './components/Toggle';
 
 export { Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption } from './components/Table';
 export type { TableProps, TableHeaderProps, TableBodyProps, TableFooterProps, TableRowProps, TableHeadProps, TableCellProps, TableCaptionProps } from './components/Table';
+
+export { Alert, AlertTitle, AlertDescription } from './components/Alert';
+export type { AlertProps, AlertVariant, AlertTitleProps, AlertDescriptionProps } from './components/Alert';
