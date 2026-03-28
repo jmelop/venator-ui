@@ -37,3 +37,6 @@ export type { CodeBlockProps } from './components/CodeBlock';
 
 export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs';
 export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from './components/Tabs';
+
+export { Skeleton } from './components/Skeleton';
+export type { SkeletonProps, SkeletonRounded } from './components/Skeleton';
