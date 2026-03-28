@@ -40,3 +40,6 @@ export type { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } fro
 
 export { Skeleton } from './components/Skeleton';
 export type { SkeletonProps, SkeletonRounded } from './components/Skeleton';
+
+export { Breadcrumb, BreadcrumbItem, BreadcrumbSeparator } from './components/Breadcrumb';
+export type { BreadcrumbProps, BreadcrumbItemProps, BreadcrumbSeparatorProps } from './components/Breadcrumb';
