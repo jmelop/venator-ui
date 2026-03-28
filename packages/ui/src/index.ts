@@ -13,3 +13,21 @@ export type { InputProps, LabelProps } from './components/Input';
 
 export { NavItem, NavGroup } from './components/Nav';
 export type { NavItemProps, NavGroupProps } from './components/Nav';
+
+export { Badge } from './components/Badge';
+export type { BadgeProps, BadgeVariant, BadgeSize } from './components/Badge';
+
+export { Avatar } from './components/Avatar';
+export type { AvatarProps, AvatarSize, AvatarShape } from './components/Avatar';
+
+export { Separator } from './components/Separator';
+export type { SeparatorProps, SeparatorOrientation } from './components/Separator';
+
+export { Select } from './components/Select';
+export type { SelectProps, SelectSize } from './components/Select';
+
+export { Tooltip } from './components/Tooltip';
+export type { TooltipProps, TooltipSide } from './components/Tooltip';
+
+export { Modal, ModalHeader, ModalContent, ModalFooter } from './components/Modal';
+export type { ModalProps, ModalSize, ModalHeaderProps, ModalContentProps, ModalFooterProps } from './components/Modal';
