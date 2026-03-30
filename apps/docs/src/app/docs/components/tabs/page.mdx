@@ -1,0 +1,100 @@
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+import { TabsExample } from '@/components/TabsExample';
+
+<PageHeader
+  title="Tabs"
+  description="Organises content into switchable panels."
+/>
+
+## Basic
+
+`Tabs` manages the active panel. `TabsList` holds the trigger buttons, `TabsTrigger` selects a panel by `value`, and `TabsContent` renders when its `value` matches.
+
+<Preview>
+  <TabsExample />
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="analytics">Analytics</TabsTrigger>
+    <TabsTrigger value="settings">Settings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview" className="mt-4">
+    <p>The overview shows a high-level summary of your project's current status.</p>
+  </TabsContent>
+  <TabsContent value="analytics" className="mt-4">
+    <p>Analytics provides detailed breakdowns of usage trends and performance data.</p>
+  </TabsContent>
+  <TabsContent value="settings" className="mt-4">
+    <p>Settings lets you configure project preferences and manage team access.</p>
+  </TabsContent>
+</Tabs>`}
+/>
+
+## Controlled
+
+Pass `value` and `onValueChange` to control the active tab externally. Omit `defaultValue` in controlled mode.
+
+<CodeBlock
+  language="tsx"
+  code={`'use client';
+
+import { useState } from 'react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@venator/ui';
+
+export function ControlledTabs() {
+  const [tab, setTab] = useState('overview');
+
+  return (
+    <Tabs value={tab} onValueChange={setTab}>
+      <TabsList>
+        <TabsTrigger value="overview">Overview</TabsTrigger>
+        <TabsTrigger value="analytics">Analytics</TabsTrigger>
+        <TabsTrigger value="settings">Settings</TabsTrigger>
+      </TabsList>
+      <TabsContent value="overview" className="mt-4">…</TabsContent>
+      <TabsContent value="analytics" className="mt-4">…</TabsContent>
+      <TabsContent value="settings" className="mt-4">…</TabsContent>
+    </Tabs>
+  );
+}`}
+/>
+
+## Props
+
+### Tabs
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultValue` | `string` | `''` | Initially active tab in uncontrolled mode |
+| `value` | `string` | — | Active tab in controlled mode |
+| `onValueChange` | `(value: string) => void` | — | Called when the active tab changes |
+| `children` | `ReactNode` | — | `TabsList` and `TabsContent` elements |
+
+### TabsList
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes |
+| `children` | `ReactNode` | — | `TabsTrigger` elements |
+
+### TabsTrigger
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Identifier matching a `TabsContent` value |
+| `disabled` | `boolean` | `false` | Prevents selection and applies muted styles |
+| `className` | `string` | — | Additional Tailwind classes |
+
+### TabsContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Identifier matching a `TabsTrigger` value |
+| `className` | `string` | — | Additional Tailwind classes on the content wrapper |
+| `children` | `ReactNode` | — | Panel content rendered when this tab is active |

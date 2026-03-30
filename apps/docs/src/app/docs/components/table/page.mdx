@@ -1,0 +1,194 @@
+import { Badge, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@venator/ui';
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Table"
+  description="A structured layout for displaying tabular data."
+/>
+
+## Basic
+
+A full table with header, body, and three columns. The Status column uses `Badge` to communicate state.
+
+<Preview>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Name</TableHead>
+        <TableHead>Role</TableHead>
+        <TableHead>Status</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Alice Martin</TableCell>
+        <TableCell>Admin</TableCell>
+        <TableCell><Badge variant="success" dot>Active</Badge></TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Bob Chen</TableCell>
+        <TableCell>Editor</TableCell>
+        <TableCell><Badge variant="warning" dot>Pending</Badge></TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Clara Osei</TableCell>
+        <TableCell>Viewer</TableCell>
+        <TableCell><Badge variant="error" dot>Inactive</Badge></TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Name</TableHead>
+      <TableHead>Role</TableHead>
+      <TableHead>Status</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Alice Martin</TableCell>
+      <TableCell>Admin</TableCell>
+      <TableCell><Badge variant="success" dot>Active</Badge></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Bob Chen</TableCell>
+      <TableCell>Editor</TableCell>
+      <TableCell><Badge variant="warning" dot>Pending</Badge></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Clara Osei</TableCell>
+      <TableCell>Viewer</TableCell>
+      <TableCell><Badge variant="error" dot>Inactive</Badge></TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`}
+/>
+
+## With footer
+
+`TableFooter` renders a `<tfoot>` with a muted background, useful for totals or summaries.
+
+<Preview>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Name</TableHead>
+        <TableHead>Role</TableHead>
+        <TableHead>Status</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Alice Martin</TableCell>
+        <TableCell>Admin</TableCell>
+        <TableCell><Badge variant="success" dot>Active</Badge></TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Bob Chen</TableCell>
+        <TableCell>Editor</TableCell>
+        <TableCell><Badge variant="warning" dot>Pending</Badge></TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter>
+      <TableRow>
+        <TableCell>2 users</TableCell>
+        <TableCell></TableCell>
+        <TableCell>1 active</TableCell>
+      </TableRow>
+    </TableFooter>
+  </Table>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<TableFooter>
+  <TableRow>
+    <TableCell>2 users</TableCell>
+    <TableCell></TableCell>
+    <TableCell>1 active</TableCell>
+  </TableRow>
+</TableFooter>`}
+/>
+
+## With caption
+
+`TableCaption` renders a `<caption>` element below the table describing its contents.
+
+<Preview>
+  <Table>
+    <TableCaption>Team members and their current access roles.</TableCaption>
+    <TableHeader>
+      <TableRow>
+        <TableHead>Name</TableHead>
+        <TableHead>Role</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Alice Martin</TableCell>
+        <TableCell>Admin</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Bob Chen</TableCell>
+        <TableCell>Editor</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Table>
+  <TableCaption>Team members and their current access roles.</TableCaption>
+  <TableHeader>…</TableHeader>
+  <TableBody>…</TableBody>
+</Table>`}
+/>
+
+## Props
+
+### Table
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes on the `<table>` element |
+| `children` | `ReactNode` | — | Table sections |
+
+### TableHeader / TableBody / TableFooter
+
+All three wrap their respective HTML section elements (`<thead>`, `<tbody>`, `<tfoot>`) and accept `className` and `children`.
+
+### TableRow
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes |
+| `children` | `ReactNode` | — | `TableHead` or `TableCell` elements |
+
+### TableHead
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes on the `<th>` |
+| `children` | `ReactNode` | — | Column heading content |
+
+### TableCell
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes on the `<td>` |
+| `children` | `ReactNode` | — | Cell content |
+
+### TableCaption
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes on the `<caption>` |
+| `children` | `ReactNode` | — | Caption text describing the table |

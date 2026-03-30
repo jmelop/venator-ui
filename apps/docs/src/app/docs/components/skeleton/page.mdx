@@ -1,0 +1,95 @@
+import { Skeleton } from '@venator/ui';
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Skeleton"
+  description="A placeholder loading state that mimics content layout."
+/>
+
+## Basic
+
+Pass `width` and `height` as CSS values to size the skeleton block.
+
+<Preview>
+  <Skeleton width="200px" height="20px" />
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Skeleton width="200px" height="20px" />`}
+/>
+
+## Rounded variants
+
+Use the `rounded` prop to control the border radius. Defaults to `md`.
+
+<Preview>
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <span className="text-xs text-neutral-400 w-8">none</span>
+      <Skeleton width="160px" height="20px" rounded="none" />
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-xs text-neutral-400 w-8">sm</span>
+      <Skeleton width="160px" height="20px" rounded="sm" />
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-xs text-neutral-400 w-8">md</span>
+      <Skeleton width="160px" height="20px" rounded="md" />
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-xs text-neutral-400 w-8">lg</span>
+      <Skeleton width="160px" height="20px" rounded="lg" />
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-xs text-neutral-400 w-8">full</span>
+      <Skeleton width="160px" height="20px" rounded="full" />
+    </div>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Skeleton width="160px" height="20px" rounded="none" />
+<Skeleton width="160px" height="20px" rounded="sm" />
+<Skeleton width="160px" height="20px" rounded="md" />
+<Skeleton width="160px" height="20px" rounded="lg" />
+<Skeleton width="160px" height="20px" rounded="full" />`}
+/>
+
+## Composing layouts
+
+Combine multiple `Skeleton` elements to mimic a real content layout while data loads.
+
+<Preview>
+  <div className="flex items-start gap-3">
+    <Skeleton width="40px" height="40px" rounded="full" />
+    <div className="flex flex-col gap-2 flex-1 pt-1">
+      <Skeleton height="14px" width="140px" />
+      <Skeleton height="12px" width="220px" />
+    </div>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<div className="flex items-start gap-3">
+  <Skeleton width="40px" height="40px" rounded="full" />
+  <div className="flex flex-col gap-2 flex-1 pt-1">
+    <Skeleton height="14px" width="140px" />
+    <Skeleton height="12px" width="220px" />
+  </div>
+</div>`}
+/>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `width` | `string` | — | CSS width value applied as inline style |
+| `height` | `string` | — | CSS height value applied as inline style |
+| `rounded` | `'none' \| 'sm' \| 'md' \| 'lg' \| 'full'` | `'md'` | Border radius of the skeleton block |
+| `className` | `string` | — | Additional Tailwind classes |
+| `style` | `CSSProperties` | — | Additional inline styles merged with width/height |
