@@ -1,0 +1,77 @@
+import { Badge } from '@venator/ui';
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Badge"
+  description="A small label for status, categories or counts."
+/>
+
+## Variants
+
+Use the `variant` prop to communicate meaning or category.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Badge variant="default">Default</Badge>
+    <Badge variant="primary">Primary</Badge>
+    <Badge variant="success">Success</Badge>
+    <Badge variant="warning">Warning</Badge>
+    <Badge variant="error">Error</Badge>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Badge variant="default">Default</Badge>
+<Badge variant="primary">Primary</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="warning">Warning</Badge>
+<Badge variant="error">Error</Badge>`}
+/>
+
+## Sizes
+
+Use the `size` prop to control the badge's padding and font size.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Badge size="sm">Small</Badge>
+    <Badge size="md">Medium</Badge>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Badge size="sm">Small</Badge>
+<Badge size="md">Medium</Badge>`}
+/>
+
+## Dot indicator
+
+Set `dot` to prepend a colored dot matching the current variant.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Badge variant="success" dot>Active</Badge>
+    <Badge variant="warning" dot>Pending</Badge>
+    <Badge variant="error" dot>Offline</Badge>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Badge variant="success" dot>Active</Badge>
+<Badge variant="warning" dot>Pending</Badge>
+<Badge variant="error" dot>Offline</Badge>`}
+/>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'primary' \| 'success' \| 'warning' \| 'error'` | `'default'` | Color style conveying meaning |
+| `size` | `'sm' \| 'md'` | `'md'` | Controls padding and font size |
+| `dot` | `boolean` | `false` | Prepends a colored dot matching the variant |
+| `className` | `string` | — | Additional Tailwind classes |

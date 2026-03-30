@@ -1,0 +1,107 @@
+import { Avatar } from '@venator/ui';
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Avatar"
+  description="Displays a user image, initials fallback or a placeholder."
+/>
+
+## Image
+
+Pass a `src` to render a user photo. An `alt` description is recommended for accessibility.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Avatar src="https://i.pravatar.cc/40" alt="User avatar" />
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Avatar src="https://i.pravatar.cc/40" alt="User avatar" />`}
+/>
+
+## Fallback initials
+
+When no `src` is provided, or the image fails to load, the `fallback` string is shown (up to 2 characters).
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Avatar fallback="JM" alt="Juan Martinez" />
+    <Avatar fallback="AB" alt="Alice Brown" />
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Avatar fallback="JM" alt="Juan Martinez" />
+<Avatar fallback="AB" alt="Alice Brown" />`}
+/>
+
+## Placeholder
+
+With no `src` and no `fallback`, a generic person icon is shown.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Avatar />
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Avatar />`}
+/>
+
+## Sizes
+
+Use the `size` prop to control the avatar dimensions.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Avatar fallback="XS" size="xs" />
+    <Avatar fallback="SM" size="sm" />
+    <Avatar fallback="MD" size="md" />
+    <Avatar fallback="LG" size="lg" />
+    <Avatar fallback="XL" size="xl" />
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Avatar fallback="XS" size="xs" />
+<Avatar fallback="SM" size="sm" />
+<Avatar fallback="MD" size="md" />
+<Avatar fallback="LG" size="lg" />
+<Avatar fallback="XL" size="xl" />`}
+/>
+
+## Shape
+
+Use `shape="square"` for a rounded-rectangle avatar instead of the default circle.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Avatar fallback="CI" shape="circle" />
+    <Avatar fallback="SQ" shape="square" />
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Avatar fallback="CI" shape="circle" />
+<Avatar fallback="SQ" shape="square" />`}
+/>
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `src` | `string` | — | Image URL to display |
+| `alt` | `string` | — | Alt text for the image, also used as aria-label for fallback |
+| `fallback` | `string` | — | Up to 2 characters shown when no image is available |
+| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `'md'` | Controls the avatar dimensions |
+| `shape` | `'circle' \| 'square'` | `'circle'` | Controls the border radius |
+| `className` | `string` | — | Additional Tailwind classes |

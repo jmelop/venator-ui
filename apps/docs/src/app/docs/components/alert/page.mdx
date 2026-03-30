@@ -1,0 +1,140 @@
+import { Alert, AlertTitle, AlertDescription } from '@venator/ui';
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Alert"
+  description="Displays contextual feedback messages."
+/>
+
+## Variants
+
+Use the `variant` prop to communicate the nature of the message.
+
+<Preview>
+  <div className="flex flex-col gap-3">
+    <Alert variant="default">
+      <AlertTitle>Default</AlertTitle>
+      <AlertDescription>A neutral message with no specific status.</AlertDescription>
+    </Alert>
+    <Alert variant="info">
+      <AlertTitle>Info</AlertTitle>
+      <AlertDescription>Here is some information you might find useful.</AlertDescription>
+    </Alert>
+    <Alert variant="success">
+      <AlertTitle>Success</AlertTitle>
+      <AlertDescription>Your changes have been saved successfully.</AlertDescription>
+    </Alert>
+    <Alert variant="warning">
+      <AlertTitle>Warning</AlertTitle>
+      <AlertDescription>This action may have unintended consequences.</AlertDescription>
+    </Alert>
+    <Alert variant="error">
+      <AlertTitle>Error</AlertTitle>
+      <AlertDescription>Something went wrong. Please try again.</AlertDescription>
+    </Alert>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Alert variant="default">
+  <AlertTitle>Default</AlertTitle>
+  <AlertDescription>A neutral message with no specific status.</AlertDescription>
+</Alert>
+
+<Alert variant="info">
+  <AlertTitle>Info</AlertTitle>
+  <AlertDescription>Here is some information you might find useful.</AlertDescription>
+</Alert>
+
+<Alert variant="success">
+  <AlertTitle>Success</AlertTitle>
+  <AlertDescription>Your changes have been saved successfully.</AlertDescription>
+</Alert>
+
+<Alert variant="warning">
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>This action may have unintended consequences.</AlertDescription>
+</Alert>
+
+<Alert variant="error">
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>Something went wrong. Please try again.</AlertDescription>
+</Alert>`}
+/>
+
+## With icon
+
+Pass any React node to the `icon` prop to render it to the left of the content.
+
+<Preview>
+  <div className="flex flex-col gap-3">
+    <Alert
+      variant="success"
+      icon={
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+      }
+    >
+      <AlertTitle>Saved</AlertTitle>
+      <AlertDescription>Your profile has been updated.</AlertDescription>
+    </Alert>
+    <Alert
+      variant="error"
+      icon={
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+      }
+    >
+      <AlertTitle>Failed</AlertTitle>
+      <AlertDescription>Unable to connect to the server.</AlertDescription>
+    </Alert>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Alert
+  variant="success"
+  icon={
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  }
+>
+  <AlertTitle>Saved</AlertTitle>
+  <AlertDescription>Your profile has been updated.</AlertDescription>
+</Alert>`}
+/>
+
+## Props
+
+### Alert
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'info' \| 'success' \| 'warning' \| 'error'` | `'default'` | Color style conveying the message type |
+| `icon` | `ReactNode` | — | Optional icon rendered to the left of the content |
+| `className` | `string` | — | Additional Tailwind classes |
+
+### AlertTitle
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes |
+| `children` | `ReactNode` | — | Title text |
+
+### AlertDescription
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional Tailwind classes |
+| `children` | `ReactNode` | — | Description text |
