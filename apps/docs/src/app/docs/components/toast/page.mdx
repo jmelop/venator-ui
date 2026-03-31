@@ -1,0 +1,101 @@
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+import { ToastExample } from '@/components/ToastExample';
+
+<PageHeader
+  title="Toast"
+  description="Temporary notifications that appear in the bottom-right corner."
+/>
+
+## Basic
+
+Wrap your app (or the relevant subtree) with `ToastProvider`, then call `useToast()` anywhere inside it to trigger toasts. Each toast auto-dismisses after `duration` ms (default 4000).
+
+<Preview>
+  <ToastExample />
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`'use client';
+
+import { Button, ToastProvider, useToast } from '@venator/ui';
+
+function ToastTrigger() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      variant="primary"
+      onClick={() => toast({ title: 'Saved successfully', variant: 'success' })}
+    >
+      Show toast
+    </Button>
+  );
+}
+
+export function App() {
+  return (
+    <ToastProvider>
+      <ToastTrigger />
+    </ToastProvider>
+  );
+}`}
+/>
+
+## With description
+
+Pass `description` alongside `title` to provide additional context.
+
+<CodeBlock
+  language="tsx"
+  code={`toast({
+  title: 'Profile updated',
+  description: 'Your changes have been saved and are now live.',
+  variant: 'success',
+});`}
+/>
+
+## Custom duration
+
+Set `duration` in milliseconds to control how long the toast stays visible. Set to a very large number to keep it on screen indefinitely, or call `dismiss(id)` to remove it manually.
+
+<CodeBlock
+  language="tsx"
+  code={`// Stays for 8 seconds
+toast({ title: 'Processing…', duration: 8000 });
+
+// Dismiss manually
+const { toast, dismiss } = useToast();
+const id = /* returned id not directly exposed — use onValueChange pattern */;
+
+// Or dismiss all by re-triggering a new toast and tracking ids externally`}
+/>
+
+## Props
+
+### ToastData
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `id` | `string` | auto-generated | Unique identifier for the toast |
+| `title` | `string` | — | Main toast heading |
+| `description` | `string` | — | Optional supporting text below the title |
+| `variant` | `'default' \| 'success' \| 'warning' \| 'error'` | `'default'` | Color style conveying the toast type |
+| `duration` | `number` | `4000` | Time in milliseconds before the toast auto-dismisses |
+
+### ToastProvider
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | — | App or subtree that needs access to `useToast` |
+
+### useToast
+
+Returns `{ toast, dismiss }`:
+
+| Key | Type | Description |
+|-----|------|-------------|
+| `toast` | `(data: Omit<ToastData, 'id'>) => void` | Adds a toast to the queue |
+| `dismiss` | `(id: string) => void` | Immediately removes a toast by id |

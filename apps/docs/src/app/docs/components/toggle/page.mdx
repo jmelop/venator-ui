@@ -1,0 +1,91 @@
+import { Toggle } from '@venator/ui';
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+import { ToggleExample } from '@/components/ToggleExample';
+
+<PageHeader
+  title="Toggle"
+  description="A pressable button that alternates between on and off."
+/>
+
+## Basic
+
+`Toggle` manages pressed state internally when used uncontrolled via `defaultPressed`. Use `onPressedChange` to react to state changes.
+
+<Preview>
+  <ToggleExample />
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`'use client';
+
+import { useState } from 'react';
+import { Toggle } from '@venator/ui';
+
+export function ToggleExample() {
+  const [pressed, setPressed] = useState(false);
+
+  return (
+    <div className="flex items-center gap-3">
+      <Toggle pressed={pressed} onPressedChange={setPressed}>
+        Bold
+      </Toggle>
+      <span className="text-sm text-neutral-500">
+        {pressed ? 'On' : 'Off'}
+      </span>
+    </div>
+  );
+}`}
+/>
+
+## Sizes
+
+Use the `size` prop to control padding and font size.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Toggle size="sm">Small</Toggle>
+    <Toggle size="md">Medium</Toggle>
+    <Toggle size="lg">Large</Toggle>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Toggle size="sm">Small</Toggle>
+<Toggle size="md">Medium</Toggle>
+<Toggle size="lg">Large</Toggle>`}
+/>
+
+## Disabled
+
+Set `disabled` to prevent interaction and apply muted styles.
+
+<Preview>
+  <div className="flex gap-3 flex-wrap items-center">
+    <Toggle disabled>Disabled off</Toggle>
+    <Toggle defaultPressed disabled>Disabled on</Toggle>
+  </div>
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Toggle disabled>Disabled off</Toggle>
+<Toggle defaultPressed disabled>Disabled on</Toggle>`}
+/>
+
+## Props
+
+### Toggle
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `pressed` | `boolean` | — | Controlled pressed state |
+| `defaultPressed` | `boolean` | `false` | Initial pressed state in uncontrolled mode |
+| `onPressedChange` | `(pressed: boolean) => void` | — | Called when pressed state changes |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Controls padding and font size |
+| `disabled` | `boolean` | `false` | Prevents interaction and applies muted styles |
+| `className` | `string` | — | Additional Tailwind classes |
+| `children` | `ReactNode` | — | Label or icon content |
