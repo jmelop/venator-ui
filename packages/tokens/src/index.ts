@@ -130,3 +130,6 @@ export const zIndex = {
   toast: 1500,
   tooltip: 1600,
 } as const;
+
+export { venatorPreset } from './tailwind-preset';
+export type { VenatorPreset } from './tailwind-preset';

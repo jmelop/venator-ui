@@ -61,7 +61,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   );
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-neutral-50 dark:bg-neutral-950">
       {sidebar && (
         <>
           {isMobileOpen && (
@@ -74,7 +74,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
           <aside
             className={[
-              'bg-white border-r border-gray-200 transition-all duration-300',
+              'bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-800 transition-all duration-300',
               // Desktop: static, respects sidebarCollapsed
               'lg:relative lg:translate-x-0 lg:flex lg:flex-col',
               sidebarCollapsed ? 'lg:w-16' : 'lg:w-64',
@@ -114,7 +114,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
       <div className="flex-1 flex flex-col min-w-0">
         {header && (
-          <header className="bg-white border-b border-gray-200 px-6 py-4">
+          <header className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-6 py-4">
             {header}
           </header>
         )}

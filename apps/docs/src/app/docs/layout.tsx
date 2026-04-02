@@ -154,7 +154,10 @@ function Header({ dark, onToggleDark }: { dark: boolean; onToggleDark: () => voi
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => {
+    if (typeof document === 'undefined') return false;
+    return document.documentElement.classList.contains('dark');
+  });
 
   const toggleDark = () => {
     const next = !dark;

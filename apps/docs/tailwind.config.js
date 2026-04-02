@@ -1,23 +1,16 @@
-const tokens = require('@venator/tokens');
+const { venatorPreset } = require('@venator/tokens');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
+  presets: [venatorPreset],
   content: [
-    './src/**/*.{ts,tsx,md,mdx}',
+    './src/**/*.{ts,tsx,md,mdx,css}',
     '../../packages/ui/src/**/*.{ts,tsx}',
     '../../packages/patterns/src/**/*.{ts,tsx}',
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: tokens.colors.primary,
-        neutral: tokens.colors.neutral,
-        success: tokens.colors.success,
-        warning: tokens.colors.warning,
-        error: tokens.colors.error,
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

@@ -21,3 +21,5 @@ export const venatorPreset = {
     },
   },
 };
+
+export type VenatorPreset = typeof venatorPreset;
