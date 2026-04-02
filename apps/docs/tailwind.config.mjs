@@ -1,7 +1,7 @@
-const { venatorPreset } = require('@venator/tokens');
+import { venatorPreset } from '@venator/tokens';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: 'class',
   presets: [venatorPreset],
   content: [
