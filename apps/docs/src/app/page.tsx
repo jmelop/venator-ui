@@ -8,6 +8,7 @@ import {
   Card,
   CardContent,
   CardHeader,
+  CodeBlock,
   Input,
   Label,
 } from '@venator/ui';
@@ -17,19 +18,19 @@ const features = [
     pkg: '@venator/tokens',
     title: 'Design Tokens',
     description:
-      'Shared color palettes, spacing scales, and typography values — the single source of truth for the entire design system.',
+      'The single source of truth for your design system. Colors, spacing, typography, and shadows — shared across every layer of Venator.',
   },
   {
     pkg: '@venator/ui',
     title: 'UI Components',
     description:
-      'Accessible, composable primitives built with Tailwind CSS: buttons, cards, modals, tables, toasts, and more.',
+      'Typed, accessible component primitives built on Tailwind CSS. No opinions on layout — just reliable building blocks.',
   },
   {
     pkg: '@venator/patterns',
     title: 'Patterns',
     description:
-      'Opinionated layout compositions like DashboardLayout and PageHeader for rapidly scaffolding data-driven interfaces.',
+      'Production-ready structural compositions. DashboardLayout, PageHeader, ModuleGrid — the recurring structures that appear in every real application.',
   },
 ] as const;
 
@@ -42,9 +43,11 @@ export default function Home() {
         <h1 className="text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
           Venator UI
         </h1>
+        <p className="max-w-xl text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+          Build fast. Scale correctly.
+        </p>
         <p className="max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
-          A React + TypeScript UI infrastructure for building modern web interfaces, data-driven
-          tools, and AI-assisted applications.
+          A React + TypeScript UI system that goes beyond components — from primitives to patterns to full application architectures.
         </p>
         <div className="flex items-center gap-3 flex-wrap justify-center">
           <Link href="/docs/getting-started/introduction">
@@ -53,6 +56,23 @@ export default function Home() {
           <Link href="#">
             <Button variant="outline" size="lg">GitHub</Button>
           </Link>
+        </div>
+        <div className="flex flex-col items-center gap-2 mt-2">
+          <p className="text-xs text-neutral-400 dark:text-neutral-500">Deploy a complete architecture in seconds</p>
+          <code className="text-sm font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-4 py-2 rounded-md">
+            npx venator init dashboard
+          </code>
+        </div>
+      </section>
+
+      {/* CLI section */}
+      <section className="px-6 py-16 border-t border-neutral-100 dark:border-neutral-800">
+        <div className="max-w-2xl mx-auto space-y-6">
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 text-center">
+            The Venator CLI deploys archetypes and patterns directly into your project. You own the output.
+          </p>
+          <CodeBlock language="bash" filename="Terminal" code="venator init dashboard" />
+          <CodeBlock language="bash" filename="Terminal" code="venator add page-header" />
         </div>
       </section>
 
