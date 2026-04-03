@@ -8,7 +8,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CodeBlock,
   Input,
   Label,
 } from '@venator/ui';
@@ -38,7 +37,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950">
       {/* Hero */}
-      <section className="flex-1 flex flex-col items-center justify-center text-center px-6 py-24 gap-6">
+      <section className="flex-1 flex flex-col items-center justify-center text-center px-6 py-24 gap-4">
         <Badge variant="default">React · TypeScript · Tailwind CSS</Badge>
         <h1 className="text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
           Venator UI
@@ -62,17 +61,6 @@ export default function Home() {
           <code className="text-sm font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-4 py-2 rounded-md">
             npx venator init dashboard
           </code>
-        </div>
-      </section>
-
-      {/* CLI section */}
-      <section className="px-6 py-16 border-t border-neutral-100 dark:border-neutral-800">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 text-center">
-            The Venator CLI deploys archetypes and patterns directly into your project. You own the output.
-          </p>
-          <CodeBlock language="bash" filename="Terminal" code="venator init dashboard" />
-          <CodeBlock language="bash" filename="Terminal" code="venator add page-header" />
         </div>
       </section>
 
