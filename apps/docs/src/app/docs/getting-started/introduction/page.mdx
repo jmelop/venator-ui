@@ -1,0 +1,59 @@
+import { Alert, AlertTitle, AlertDescription, Card, CardContent, CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+
+<PageHeader
+  title="Introduction"
+  description="Venator is a React + TypeScript frontend system for building scalable, consistent, and maintainable application architectures."
+/>
+
+<Alert variant="info">
+  <AlertTitle>Early development</AlertTitle>
+  <AlertDescription>
+    Venator is under active development. APIs may change between releases.
+  </AlertDescription>
+</Alert>
+
+## What is Venator?
+
+Venator is organized in three layers: **@venator/ui** for UI primitives, **@venator/patterns** for structural layout compositions, and **@venator/archetypes** for complete application architectures deployed via CLI and owned by the developer.
+
+## Three layers
+
+**1. @venator/ui — UI primitives**
+Accessible, composable component primitives built on Tailwind CSS and design tokens.
+
+**2. @venator/patterns — Structural patterns**
+Reusable layout abstractions like `DashboardLayout`, `PageHeader`, and `ModuleGrid`.
+
+**3. @venator/archetypes — Application architectures**
+Complete project scaffolds deployed via CLI. Once deployed, the code is yours to modify.
+
+## Quick start
+
+<CodeBlock
+  language="bash"
+  filename="Terminal"
+  code={`npm install @venator/ui @venator/patterns`}
+/>
+
+<CodeBlock
+  language="tsx"
+  filename="Example.tsx"
+  code={`import { Button, Card, CardContent } from '@venator/ui';
+
+export function Example() {
+  return (
+    <Card>
+      <CardContent>
+        <Button variant="primary">Get started</Button>
+      </CardContent>
+    </Card>
+  );
+}`}
+/>
+
+<Card>
+  <CardContent className="pt-6">
+    Browse the **Components** section in the sidebar to explore all available primitives, or jump to **Patterns** to see full layout compositions.
+  </CardContent>
+</Card>
