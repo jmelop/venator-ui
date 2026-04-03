@@ -42,8 +42,10 @@ function toSlug(name: string): string {
 function Sidebar({ pathname }: { pathname: string }) {
   return (
     <nav className="flex flex-col gap-6 p-4 h-full">
-      <div className="px-3 py-2">
-        <span className="text-lg font-bold text-neutral-900 dark:text-neutral-100">Venator UI</span>
+      <div className="px-3 py-4 border-b border-neutral-200 dark:border-neutral-800 mb-4">
+        <Link href="/" className="text-base font-bold text-neutral-900 dark:text-neutral-100 hover:text-primary-600 transition-colors">
+          Venator UI
+        </Link>
       </div>
 
       <NavGroup label="Getting Started">
