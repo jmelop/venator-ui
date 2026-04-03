@@ -1,4 +1,4 @@
-import { CodeBlock } from '@venator/ui';
+import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
 import { PageHeader } from '@venator/patterns';
 import { Preview } from '@/components/Preview';
 import { ToastExample } from '@/components/ToastExample';
@@ -77,25 +77,92 @@ const id = /* returned id not directly exposed — use onValueChange pattern */;
 
 ### ToastData
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `id` | `string` | auto-generated | Unique identifier for the toast |
-| `title` | `string` | — | Main toast heading |
-| `description` | `string` | — | Optional supporting text below the title |
-| `variant` | `'default' \| 'success' \| 'warning' \| 'error'` | `'default'` | Color style conveying the toast type |
-| `duration` | `number` | `4000` | Time in milliseconds before the toast auto-dismisses |
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">id</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>auto-generated</TableCell>
+      <TableCell>Unique identifier for the toast</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">title</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Main toast heading</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">description</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Optional supporting text below the title</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">variant</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'default' | 'success' | 'warning' | 'error'</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'default'</code></TableCell>
+      <TableCell>Color style conveying the toast type</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">duration</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">4000</code></TableCell>
+      <TableCell>Time in milliseconds before the toast auto-dismisses</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 ### ToastProvider
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `ReactNode` | — | App or subtree that needs access to `useToast` |
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">children</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>App or subtree that needs access to <code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">useToast</code></TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 ### useToast
 
 Returns `{ toast, dismiss }`:
 
-| Key | Type | Description |
-|-----|------|-------------|
-| `toast` | `(data: Omit<ToastData, 'id'>) => void` | Adds a toast to the queue |
-| `dismiss` | `(id: string) => void` | Immediately removes a toast by id |
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Key</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">toast</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">(data: Omit&lt;ToastData, 'id'&gt;) =&gt; void</code></TableCell>
+      <TableCell>Adds a toast to the queue</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">dismiss</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">(id: string) =&gt; void</code></TableCell>
+      <TableCell>Immediately removes a toast by id</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
