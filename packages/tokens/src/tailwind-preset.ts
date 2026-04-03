@@ -1,23 +1,27 @@
+import { colors, typography, borderRadius, shadows, breakpoints } from './index';
+
 export const venatorPreset = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-        },
+        primary: colors.primary,
         neutral: {
+          ...colors.neutral,
           950: '#0a0a0a',
         },
+        success: colors.success,
+        warning: colors.warning,
+        error: colors.error,
       },
+      fontFamily: {
+        sans: [typography.fontFamily.sans],
+        mono: [typography.fontFamily.mono],
+      },
+      fontSize: typography.fontSize,
+      fontWeight: typography.fontWeight,
+      borderRadius,
+      boxShadow: shadows,
+      screens: breakpoints,
     },
   },
 };
