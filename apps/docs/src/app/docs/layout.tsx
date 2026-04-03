@@ -175,7 +175,9 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
       sidebar={<Sidebar pathname={pathname} />}
       header={<Header dark={dark} onToggleDark={toggleDark} />}
     >
-      {children}
+      <div className="max-w-3xl pb-16">
+        {children}
+      </div>
     </DashboardLayout>
   );
 }
