@@ -34,6 +34,34 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     li: ({ children }) => <li className="leading-relaxed">{children}</li>,
     hr: () => <hr className="border-neutral-200 dark:border-neutral-800 my-6" />,
+    table: ({ children }) => (
+      <div className="w-full overflow-x-auto my-6">
+        <table className="w-full text-sm border-collapse">
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({ children }) => (
+      <thead className="border-b border-neutral-200 dark:border-neutral-800">
+        {children}
+      </thead>
+    ),
+    tbody: ({ children }) => <tbody>{children}</tbody>,
+    tr: ({ children }) => (
+      <tr className="border-b border-neutral-100 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors">
+        {children}
+      </tr>
+    ),
+    th: ({ children }) => (
+      <th className="px-4 py-2 text-left text-xs font-semibold text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td className="px-4 py-3 text-neutral-700 dark:text-neutral-300">
+        {children}
+      </td>
+    ),
     ...components,
   };
 }
