@@ -17,22 +17,22 @@ import {
 
 const features = [
   {
-    pkg: '@venator/tokens',
-    title: 'Design Tokens',
-    description:
-      'The single source of truth for your design system. Colors, spacing, typography, and shadows — shared across every layer of Venator.',
-  },
-  {
     pkg: '@venator/ui',
     title: 'UI Components',
     description:
-      'Typed, accessible component primitives built on Tailwind CSS. No opinions on layout — just reliable building blocks.',
+      'Typed, accessible primitives for building consistent interfaces. Buttons, cards, modals, tables and more, built on Tailwind CSS and design tokens.',
   },
   {
     pkg: '@venator/patterns',
     title: 'Patterns',
     description:
-      'Production-ready structural compositions. DashboardLayout, PageHeader, ModuleGrid — the recurring structures that appear in every real application.',
+      'Reusable structural compositions for recurring application layouts. DashboardLayout, PageHeader and ModuleGrid cover the structures that appear in every real application.',
+  },
+  {
+    pkg: 'venator init',
+    title: 'CLI',
+    description:
+      'Scaffold full application architectures or add patterns directly into your project. You own the output with no runtime dependency and no lock-in.',
   },
 ] as const;
 
@@ -108,7 +108,7 @@ export default function Home() {
         <section className="px-6 py-16 bg-neutral-50 dark:bg-neutral-900">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 text-center mb-10">
-              Three focused packages
+              Three layers of Venator
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {features.map(({ pkg, title, description }) => (
