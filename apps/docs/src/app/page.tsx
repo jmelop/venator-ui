@@ -52,8 +52,9 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
-        <Link href="/" className="text-sm font-semibold text-neutral-900 dark:text-neutral-50">
-          Venator UI
+        <Link href="/" className="flex items-center gap-2.5">
+          <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />
+          <span className="text-sm font-bold text-neutral-900 dark:text-neutral-100">Venator UI</span>
         </Link>
         <button
           onClick={toggleDark}
@@ -77,6 +78,7 @@ export default function Home() {
         {/* Hero */}
         <section className="flex-1 flex flex-col items-center justify-center text-center px-6 py-24 gap-4">
           <Badge variant="default">React · TypeScript · Tailwind CSS</Badge>
+          <img src="/venator-logo-icon.png" alt="Venator" className="w-16 h-16 rounded-2xl mb-2" />
           <h1 className="text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
             Venator UI
           </h1>
