@@ -11,8 +11,13 @@ import {
   Card,
   CardContent,
   CardHeader,
+  CodeBlock,
   Input,
   Label,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
 } from '@venator/ui';
 
 const features = [
@@ -96,11 +101,25 @@ export default function Home() {
               <Button variant="outline" size="lg">GitHub</Button>
             </Link>
           </div>
-          <div className="flex flex-col items-center gap-2 mt-2">
-            <p className="text-xs text-neutral-400 dark:text-neutral-500">Deploy a complete architecture in seconds</p>
-            <code className="text-sm font-mono bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-4 py-2 rounded-md">
-              npx venator init dashboard
-            </code>
+          <div className="max-w-lg mx-auto w-full mt-2">
+            <Tabs defaultValue="quickstart">
+              <TabsList>
+                <TabsTrigger value="quickstart">Quick start</TabsTrigger>
+                <TabsTrigger value="manual">Install manually</TabsTrigger>
+              </TabsList>
+              <TabsContent value="quickstart">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+                  Deploy a complete dashboard architecture into your project.
+                </p>
+                <CodeBlock code="npx venator init dashboard" language="bash" />
+              </TabsContent>
+              <TabsContent value="manual">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+                  Install UI primitives and patterns as dependencies.
+                </p>
+                <CodeBlock code="npm install @venator/ui @venator/patterns" language="bash" />
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
 
