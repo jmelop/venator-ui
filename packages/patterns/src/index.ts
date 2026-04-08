@@ -13,3 +13,6 @@ export type { PageHeaderProps } from './components/PageHeader';
 
 export { ModuleGrid } from './components/ModuleGrid';
 export type { ModuleGridProps } from './components/ModuleGrid';
+
+export { SidebarNav } from './components/SidebarNav';
+export type { SidebarNavProps, SidebarNavSection, SidebarNavItem } from './components/SidebarNav';
