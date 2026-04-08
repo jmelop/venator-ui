@@ -16,3 +16,6 @@ export type { ModuleGridProps } from './components/ModuleGrid';
 
 export { SidebarNav } from './components/SidebarNav';
 export type { SidebarNavProps, SidebarNavSection, SidebarNavItem } from './components/SidebarNav';
+
+export { Topbar } from './components/Topbar';
+export type { TopbarProps } from './components/Topbar';
