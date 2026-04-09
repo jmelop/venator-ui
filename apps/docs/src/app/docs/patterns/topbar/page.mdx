@@ -1,0 +1,124 @@
+import { Button, CodeBlock, Input, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
+import { PageHeader, Topbar } from '@venator/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Topbar"
+  description="A top navigation bar with left, center and right slots."
+/>
+
+## Basic
+
+Renders a full-width bar with a bottom border. Use `title` to display a brand name in the left slot.
+
+<Preview>
+  <Topbar title="My App" />
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Topbar title="My App" />`}
+/>
+
+## With slots
+
+Use `left`, `center` and `right` to place any content into the three layout zones.
+
+<Preview>
+  <Topbar
+    left={<span className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">My App</span>}
+    center={<Input placeholder="Search…" className="max-w-xs" />}
+    right={<Button variant="primary" size="sm">New project</Button>}
+  />
+</Preview>
+
+<CodeBlock
+  language="tsx"
+  code={`<Topbar
+  left={<span className="text-sm font-semibold">My App</span>}
+  center={<Input placeholder="Search…" className="max-w-xs" />}
+  right={<Button variant="primary" size="sm">New project</Button>}
+/>`}
+/>
+
+## Position
+
+Control how the bar is positioned in the document with the `position` prop.
+
+<CodeBlock
+  language="tsx"
+  code={`{/* Scrolls with content (default) */}
+<Topbar title="My App" position="static" />
+
+{/* Stays at the top while scrolling */}
+<Topbar title="My App" position="sticky" />
+
+{/* Removed from document flow, spans the viewport */}
+<Topbar title="My App" position="fixed" />`}
+/>
+
+## Without border
+
+Set `bordered={false}` to remove the bottom border — useful when the bar sits above a coloured hero or custom header.
+
+<CodeBlock
+  language="tsx"
+  code={`<Topbar title="My App" bordered={false} />`}
+/>
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">title</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Brand name rendered in the left zone alongside <code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">left</code></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">left</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Content anchored to the left</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">center</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Content centered in the available space</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">right</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Content anchored to the right</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">position</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'static' | 'sticky' | 'fixed'</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'static'</code></TableCell>
+      <TableCell>CSS positioning strategy for the bar</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">bordered</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">true</code></TableCell>
+      <TableCell>Shows a bottom border separating the bar from page content</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Additional Tailwind classes on the root element</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

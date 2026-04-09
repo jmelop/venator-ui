@@ -45,6 +45,14 @@ const sections = [
       { label: 'PageHeader', href: '/docs/patterns/page-header' },
       { label: 'ModuleGrid', href: '/docs/patterns/module-grid' },
       { label: 'SidebarNav', href: '/docs/patterns/sidebar-nav' },
+      { label: 'Topbar', href: '/docs/patterns/topbar' },
+      { label: 'StatCard', href: '/docs/patterns/stat-card' },
+    ],
+  },
+  {
+    label: 'Archetypes',
+    items: [
+      { label: 'Dashboard', href: '/docs/archetypes/dashboard' },
     ],
   },
 ];

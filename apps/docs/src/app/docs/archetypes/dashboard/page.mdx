@@ -1,0 +1,86 @@
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+
+<PageHeader
+  title="Dashboard"
+  description="A complete dashboard architecture deployed via CLI and owned by the developer."
+/>
+
+## Overview
+
+The Dashboard archetype is a production-ready Next.js application shell. Running the deploy command copies the full file tree into your project — no black-box abstraction, no hidden config. Every file is yours to edit from day one.
+
+What's included:
+
+- A root layout with `ToastProvider` wired up
+- A `/dashboard` route with `DashboardLayout`, sidebar navigation and a dark mode toggle
+- Three pre-built pages: overview with KPI cards, an analytics page, and a settings form
+- Tailwind pre-configured via `venatorPreset`
+- All `@venator` dependencies listed in `package.json`
+
+## Deploy
+
+Run the following command inside your project directory:
+
+<CodeBlock
+  language="bash"
+  code={`npx venator init dashboard`}
+/>
+
+The CLI will:
+
+1. Copy the archetype files into your project at the paths shown below
+2. Run `npm install` to add the required Venator packages
+3. Start the dev server with `npm run dev`
+
+## What's included
+
+<CodeBlock
+  language="bash"
+  code={`my-app/
+  app/
+    layout.tsx           # Root layout with ToastProvider
+    page.tsx             # Redirects to /dashboard
+    dashboard/
+      layout.tsx         # DashboardLayout with Sidebar and Header
+      page.tsx           # Overview with StatCards and ModuleGrid
+      analytics/
+        page.tsx         # Analytics page with metrics
+      settings/
+        page.tsx         # Settings form
+  components/
+    sidebar.tsx          # SidebarNav with navigation sections
+    header.tsx           # Topbar with dark mode toggle
+  tailwind.config.js     # Pre-configured with venatorPreset
+  package.json           # Dependencies pre-configured`}
+/>
+
+## Venator packages used
+
+- **`@venator/ui`** — `Button`, `Card`, `Input`, `Label`, `Separator`, `Badge`
+- **`@venator/patterns`** — `DashboardLayout`, `SidebarNav`, `Topbar`, `PageHeader`, `ModuleGrid`, `StatCard`
+- **`@venator/tokens`** — included via `venatorPreset` in `tailwind.config.js`
+
+## Customization
+
+All files are copied into your project and are fully yours — there is no runtime dependency on the archetype. Start with these common entry points:
+
+- **Navigation** — edit `components/sidebar.tsx` to update the `sections` array with your own routes and labels
+- **KPI data** — replace the hardcoded values in `app/dashboard/page.tsx` with real data from your API or database
+- **New pages** — add a folder under `app/dashboard/` with a `page.tsx` and add a matching entry to the sidebar sections
+
+## Next steps
+
+Add an individual pattern to an existing project:
+
+<CodeBlock
+  language="bash"
+  code={`npx venator add page-header`}
+/>
+
+Install Venator UI components directly:
+
+<CodeBlock
+  language="bash"
+  code={`npm install @venator/ui`}
+/>
