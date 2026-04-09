@@ -1,33 +1,33 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { NavGroup, NavItem } from '@venator/ui';
+import { SidebarNav } from '@venator/patterns';
+import Link from 'next/link';
+
+const sections = [
+  {
+    label: 'Main',
+    items: [
+      { label: 'Dashboard', href: '/dashboard' },
+      { label: 'Analytics', href: '/dashboard/analytics' },
+    ],
+  },
+  {
+    label: 'Settings',
+    items: [
+      { label: 'Settings', href: '/dashboard/settings' },
+    ],
+  },
+];
 
 export function Sidebar() {
   const pathname = usePathname();
-
   return (
-    <nav className="flex flex-col gap-6 p-4 h-full">
-      <div className="px-3 py-2">
-        <span className="text-lg font-bold text-neutral-900 dark:text-neutral-100">My App</span>
-      </div>
-      <NavGroup label="Navigation">
-        <NavItem
-          label="Dashboard"
-          href="/dashboard"
-          active={pathname === '/dashboard'}
-        />
-        <NavItem
-          label="Settings"
-          href="/dashboard/settings"
-          active={pathname === '/dashboard/settings'}
-        />
-        <NavItem
-          label="Profile"
-          href="/dashboard/profile"
-          active={pathname === '/dashboard/profile'}
-        />
-      </NavGroup>
-    </nav>
+    <SidebarNav
+      sections={sections}
+      pathname={pathname}
+      linkComponent={Link}
+      title="My App"
+    />
   );
 }
