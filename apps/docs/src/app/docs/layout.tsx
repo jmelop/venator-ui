@@ -49,6 +49,12 @@ const sections = [
       { label: 'StatCard', href: '/docs/patterns/stat-card' },
     ],
   },
+  {
+    label: 'Archetypes',
+    items: [
+      { label: 'Dashboard', href: '/docs/archetypes/dashboard' },
+    ],
+  },
 ];
 
 function MoonIcon() {
