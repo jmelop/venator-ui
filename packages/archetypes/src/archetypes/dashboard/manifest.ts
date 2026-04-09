@@ -1,7 +1,9 @@
 export const dashboardArchetype = {
   name: 'dashboard',
-  description: 'A modular dashboard with sidebar navigation, header and a grid-based module system',
-  templateDir: 'templates/dashboard',
-  patterns: ['DashboardLayout', 'PageHeader', 'ModuleGrid'],
-  components: ['Button', 'Card', 'NavItem', 'NavGroup', 'Badge', 'Avatar', 'Separator'],
+  description: 'A modular dashboard with sidebar navigation, topbar, stat cards, and a grid-based content layout',
+  framework: 'next-app-router',
+  templateDir: './template',
+  dependencies: ['@venator/ui', '@venator/patterns'],
+  patterns: ['DashboardLayout', 'SidebarNav', 'Topbar', 'PageHeader', 'ModuleGrid', 'StatCard'],
+  components: ['Button', 'Card', 'CardHeader', 'CardContent', 'Input', 'Label', 'Separator', 'Badge'],
 } as const;
