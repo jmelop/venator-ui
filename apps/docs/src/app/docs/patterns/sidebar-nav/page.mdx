@@ -1,0 +1,215 @@
+import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+
+<PageHeader
+  title="SidebarNav"
+  description="A composable sidebar navigation with sections, active state and framework-agnostic link rendering."
+/>
+
+## Basic
+
+`SidebarNav` renders a vertical nav from a `sections` array. Pass `pathname` to highlight the active item.
+
+<CodeBlock
+  language="tsx"
+  code={`const sections = [
+  {
+    label: 'Main',
+    items: [
+      { label: 'Dashboard', href: '/dashboard' },
+      { label: 'Analytics', href: '/dashboard/analytics' },
+    ],
+  },
+  {
+    label: 'Settings',
+    items: [
+      { label: 'Settings', href: '/dashboard/settings' },
+    ],
+  },
+];
+
+<SidebarNav sections={sections} pathname="/dashboard" />`}
+/>
+
+## With logo and title
+
+Pass `logo` and `title` to render a branded header above the nav sections.
+
+<CodeBlock
+  language="tsx"
+  code={`<SidebarNav
+  sections={sections}
+  pathname="/dashboard"
+  logo={<img src="/logo.svg" width={24} height={24} alt="" />}
+  title="My App"
+  titleHref="/"
+/>`}
+/>
+
+## With Next.js Link
+
+Pass `linkComponent={Link}` to enable client-side navigation. Any component that accepts an `href` prop works.
+
+<CodeBlock
+  language="tsx"
+  code={`import Link from 'next/link';
+
+<SidebarNav
+  sections={sections}
+  pathname={pathname}
+  linkComponent={Link}
+  title="My App"
+/>`}
+/>
+
+## Collapsible sections
+
+Set `collapsible` on a section to let users expand and collapse it. Use `defaultCollapsed` to start it closed.
+
+<CodeBlock
+  language="tsx"
+  code={`const sections = [
+  {
+    label: 'Main',
+    items: [
+      { label: 'Dashboard', href: '/dashboard' },
+    ],
+  },
+  {
+    label: 'Advanced',
+    collapsible: true,
+    defaultCollapsed: true,
+    items: [
+      { label: 'API keys', href: '/dashboard/api-keys' },
+      { label: 'Webhooks', href: '/dashboard/webhooks' },
+    ],
+  },
+];
+
+<SidebarNav sections={sections} pathname={pathname} />`}
+/>
+
+## Props
+
+### SidebarNav
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">sections</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">SidebarNavSection[]</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Array of section groups, each with a label and items</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">pathname</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Current URL path used to highlight the active item</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">title</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Brand name rendered in the sidebar header</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">titleHref</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'/'</code></TableCell>
+      <TableCell>Link target for the logo/title area</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">logo</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Logo element rendered before the title</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">linkComponent</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ElementType</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'a'</code></TableCell>
+      <TableCell>Component used to render links — pass <code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">Link</code> from Next.js for client-side routing</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Additional Tailwind classes on the nav element</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### SidebarNavSection
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">label</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Section heading text</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">items</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">SidebarNavItem[]</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Nav items belonging to this section</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">collapsible</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Allows the section to be toggled open and closed</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">defaultCollapsed</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>When <code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">collapsible</code> is true, starts the section collapsed</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### SidebarNavItem
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">label</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Display text for the nav item</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">href</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Link destination, compared against <code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">pathname</code> to determine active state</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
