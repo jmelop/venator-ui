@@ -1,0 +1,84 @@
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+
+<PageHeader
+  title="Admin"
+  description="A deployable backoffice interface for managing users, roles and settings."
+/>
+
+## Overview
+
+The Admin archetype is a deployable Next.js backoffice shell built on Venator. Running the deploy command copies the full file tree into your project — every file is yours to edit from day one, with no runtime dependency on the archetype.
+
+What's included:
+
+- A users page with a searchable table, role badges and action buttons
+- A settings page with an organization form
+- `SidebarNav`, `Topbar` and `DashboardLayout` pre-wired
+
+## Deploy
+
+<CodeBlock
+  language="bash"
+  code={`npx venator init admin`}
+/>
+
+Then:
+
+<CodeBlock
+  language="bash"
+  code={`cd my-admin
+npm install
+npm run dev`}
+/>
+
+## Use cases
+
+- Admin panels for SaaS applications
+- Internal tools and dashboards
+- User and role management interfaces
+
+## What's included
+
+<CodeBlock
+  language="bash"
+  code={`my-app/
+  app/
+    layout.tsx           # Root layout with ToastProvider
+    page.tsx             # Redirects to /admin/users
+    admin/
+      layout.tsx         # DashboardLayout with Sidebar and Header
+      users/
+        page.tsx         # Users table with search, roles and status badges
+      settings/
+        page.tsx         # Organization settings form
+  components/
+    sidebar.tsx          # SidebarNav with navigation sections
+    header.tsx           # Topbar with dark mode toggle
+  tailwind.config.js     # Pre-configured with venatorPreset
+  package.json           # Dependencies pre-configured`}
+/>
+
+## Venator packages used
+
+- **`@venator/ui`** — `Button`, `Card`, `Input`, `Label`, `Table`, `Badge`, `Separator`
+- **`@venator/patterns`** — `DashboardLayout`, `SidebarNav`, `Topbar`, `PageHeader`
+- **`@venator/tokens`** — included via `venatorPreset` in `tailwind.config.js`
+
+## Customization
+
+- Replace mock users in `app/admin/users/page.tsx` with real API data
+- Update `components/sidebar.tsx` sections with your own routes
+- Add new resource pages under `app/admin/` following the same pattern
+
+## Next steps
+
+<CodeBlock
+  language="bash"
+  code={`npx venator add page-header`}
+/>
+
+<CodeBlock
+  language="bash"
+  code={`npm install @venator/ui`}
+/>
