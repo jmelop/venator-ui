@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, AlertDescription, Card, CardContent, CodeBlock } from '@venator/ui';
+import { Alert, AlertTitle, AlertDescription, CodeBlock } from '@venator/ui';
 import { PageHeader } from '@venator/patterns';
 
 <PageHeader
@@ -45,23 +45,19 @@ Complete project scaffolds deployed via CLI. Once deployed, the code is yours to
 <div className="mt-4" />
 
 <CodeBlock
-  language="bash"
-  filename="Terminal"
-  code={`npm install @venator/ui @venator/patterns`}
-/>
-
-<div className="mt-4" />
-
-<CodeBlock
   language="tsx"
   filename="Example.tsx"
-  code={`...`}
-/>
+  code={`import { Button, Card, CardContent } from '@venator/ui';
 
 <div className="mt-4" />
 
-<Card>
-  <CardContent className="pt-6">
-    Browse the **Components** section...
-  </CardContent>
-</Card>
+export function Example() {
+  return (
+    <Card>
+      <CardContent>
+        <Button variant="primary">Get started</Button>
+      </CardContent>
+    </Card>
+  );
+}`}
+/>
