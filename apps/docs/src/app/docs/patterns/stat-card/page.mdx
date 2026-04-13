@@ -15,7 +15,7 @@ Displays a labelled metric value. Add `description` for supporting context below
   <StatCard title="Total users" value="4,821" description="Registered accounts" />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<StatCard title="Total users" value="4,821" description="Registered accounts" />`}
 />
@@ -31,7 +31,7 @@ Pass `trend` as a positive or negative number to render a colour-coded badge. Pa
   </ModuleGrid>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* Positive trend — green badge */}
 <StatCard title="Revenue" value="$18,400" trend={8.1} trendLabel="vs last month" />
@@ -61,7 +61,7 @@ Pass any React node to `icon` to display it top-right inside the card.
   />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<StatCard
   title="Active sessions"
@@ -93,7 +93,7 @@ Use `variant` to add a coloured left border accent that signals the nature of th
   </ModuleGrid>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<StatCard title="Default" value="100" />
 <StatCard title="Primary" value="100" variant="primary" />

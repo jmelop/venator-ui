@@ -10,7 +10,7 @@ import { PageHeader } from '@venator/patterns';
 
 `SidebarNav` renders a vertical nav from a `sections` array. Pass `pathname` to highlight the active item.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`const sections = [
   {
@@ -35,7 +35,7 @@ import { PageHeader } from '@venator/patterns';
 
 Pass `logo` and `title` to render a branded header above the nav sections.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<SidebarNav
   sections={sections}
@@ -50,7 +50,7 @@ Pass `logo` and `title` to render a branded header above the nav sections.
 
 Pass `linkComponent={Link}` to enable client-side navigation. Any component that accepts an `href` prop works.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`import Link from 'next/link';
 
@@ -66,7 +66,7 @@ Pass `linkComponent={Link}` to enable client-side navigation. Any component that
 
 Set `collapsible` on a section to let users expand and collapse it. Use `defaultCollapsed` to start it closed.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`const sections = [
   {

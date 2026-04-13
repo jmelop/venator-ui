@@ -28,7 +28,7 @@ import { Preview } from '@/components/Preview';
   </ModuleGrid>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<ModuleGrid>
   <Card>…</Card>
@@ -41,7 +41,7 @@ import { Preview } from '@/components/Preview';
 
 Use the `columns` prop to set the number of columns at the `lg` breakpoint. All values collapse to a single column on small screens and two columns on medium screens.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* 1 column at all breakpoints */}
 <ModuleGrid columns={1}>…</ModuleGrid>
@@ -60,7 +60,7 @@ Use the `columns` prop to set the number of columns at the `lg` breakpoint. All 
 
 Use the `gap` prop to control spacing between grid cells.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* gap-3 */}
 <ModuleGrid gap="sm">…</ModuleGrid>

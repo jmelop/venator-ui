@@ -18,7 +18,7 @@ Pass a `src` to render a user photo. An `alt` description is recommended for acc
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Avatar src="https://i.pravatar.cc/40" alt="User avatar" />`}
 />
@@ -34,7 +34,7 @@ When no `src` is provided, or the image fails to load, the `fallback` string is 
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Avatar fallback="JM" alt="Juan Martinez" />
 <Avatar fallback="AB" alt="Alice Brown" />`}
@@ -50,7 +50,7 @@ With no `src` and no `fallback`, a generic person icon is shown.
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Avatar />`}
 />
@@ -69,7 +69,7 @@ Use the `size` prop to control the avatar dimensions.
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Avatar fallback="XS" size="xs" />
 <Avatar fallback="SM" size="sm" />
@@ -89,7 +89,7 @@ Use `shape="square"` for a rounded-rectangle avatar instead of the default circl
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Avatar fallback="CI" shape="circle" />
 <Avatar fallback="SQ" shape="square" />`}

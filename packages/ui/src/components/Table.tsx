@@ -38,7 +38,7 @@ export interface TableFooterProps extends HTMLAttributes<HTMLTableSectionElement
 
 export const TableFooter = forwardRef<HTMLTableSectionElement, TableFooterProps>(
   ({ className = '', ...props }, ref) => (
-    <tfoot ref={ref} className={`bg-neutral-50 font-medium ${className}`} {...props} />
+    <tfoot ref={ref} className={`bg-neutral-50 font-medium dark:bg-neutral-800 ${className}`} {...props} />
   ),
 );
 TableFooter.displayName = 'TableFooter';
@@ -49,7 +49,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
   ({ className = '', ...props }, ref) => (
     <tr
       ref={ref}
-      className={`border-b border-neutral-200 transition-colors hover:bg-neutral-50 ${className}`}
+      className={`border-b border-neutral-200 transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-800 ${className}`}
       {...props}
     />
   ),
@@ -62,7 +62,7 @@ export const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
   ({ className = '', ...props }, ref) => (
     <th
       ref={ref}
-      className={`px-4 py-3 text-left text-xs font-semibold text-neutral-500 uppercase tracking-wider bg-neutral-50 ${className}`}
+      className={`px-4 py-3 text-left text-xs font-semibold text-neutral-500 uppercase tracking-wider bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-400 ${className}`}
       {...props}
     />
   ),
@@ -73,7 +73,7 @@ export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
 
 export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
   ({ className = '', ...props }, ref) => (
-    <td ref={ref} className={`px-4 py-3 text-neutral-700 ${className}`} {...props} />
+    <td ref={ref} className={`px-4 py-3 text-neutral-700 dark:text-neutral-300 ${className}`} {...props} />
   ),
 );
 TableCell.displayName = 'TableCell';

@@ -133,7 +133,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           />
         </button>
         {label && (
-          <span className="text-sm text-neutral-700 select-none">{label}</span>
+          <span className="text-sm text-neutral-700 dark:text-neutral-300 select-none">{label}</span>
         )}
       </label>
     );

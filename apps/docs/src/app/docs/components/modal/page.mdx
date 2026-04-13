@@ -16,7 +16,7 @@ import { ModalExample } from '@/components/ModalExample';
   <ModalExample />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 
@@ -64,7 +64,7 @@ Use the `size` prop to control the maximum width of the dialog panel.
 | `xl` | `max-w-xl` (576px) |
 | `full` | Full viewport width and height |
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Modal open={open} onClose={onClose} size="sm">…</Modal>
 <Modal open={open} onClose={onClose} size="md">…</Modal>
@@ -77,7 +77,7 @@ Use the `size` prop to control the maximum width of the dialog panel.
 
 `Modal` is always controlled — manage `open` state externally and pass `onClose` to handle close requests (backdrop click, Escape key, or a close button).
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 

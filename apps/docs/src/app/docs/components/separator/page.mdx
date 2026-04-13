@@ -14,13 +14,13 @@ The default orientation. Renders a full-width 1px line.
 
 <Preview>
   <div className="flex flex-col gap-4">
-    <p className="text-sm text-neutral-600">Section one content goes here.</p>
+    <p className="text-sm text-neutral-600 dark:text-neutral-400">Section one content goes here.</p>
     <Separator />
-    <p className="text-sm text-neutral-600">Section two content goes here.</p>
+    <p className="text-sm text-neutral-600 dark:text-neutral-400">Section two content goes here.</p>
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<p>Section one content goes here.</p>
 <Separator />
@@ -33,15 +33,15 @@ Set `orientation="vertical"` to render a 1px tall vertical line. The separator t
 
 <Preview>
   <div className="flex items-center gap-4 h-6">
-    <span className="text-sm text-neutral-600">Files</span>
+    <span className="text-sm text-neutral-600 dark:text-neutral-400">Files</span>
     <Separator orientation="vertical" />
-    <span className="text-sm text-neutral-600">Edit</span>
+    <span className="text-sm text-neutral-600 dark:text-neutral-400">Edit</span>
     <Separator orientation="vertical" />
-    <span className="text-sm text-neutral-600">View</span>
+    <span className="text-sm text-neutral-600 dark:text-neutral-400">View</span>
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<div className="flex items-center gap-4 h-6">
   <span>Files</span>
@@ -56,7 +56,7 @@ Set `orientation="vertical"` to render a 1px tall vertical line. The separator t
 
 By default `decorative` is `true`, which adds `aria-hidden="true"` so screen readers skip the element. Set `decorative={false}` when the separator conveys meaningful structure — this switches to `role="separator"` with `aria-orientation`.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* Decorative (default) — hidden from assistive technology */}
 <Separator />

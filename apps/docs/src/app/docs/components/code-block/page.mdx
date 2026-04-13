@@ -1,6 +1,5 @@
 import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
 import { PageHeader } from '@venator/patterns';
-import { Preview } from '@/components/Preview';
 
 <PageHeader
   title="CodeBlock"
@@ -11,19 +10,17 @@ import { Preview } from '@/components/Preview';
 
 Renders a dark code block with a copy-to-clipboard button. The default language is `tsx`.
 
-<Preview>
-  <CodeBlock
-    code={`import { Button } from '@venator/ui';
+<CodeBlock
+  code={`import { Button } from '@venator/ui';
 
 export function Example() {
   return <Button variant="primary">Click me</Button>;
 }`}
-  />
-</Preview>
+/>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
-  code={`<CodeBlock
+  code={`<CodeBlock className="mt-6"
   code={\`import { Button } from '@venator/ui';
 
 export function Example() {
@@ -36,21 +33,19 @@ export function Example() {
 
 Pass `filename` to show a label bar above the code. The top corners of the code block become square to connect with the bar.
 
-<Preview>
-  <CodeBlock
-    filename="Button.tsx"
-    code={`export interface ButtonProps {
+<CodeBlock
+  filename="Button.tsx"
+  code={`export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   isLoading?: boolean;
 }`}
-  />
-</Preview>
+/>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
-  code={`<CodeBlock
+  code={`<CodeBlock className="mt-6"
   filename="Button.tsx"
   code={\`export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -65,17 +60,15 @@ Pass `filename` to show a label bar above the code. The top corners of the code 
 
 Set `language="bash"` for shell commands.
 
-<Preview>
-  <CodeBlock
-    language="bash"
-    filename="Terminal"
-    code={`npm install @venator/ui @venator/patterns @venator/tokens`}
-  />
-</Preview>
-
 <CodeBlock
+  language="bash"
+  filename="Terminal"
+  code={`npm install @venator/ui @venator/patterns @venator/tokens`}
+/>
+
+<CodeBlock className="mt-6"
   language="tsx"
-  code={`<CodeBlock
+  code={`<CodeBlock className="mt-6"
   language="bash"
   filename="Terminal"
   code={\`npm install @venator/ui @venator/patterns @venator/tokens\`}

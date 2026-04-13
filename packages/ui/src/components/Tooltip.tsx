@@ -7,6 +7,7 @@ export interface TooltipProps {
   side?: TooltipSide;
   delay?: number;
   children: React.ReactNode;
+  className?: string;
 }
 
 const bubblePosition: Record<TooltipSide, string> = {
@@ -30,6 +31,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   side = 'top',
   delay = 300,
   children,
+  className,
 }) => {
   const [visible, setVisible] = React.useState(false);
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -48,7 +50,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
 
   return (
     <div
-      className="relative inline-block"
+      className={`relative inline-block${className ? ` ${className}` : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

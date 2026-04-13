@@ -26,7 +26,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ padding = 'md', className = '', children, ...props }, ref) => (
     <div
       ref={ref}
-      className={`bg-white border border-neutral-200 rounded-lg shadow-sm dark:bg-neutral-900 dark:border-neutral-800 ${paddingStyles[padding]} ${className}`.trim()}
+      className={`bg-white border border-neutral-200 rounded-lg shadow-sm dark:bg-neutral-800 dark:border-neutral-800 ${paddingStyles[padding]} ${className}`.trim()}
       {...props}
     >
       {children}
@@ -43,8 +43,8 @@ export const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
       {...props}
     >
       <div className="min-w-0">
-        {title && <h3 className="text-base font-semibold text-neutral-900 truncate">{title}</h3>}
-        {description && <p className="mt-1 text-sm text-neutral-500">{description}</p>}
+        {title && <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100 truncate">{title}</h3>}
+        {description && <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">{description}</p>}
         {children}
       </div>
       {action && <div className="shrink-0">{action}</div>}
@@ -55,7 +55,7 @@ CardHeader.displayName = 'CardHeader';
 
 export const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>(
   ({ className = '', children, ...props }, ref) => (
-    <div ref={ref} className={className} {...props}>
+    <div ref={ref} className={`dark:text-neutral-100 ${className}`.trim()} {...props}>
       {children}
     </div>
   ),

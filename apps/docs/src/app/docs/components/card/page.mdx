@@ -16,7 +16,7 @@ A `Card` with `CardHeader`, `CardContent`, and `CardFooter`.
   <Card>
     <CardHeader title="Project overview" description="A summary of the current project status." />
     <CardContent className="mt-4">
-      <p className="text-sm text-neutral-600">Everything is on track. The next milestone is due at the end of the sprint.</p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300">Everything is on track. The next milestone is due at the end of the sprint.</p>
     </CardContent>
     <CardFooter className="mt-4">
       <Button variant="primary" size="sm">View project</Button>
@@ -25,7 +25,7 @@ A `Card` with `CardHeader`, `CardContent`, and `CardFooter`.
   </Card>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Card>
   <CardHeader
@@ -54,12 +54,12 @@ Pass a node to the `action` prop on `CardHeader` to render it in the top-right s
       action={<Badge variant="success" dot>Live</Badge>}
     />
     <CardContent className="mt-4">
-      <p className="text-sm text-neutral-600">12,430 requests — 99.9% uptime.</p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300">12,430 requests — 99.9% uptime.</p>
     </CardContent>
   </Card>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Card>
   <CardHeader
@@ -80,21 +80,21 @@ Use the `padding` prop to control the card's internal spacing.
 <Preview>
   <div className="flex flex-col gap-4">
     <Card padding="none">
-      <p className="text-sm text-neutral-600 p-2">padding="none"</p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 p-2">padding="none"</p>
     </Card>
     <Card padding="sm">
-      <p className="text-sm text-neutral-600">padding="sm"</p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300">padding="sm"</p>
     </Card>
     <Card padding="md">
-      <p className="text-sm text-neutral-600">padding="md" (default)</p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300">padding="md" (default)</p>
     </Card>
     <Card padding="lg">
-      <p className="text-sm text-neutral-600">padding="lg"</p>
+      <p className="text-sm text-neutral-600 dark:text-neutral-300">padding="lg"</p>
     </Card>
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Card padding="none">…</Card>
 <Card padding="sm">…</Card>

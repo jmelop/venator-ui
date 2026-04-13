@@ -8,7 +8,7 @@ import { PageHeader } from '@venator/patterns';
 
 ## Overview
 
-The Dashboard archetype is a deployable Next.js application shell designed as a strong production starting point. Running the deploy command copies the full file tree into your project — no black-box abstraction, no hidden config. Every file is yours to edit from day one.
+The Dashboard archetype is a deployable Next.js application shell. Running the deploy command copies the full file tree into your project — no black-box abstraction, no hidden config. Every file is yours to edit from day one.
 
 What's included:
 
@@ -20,27 +20,15 @@ What's included:
 
 ## Deploy
 
-Run the following command inside your project directory:
+<CodeBlock className="mt-6" language="bash" code={`npx venator init dashboard`} />
 
-<CodeBlock
-  language="bash"
-  code={`npx venator init dashboard`}
-/>
+Once deployed:
 
-The CLI will:
-
-1. Copy the archetype files into your project at the paths shown below
-2. Run `npm install` to add the required Venator packages
-3. Leave the project ready to run locally
-
-Then run:
-
-```bash
-npm run dev
+<CodeBlock className="mt-6" language="bash" code={`cd my-dashboard\nnpm install\nnpm run dev`} />
 
 ## What's included
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="bash"
   code={`my-app/
   app/
@@ -62,30 +50,25 @@ npm run dev
 
 ## Venator packages used
 
-- **`@venator/ui`** — `Button`, `Card`, `Input`, `Label`, `Separator`, `Badge`
-- **`@venator/patterns`** — `DashboardLayout`, `SidebarNav`, `Topbar`, `PageHeader`, `ModuleGrid`, `StatCard`
-- **`@venator/tokens`** — included via `venatorPreset` in `tailwind.config.js`
+- `@venator/ui` — Button, Card, Input, Label, Separator, Badge
+- `@venator/patterns` — DashboardLayout, SidebarNav, Topbar, PageHeader, ModuleGrid, StatCard
+- `@venator/tokens` — included via venatorPreset in tailwind.config.js
 
 ## Customization
 
-All files are copied into your project and are fully yours — there is no runtime dependency on the archetype. Start with these common entry points:
+All files are copied into your project and are fully yours. Common entry points:
 
-- **Navigation** — edit `components/sidebar.tsx` to update the `sections` array with your own routes and labels
-- **KPI data** — replace the hardcoded values in `app/dashboard/page.tsx` with real data from your API or database
-- **New pages** — add a folder under `app/dashboard/` with a `page.tsx` and add a matching entry to the sidebar sections
+- Update `components/sidebar.tsx` sections with your own routes
+- Replace hardcoded values in `app/dashboard/page.tsx` with real data
+- Add new pages under `app/dashboard/` following the same pattern
 
 ## Next steps
 
 Add an individual pattern to an existing project:
 
-<CodeBlock
-  language="bash"
-  code={`npx venator add page-header`}
-/>
+<CodeBlock className="mt-6" language="bash" code={`npx venator add page-header`} />
+
 
 Install Venator UI components directly:
 
-<CodeBlock
-  language="bash"
-  code={`npm install @venator/ui`}
-/>
+<CodeBlock className="mt-6" language="bash" code={`npm install @venator/ui`} />

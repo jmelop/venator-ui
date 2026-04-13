@@ -6,9 +6,10 @@ export interface CodeBlockProps {
   code: string;
   language?: string;
   filename?: string;
+  className?: string;
 }
 
-export function CodeBlock({ code, language = 'tsx', filename }: CodeBlockProps) {
+export function CodeBlock({ code, language = 'tsx', filename, className }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -19,7 +20,7 @@ export function CodeBlock({ code, language = 'tsx', filename }: CodeBlockProps) 
   };
 
   return (
-    <div className="relative">
+    <div className={`relative ${className ?? ''}`.trim()}>
       {filename && (
         <div className="bg-neutral-800 px-4 py-2 text-xs text-neutral-400 rounded-t-lg border-b border-neutral-700">
           {filename}

@@ -18,7 +18,7 @@ The `header` slot renders a sticky top bar above the scrollable content area. Th
 
 ## Basic usage
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`import { DashboardLayout } from '@venator/patterns';
 
@@ -38,7 +38,7 @@ export default function App() {
 
 Manage the mobile drawer state externally by passing `mobileOpen` and `onMobileOpenChange`. Useful when a hamburger button in the header needs to open the sidebar.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 
@@ -69,7 +69,7 @@ export function App() {
 
 Set `sidebarCollapsed` to `true` on desktop to shrink the sidebar to icon-width. Useful for building a toggle that expands and collapses the nav.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 

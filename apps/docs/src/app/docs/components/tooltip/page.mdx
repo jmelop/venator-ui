@@ -19,7 +19,7 @@ Wrap any element with `Tooltip` and pass `content` to show a label on hover. The
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Tooltip content="This is a tooltip">
   <Button variant="outline" size="sm">Hover me</Button>
@@ -47,7 +47,7 @@ Use the `side` prop to control which side the tooltip appears on.
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Tooltip content="Top tooltip" side="top">
   <Button variant="outline" size="sm">Top</Button>
@@ -70,7 +70,7 @@ Use the `side` prop to control which side the tooltip appears on.
 
 Set `delay` in milliseconds to control how long the user must hover before the tooltip appears. Set to `0` for instant display.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* Appears instantly */}
 <Tooltip content="Instant" delay={0}>
