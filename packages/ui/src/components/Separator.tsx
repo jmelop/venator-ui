@@ -11,7 +11,7 @@ export const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
   ({ orientation = 'horizontal', decorative = true, className, ...props }, ref) => {
     const classes = [
       orientation === 'horizontal' ? 'w-full h-px' : 'h-full w-px',
-      'bg-neutral-200',
+      'bg-neutral-200 dark:bg-neutral-700',
       className,
     ]
       .filter(Boolean)
