@@ -12,7 +12,7 @@ import { Preview } from '@/components/Preview';
 Renders a dark code block with a copy-to-clipboard button. The default language is `tsx`.
 
 <Preview>
-  <CodeBlock
+  <CodeBlock className="mt-6"
     code={`import { Button } from '@venator/ui';
 
 export function Example() {
@@ -21,9 +21,9 @@ export function Example() {
   />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
-  code={`<CodeBlock
+  code={`<CodeBlock className="mt-6"
   code={\`import { Button } from '@venator/ui';
 
 export function Example() {
@@ -37,7 +37,7 @@ export function Example() {
 Pass `filename` to show a label bar above the code. The top corners of the code block become square to connect with the bar.
 
 <Preview>
-  <CodeBlock
+  <CodeBlock className="mt-6"
     filename="Button.tsx"
     code={`export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -48,9 +48,9 @@ Pass `filename` to show a label bar above the code. The top corners of the code 
   />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
-  code={`<CodeBlock
+  code={`<CodeBlock className="mt-6"
   filename="Button.tsx"
   code={\`export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -66,16 +66,16 @@ Pass `filename` to show a label bar above the code. The top corners of the code 
 Set `language="bash"` for shell commands.
 
 <Preview>
-  <CodeBlock
+  <CodeBlock className="mt-6"
     language="bash"
     filename="Terminal"
     code={`npm install @venator/ui @venator/patterns @venator/tokens`}
   />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
-  code={`<CodeBlock
+  code={`<CodeBlock className="mt-6"
   language="bash"
   filename="Terminal"
   code={\`npm install @venator/ui @venator/patterns @venator/tokens\`}

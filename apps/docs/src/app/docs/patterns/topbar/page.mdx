@@ -15,7 +15,7 @@ Renders a full-width bar with a bottom border. Use `title` to display a brand na
   <Topbar title="My App" />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Topbar title="My App" />`}
 />
@@ -32,7 +32,7 @@ Use `left`, `center` and `right` to place any content into the three layout zone
   />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Topbar
   left={<span className="text-sm font-semibold">My App</span>}
@@ -45,7 +45,7 @@ Use `left`, `center` and `right` to place any content into the three layout zone
 
 Control how the bar is positioned in the document with the `position` prop.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* Scrolls with content (default) */}
 <Topbar title="My App" position="static" />
@@ -61,7 +61,7 @@ Control how the bar is positioned in the document with the `position` prop.
 
 Set `bordered={false}` to remove the bottom border — useful when the bar sits above a coloured hero or custom header.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Topbar title="My App" bordered={false} />`}
 />

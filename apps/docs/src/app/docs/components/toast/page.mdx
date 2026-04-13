@@ -16,7 +16,7 @@ Wrap your app (or the relevant subtree) with `ToastProvider`, then call `useToas
   <ToastExample />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 
@@ -48,7 +48,7 @@ export function App() {
 
 Pass `description` alongside `title` to provide additional context.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`toast({
   title: 'Profile updated',
@@ -61,7 +61,7 @@ Pass `description` alongside `title` to provide additional context.
 
 Set `duration` in milliseconds to control how long the toast stays visible. Set to a very large number to keep it on screen indefinitely, or call `dismiss(id)` to remove it manually.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`// Stays for 8 seconds
 toast({ title: 'Processing…', duration: 8000 });

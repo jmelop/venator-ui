@@ -20,7 +20,7 @@ A `Select` with a `placeholder` and several `<option>` children. The placeholder
   </Select>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Select placeholder="Choose a role…">
   <option value="admin">Admin</option>
@@ -50,7 +50,7 @@ Use the `size` prop to control the select's padding and font size.
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Select size="sm" placeholder="Small">…</Select>
 <Select size="md" placeholder="Medium (default)">…</Select>
@@ -69,7 +69,7 @@ Set `error` to apply red border and ring styles indicating a validation error.
   </Select>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Select placeholder="Choose a plan…" error>
   <option value="starter">Starter</option>
@@ -88,7 +88,7 @@ Pass the native `disabled` attribute to prevent interaction.
   </Select>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Select placeholder="Unavailable" disabled>
   <option value="a">Option A</option>

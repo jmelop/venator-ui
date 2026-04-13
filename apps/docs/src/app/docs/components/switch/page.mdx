@@ -16,7 +16,7 @@ import { SwitchExample } from '@/components/SwitchExample';
   <SwitchExample />
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 
@@ -46,7 +46,7 @@ Pass `label` to render a text label to the right of the track. Clicking the labe
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Switch label="Enable notifications" />
 <Switch label="Dark mode" defaultChecked />`}
@@ -56,7 +56,7 @@ Pass `label` to render a text label to the right of the track. Clicking the labe
 
 Pass `checked` and `onCheckedChange` to control the switch externally.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`'use client';
 
@@ -87,7 +87,7 @@ Set `disabled` to prevent interaction. Works in both checked and unchecked state
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<Switch label="Disabled off" disabled />
 <Switch label="Disabled on" defaultChecked disabled />`}

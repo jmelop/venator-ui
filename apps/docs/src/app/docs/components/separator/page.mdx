@@ -20,7 +20,7 @@ The default orientation. Renders a full-width 1px line.
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<p>Section one content goes here.</p>
 <Separator />
@@ -41,7 +41,7 @@ Set `orientation="vertical"` to render a 1px tall vertical line. The separator t
   </div>
 </Preview>
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`<div className="flex items-center gap-4 h-6">
   <span>Files</span>
@@ -56,7 +56,7 @@ Set `orientation="vertical"` to render a 1px tall vertical line. The separator t
 
 By default `decorative` is `true`, which adds `aria-hidden="true"` so screen readers skip the element. Set `decorative={false}` when the separator conveys meaningful structure — this switches to `role="separator"` with `aria-orientation`.
 
-<CodeBlock
+<CodeBlock className="mt-6"
   language="tsx"
   code={`{/* Decorative (default) — hidden from assistive technology */}
 <Separator />
