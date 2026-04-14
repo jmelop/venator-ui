@@ -18,12 +18,18 @@ function isKnownPattern(name: string): name is PatternSlug {
   return name in PATTERNS_MAP;
 }
 
-const PATTERNS_SRC_DIR = path.resolve(
-  path.dirname(require.resolve('@venator-ui/patterns/package.json')),
-  'src'
-);
-
 export async function addCommand(pattern: string): Promise<void> {
+  let PATTERNS_SRC_DIR: string;
+  try {
+    PATTERNS_SRC_DIR = path.resolve(
+      path.dirname(require.resolve('@venator-ui/patterns/package.json')),
+      'src'
+    );
+  } catch {
+    console.error(pc.red('Could not locate @venator-ui/patterns. Run npm install first.'));
+    process.exit(1);
+  }
+
   if (!isKnownPattern(pattern)) {
     const available = Object.keys(PATTERNS_MAP).join(', ');
     console.error(pc.red(`Unknown pattern "${pattern}". Available patterns: ${available}`));
