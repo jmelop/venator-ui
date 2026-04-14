@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import prompts from 'prompts';
 import pc from 'picocolors';
 
-const SUPPORTED_ARCHETYPES = ['dashboard', 'admin'] as const;
+const SUPPORTED_ARCHETYPES = ['dashboard', 'admin', 'ai-tool'] as const;
 type Archetype = (typeof SUPPORTED_ARCHETYPES)[number];
 
 function isSupportedArchetype(name: string): name is Archetype {
