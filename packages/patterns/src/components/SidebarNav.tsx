@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavGroup, NavItem } from '@venator/ui';
+import { NavGroup, NavItem } from '@venator-ui/ui';
 
 export interface SidebarNavItem {
   label: string;

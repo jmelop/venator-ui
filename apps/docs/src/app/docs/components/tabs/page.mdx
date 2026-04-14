@@ -1,5 +1,5 @@
-import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 import { Preview } from '@/components/Preview';
 import { TabsExample } from '@/components/TabsExample';
 
@@ -45,7 +45,7 @@ Pass `value` and `onValueChange` to control the active tab externally. Omit `def
   code={`'use client';
 
 import { useState } from 'react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@venator/ui';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@venator-ui/ui';
 
 export function ControlledTabs() {
   const [tab, setTab] = useState('overview');

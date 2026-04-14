@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Toggle } from '@venator/ui';
+import { Toggle } from '@venator-ui/ui';
 
 export function ToggleExample() {
   const [pressed, setPressed] = useState(false);

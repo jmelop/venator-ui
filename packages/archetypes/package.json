@@ -1,18 +1,15 @@
 {
-  "name": "@venator/archetypes",
+  "name": "@venator-ui/archetypes",
   "version": "0.0.0",
   "description": "Complete application architectures deployable via the Venator CLI",
-  "private": true,
+  "files": ["templates"],
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\""
-  },
-  "dependencies": {
-    "@venator/tokens": "*",
-    "@venator/ui": "*",
-    "@venator/patterns": "*"
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@venator-ui/tokens": "*",
+    "@venator-ui/ui": "*",
+    "@venator-ui/patterns": "*",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "typescript": "^5.3.3"

@@ -1,4 +1,4 @@
-# @venator/cli
+# @venator-ui/cli
 
 CLI for deploying Venator archetypes and patterns into your project.
 
@@ -6,7 +6,7 @@ CLI for deploying Venator archetypes and patterns into your project.
 
 ### `venator init <archetype>`
 
-Deploys a complete application architecture into the current directory. The files are copied into your project and are fully owned by you — there is no runtime dependency on `@venator/cli` after deployment.
+Deploys a complete application architecture into the current directory. The files are copied into your project and are fully owned by you — there is no runtime dependency on `@venator-ui/cli` after deployment.
 
 ```bash
 venator init dashboard
@@ -29,7 +29,7 @@ venator add ModuleGrid
 npx venator init dashboard
 
 # Or install globally
-npm install -g @venator/cli
+npm install -g @venator-ui/cli
 venator init dashboard
 venator add PageHeader
 ```

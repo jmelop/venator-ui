@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@venator/patterns": "latest",
-    "@venator/tokens": "latest",
-    "@venator/ui": "latest",
+    "@venator-ui/patterns": "latest",
+    "@venator-ui/tokens": "latest",
+    "@venator-ui/ui": "latest",
     "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

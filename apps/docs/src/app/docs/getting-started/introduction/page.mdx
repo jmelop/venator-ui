@@ -1,5 +1,5 @@
-import { Alert, AlertTitle, AlertDescription, CodeBlock } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { Alert, AlertTitle, AlertDescription, CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 
 <PageHeader
   title="Introduction"
@@ -17,21 +17,21 @@ import { PageHeader } from '@venator/patterns';
 
 Venator is a React + TypeScript UI system organized in three layers.
 
-- **@venator/ui** — accessible component primitives built on design tokens
-- **@venator/patterns** — structural layout compositions for real application screens
-- **@venator/archetypes** — complete application scaffolds deployed via CLI and owned by the developer
+- **@venator-ui/ui** — accessible component primitives built on design tokens
+- **@venator-ui/patterns** — structural layout compositions for real application screens
+- **@venator-ui/archetypes** — complete application scaffolds deployed via CLI and owned by the developer
 
 The CLI deploys archetypes and patterns directly into your project — no runtime dependency, no lock-in.
 
 ## Three layers
 
-**1. @venator/ui — UI primitives**
+**1. @venator-ui/ui — UI primitives**
 Accessible, composable component primitives built on Tailwind CSS and design tokens.
 
-**2. @venator/patterns — Structural patterns**
+**2. @venator-ui/patterns — Structural patterns**
 Reusable layout abstractions like `DashboardLayout`, `PageHeader`, and `ModuleGrid`.
 
-**3. @venator/archetypes — Application architectures**
+**3. @venator-ui/archetypes — Application architectures**
 Complete project scaffolds deployed via CLI. Once deployed, the code is yours to modify.
 
 ## Quick start
@@ -39,13 +39,13 @@ Complete project scaffolds deployed via CLI. Once deployed, the code is yours to
 <CodeBlock className="mt-6"
   language="bash"
   filename="Terminal"
-  code={`npm install @venator/ui @venator/patterns`}
+  code={`npm install @venator-ui/ui @venator-ui/patterns`}
 />
 
 <CodeBlock className="mt-6"
   language="tsx"
   filename="Example.tsx"
-  code={`import { Button, Card, CardContent } from '@venator/ui';
+  code={`import { Button, Card, CardContent } from '@venator-ui/ui';
 
 export function Example() {
   return (

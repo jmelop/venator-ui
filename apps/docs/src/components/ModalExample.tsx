@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Modal, ModalContent, ModalFooter, ModalHeader } from '@venator/ui';
+import { Button, Modal, ModalContent, ModalFooter, ModalHeader } from '@venator-ui/ui';
 
 export function ModalExample() {
   const [open, setOpen] = useState(false);

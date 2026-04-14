@@ -18,17 +18,17 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-} from '@venator/ui';
+} from '@venator-ui/ui';
 
 const features = [
   {
-    pkg: '@venator/ui',
+    pkg: '@venator-ui/ui',
     title: 'UI Components',
     description:
       'Typed, accessible primitives for building consistent interfaces. Buttons, cards, modals, tables and more, built on Tailwind CSS and design tokens.',
   },
   {
-    pkg: '@venator/patterns',
+    pkg: '@venator-ui/patterns',
     title: 'Patterns',
     description:
       'Reusable structural compositions for recurring application layouts. DashboardLayout, PageHeader and ModuleGrid cover the structures that appear in every real application.',
@@ -117,7 +117,7 @@ export default function Home() {
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
                   Install UI primitives and patterns as dependencies.
                 </p>
-                <CodeBlock code="npm install @venator/ui @venator/patterns" language="bash" />
+                <CodeBlock code="npm install @venator-ui/ui @venator-ui/patterns" language="bash" />
               </TabsContent>
             </Tabs>
           </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Switch } from '@venator/ui';
+import { Switch } from '@venator-ui/ui';
 
 export function SwitchExample() {
   const [checked, setChecked] = useState(false);

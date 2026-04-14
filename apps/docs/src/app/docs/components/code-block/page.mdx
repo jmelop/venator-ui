@@ -1,5 +1,5 @@
-import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 
 <PageHeader
   title="CodeBlock"
@@ -11,7 +11,7 @@ import { PageHeader } from '@venator/patterns';
 Renders a dark code block with a copy-to-clipboard button. The default language is `tsx`.
 
 <CodeBlock
-  code={`import { Button } from '@venator/ui';
+  code={`import { Button } from '@venator-ui/ui';
 
 export function Example() {
   return <Button variant="primary">Click me</Button>;
@@ -21,7 +21,7 @@ export function Example() {
 <CodeBlock className="mt-6"
   language="tsx"
   code={`<CodeBlock className="mt-6"
-  code={\`import { Button } from '@venator/ui';
+  code={\`import { Button } from '@venator-ui/ui';
 
 export function Example() {
   return <Button variant="primary">Click me</Button>;
@@ -63,7 +63,7 @@ Set `language="bash"` for shell commands.
 <CodeBlock
   language="bash"
   filename="Terminal"
-  code={`npm install @venator/ui @venator/patterns @venator/tokens`}
+  code={`npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens`}
 />
 
 <CodeBlock className="mt-6"
@@ -71,7 +71,7 @@ Set `language="bash"` for shell commands.
   code={`<CodeBlock className="mt-6"
   language="bash"
   filename="Terminal"
-  code={\`npm install @venator/ui @venator/patterns @venator/tokens\`}
+  code={\`npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens\`}
 />`}
 />
 

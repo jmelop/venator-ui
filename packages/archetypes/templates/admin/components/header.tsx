@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Topbar } from '@venator/patterns';
-import { Button } from '@venator/ui';
+import { Topbar } from '@venator-ui/patterns';
+import { Button } from '@venator-ui/ui';
 
 export function Header() {
   const [dark, setDark] = useState(false);

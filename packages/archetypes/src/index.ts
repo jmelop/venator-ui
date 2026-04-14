@@ -1,5 +1,5 @@
 /**
- * @venator/archetypes
+ * @venator-ui/archetypes
  *
  * Complete application architectures deployed via the Venator CLI.
  * Each archetype is a self-contained scaffold that is copied into the

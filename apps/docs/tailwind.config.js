@@ -1,4 +1,4 @@
-const { venatorPreset } = require('@venator/tokens');
+const { venatorPreset } = require('@venator-ui/tokens');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

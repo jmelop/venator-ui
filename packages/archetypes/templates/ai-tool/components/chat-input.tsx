@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@venator/ui';
+import { Button } from '@venator-ui/ui';
 
 export function ChatInput({ onSubmit }: { onSubmit?: (value: string) => void }) {
   const [value, setValue] = useState('');

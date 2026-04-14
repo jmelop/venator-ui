@@ -1,5 +1,5 @@
 {
-  "name": "@venator/patterns",
+  "name": "@venator-ui/patterns",
   "version": "0.0.0",
   "description": "Higher-level UI patterns and compositions for the Venator library",
   "main": "./dist/index.js",
@@ -10,7 +10,8 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --external react",
@@ -24,8 +25,8 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@venator/tokens": "*",
-    "@venator/ui": "*"
+    "@venator-ui/tokens": "*",
+    "@venator-ui/ui": "*"
   },
   "devDependencies": {
     "@types/react": "^18.2.48",
@@ -36,6 +37,7 @@
     "typescript": "^5.3.3"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ]
 }

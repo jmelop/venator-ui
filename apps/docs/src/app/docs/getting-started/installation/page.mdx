@@ -1,5 +1,5 @@
-import { CodeBlock } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 
 <PageHeader
   title="Installation"
@@ -18,25 +18,25 @@ Venator is optimised for use with Next.js 14+ (App Router).
 <CodeBlock className="mt-6"
   language="bash"
   filename="Terminal"
-  code={`npm install @venator/ui @venator/patterns`}
+  code={`npm install @venator-ui/ui @venator-ui/patterns`}
 />
 
-`@venator/tokens` is included as a transitive dependency. You can also install it directly if you need advanced access — for example, to use the Tailwind preset or design tokens in your own config.
+`@venator-ui/tokens` is included as a transitive dependency. You can also install it directly if you need advanced access — for example, to use the Tailwind preset or design tokens in your own config.
 
 ## Configure Tailwind
 
 <CodeBlock className="mt-6"
   language="js"
   filename="tailwind.config.js"
-  code={`const { venatorPreset } = require('@venator/tokens');
+  code={`const { venatorPreset } = require('@venator-ui/tokens');
 
 module.exports = {
   darkMode: 'class',
   presets: [venatorPreset],
   content: [
     './src/**\/*.{ts,tsx,md,mdx}',
-    './node_modules/@venator/ui/dist/**\/*.{js,mjs}',
-    './node_modules/@venator/patterns/dist/**\/*.{js,mjs}',
+    './node_modules/@venator-ui/ui/dist/**\/*.{js,mjs}',
+    './node_modules/@venator-ui/patterns/dist/**\/*.{js,mjs}',
   ],
   theme: { extend: {} },
   plugins: [],
@@ -48,7 +48,7 @@ module.exports = {
 <CodeBlock className="mt-6"
   language="tsx"
   filename="app/layout.tsx"
-  code={`import { ToastProvider } from '@venator/ui';
+  code={`import { ToastProvider } from '@venator-ui/ui';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 <CodeBlock className="mt-6"
   language="tsx"
   filename="page.tsx"
-  code={`import { Button, Card, CardContent, CardHeader } from '@venator/ui';
+  code={`import { Button, Card, CardContent, CardHeader } from '@venator-ui/ui';
 
 export default function Page() {
   return (

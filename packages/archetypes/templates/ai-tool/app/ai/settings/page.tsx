@@ -1,5 +1,5 @@
-import { Button, Card, CardContent, Input, Label, Select, Separator } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { Button, Card, CardContent, Input, Label, Select, Separator } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 
 export default function SettingsPage() {
   return (

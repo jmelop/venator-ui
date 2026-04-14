@@ -18,9 +18,18 @@ function isKnownPattern(name: string): name is PatternSlug {
   return name in PATTERNS_MAP;
 }
 
-const PATTERNS_SRC_DIR = path.resolve(__dirname, '../../patterns/src');
-
 export async function addCommand(pattern: string): Promise<void> {
+  let patternsSrcDir: string;
+  try {
+    patternsSrcDir = path.resolve(
+      path.dirname(require.resolve('@venator-ui/patterns/package.json')),
+      'src'
+    );
+  } catch {
+    console.error(pc.red('Could not locate @venator-ui/patterns. Run npm install first.'));
+    process.exit(1);
+  }
+
   if (!isKnownPattern(pattern)) {
     const available = Object.keys(PATTERNS_MAP).join(', ');
     console.error(pc.red(`Unknown pattern "${pattern}". Available patterns: ${available}`));
@@ -42,7 +51,7 @@ export async function addCommand(pattern: string): Promise<void> {
     const destination = path.resolve(process.cwd(), dest);
     await fs.ensureDir(destination);
 
-    const sourceFile = path.join(PATTERNS_SRC_DIR, PATTERNS_MAP[pattern]);
+    const sourceFile = path.join(patternsSrcDir, PATTERNS_MAP[pattern]);
     const fileName = path.basename(PATTERNS_MAP[pattern]);
     await fs.copy(sourceFile, path.join(destination, fileName));
 

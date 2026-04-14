@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@venator/ui';
+import { Card, CardContent } from '@venator-ui/ui';
 
 export function ChatMessage({ content }: { content: string }) {
   return (

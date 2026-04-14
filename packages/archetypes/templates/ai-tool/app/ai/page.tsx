@@ -1,6 +1,6 @@
 'use client';
 
-import { Label, Select } from '@venator/ui';
+import { Label, Select } from '@venator-ui/ui';
 import { ChatInput } from '../../components/chat-input';
 import { ChatMessage } from '../../components/chat-message';
 

@@ -1,11 +1,11 @@
-# @venator/ui
+# @venator-ui/ui
 
 Core UI components for the Venator library.
 
 ## Installation
 
 ```bash
-npm install @venator/ui
+npm install @venator-ui/ui
 ```
 
 ## Components
@@ -15,7 +15,7 @@ npm install @venator/ui
 A foundational button component with multiple variants and sizes.
 
 ```tsx
-import { Button } from '@venator/ui';
+import { Button } from '@venator-ui/ui';
 
 <Button variant="primary" size="md">
   Click me

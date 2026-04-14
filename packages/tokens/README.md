@@ -1,17 +1,17 @@
-# @venator/tokens
+# @venator-ui/tokens
 
 Design tokens for the Venator UI library.
 
 ## Installation
 
 ```bash
-npm install @venator/tokens
+npm install @venator-ui/tokens
 ```
 
 ## Usage
 
 ```tsx
-import { colors, spacing, typography } from '@venator/tokens';
+import { colors, spacing, typography } from '@venator-ui/tokens';
 
 const MyComponent = () => (
   <div style={{

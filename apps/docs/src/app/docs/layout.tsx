@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { SidebarNav, DashboardLayout } from '@venator/patterns';
+import { SidebarNav, DashboardLayout } from '@venator-ui/patterns';
 
 const sections = [
   {

@@ -1,5 +1,5 @@
-import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 import { Preview } from '@/components/Preview';
 
 <PageHeader
@@ -20,7 +20,7 @@ The `header` slot renders a sticky top bar above the scrollable content area. Th
 
 <CodeBlock className="mt-6"
   language="tsx"
-  code={`import { DashboardLayout } from '@venator/patterns';
+  code={`import { DashboardLayout } from '@venator-ui/patterns';
 
 export default function App() {
   return (
@@ -43,7 +43,7 @@ Manage the mobile drawer state externally by passing `mobileOpen` and `onMobileO
   code={`'use client';
 
 import { useState } from 'react';
-import { DashboardLayout } from '@venator/patterns';
+import { DashboardLayout } from '@venator-ui/patterns';
 
 export function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -74,7 +74,7 @@ Set `sidebarCollapsed` to `true` on desktop to shrink the sidebar to icon-width.
   code={`'use client';
 
 import { useState } from 'react';
-import { DashboardLayout } from '@venator/patterns';
+import { DashboardLayout } from '@venator-ui/patterns';
 
 export function App() {
   const [collapsed, setCollapsed] = useState(false);

@@ -53,20 +53,20 @@ venator/
 
 ### Packages
 
-**@venator/tokens**
+**@venator-ui/tokens**
 
-Design tokens shared across all layers. Consumed by `@venator/ui` and available as a Tailwind preset.
+Design tokens shared across all layers. Consumed by `@venator-ui/ui` and available as a Tailwind preset.
 
 - colors, spacing, typography, radius, shadows, breakpoints
 - `venatorPreset` for `tailwind.config.js`
 
-**@venator/ui**
+**@venator-ui/ui**
 
 UI primitives built with Tailwind CSS and design tokens. Typed, composable, accessible.
 
 - Button, Card, Input, Label, Badge, Avatar, Modal, Table, Tabs, Toast, Tooltip, and more
 
-**@venator/patterns**
+**@venator-ui/patterns**
 
 Structural patterns that define how UI is composed into pages and views. Not full pages — architectural abstractions you fill with your own content.
 
@@ -74,7 +74,7 @@ Structural patterns that define how UI is composed into pages and views. Not ful
 - `PageHeader` — consistent page title area with description, breadcrumb, and actions slots
 - `ModuleGrid` — responsive CSS grid for dashboard modules
 
-**@venator/archetypes**
+**@venator-ui/archetypes**
 
 Complete application architectures deployed via the Venator CLI and owned entirely by the developer. Not installed as a dependency — files are copied into your project and are yours to extend.
 
@@ -84,17 +84,17 @@ Complete application architectures deployed via the Venator CLI and owned entire
 
 ## Three layers
 
-**1. @venator/ui — UI primitives**
+**1. @venator-ui/ui — UI primitives**
 
 Accessible, composable component primitives. Install as a dependency, import directly, extend with `className`.
 
-**2. @venator/patterns — Structural patterns**
+**2. @venator-ui/patterns — Structural patterns**
 
 Reusable structural abstractions that define how UI is composed into layouts. Use as a dependency or as a reference for your own patterns.
 
-**3. @venator/archetypes — Application architectures**
+**3. @venator-ui/archetypes — Application architectures**
 
-Complete project scaffolds deployed via CLI. Once deployed, the developer owns the code. No runtime dependency on `@venator/archetypes`.
+Complete project scaffolds deployed via CLI. Once deployed, the developer owns the code. No runtime dependency on `@venator-ui/archetypes`.
 
 ## CLI
 
@@ -103,7 +103,7 @@ Complete project scaffolds deployed via CLI. Once deployed, the developer owns t
 npx venator init dashboard
 
 # Install UI primitives and patterns as dependencies
-npm install @venator/ui @venator/patterns @venator/tokens
+npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens
 ```
 
 ## Getting Started
@@ -141,8 +141,8 @@ npm run clean
 ## Example
 
 ```tsx
-import { Button, Card, CardContent, CardHeader } from "@venator/ui";
-import { DashboardLayout, PageHeader } from "@venator/patterns";
+import { Button, Card, CardContent, CardHeader } from "@venator-ui/ui";
+import { DashboardLayout, PageHeader } from "@venator-ui/patterns";
 
 function App() {
   return (

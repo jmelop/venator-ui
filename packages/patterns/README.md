@@ -1,11 +1,11 @@
-# @venator/patterns
+# @venator-ui/patterns
 
 Higher-level UI patterns and compositions for the Venator library.
 
 ## Installation
 
 ```bash
-npm install @venator/patterns
+npm install @venator-ui/patterns
 ```
 
 ## Patterns
@@ -15,7 +15,7 @@ npm install @venator/patterns
 A foundational dashboard layout with sidebar and header.
 
 ```tsx
-import { DashboardLayout } from '@venator/patterns';
+import { DashboardLayout } from '@venator-ui/patterns';
 
 <DashboardLayout
   sidebar={<Navigation />}

@@ -1,5 +1,5 @@
-import { Switch, CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { Switch, CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 import { Preview } from '@/components/Preview';
 import { SwitchExample } from '@/components/SwitchExample';
 
@@ -21,7 +21,7 @@ import { SwitchExample } from '@/components/SwitchExample';
   code={`'use client';
 
 import { useState } from 'react';
-import { Switch } from '@venator/ui';
+import { Switch } from '@venator-ui/ui';
 
 export function SwitchExample() {
   const [checked, setChecked] = useState(false);
@@ -61,7 +61,7 @@ Pass `checked` and `onCheckedChange` to control the switch externally.
   code={`'use client';
 
 import { useState } from 'react';
-import { Switch } from '@venator/ui';
+import { Switch } from '@venator-ui/ui';
 
 export function ControlledSwitch() {
   const [checked, setChecked] = useState(false);

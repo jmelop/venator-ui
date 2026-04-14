@@ -1,5 +1,5 @@
-import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { CodeBlock, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 import { Preview } from '@/components/Preview';
 import { ToastExample } from '@/components/ToastExample';
 
@@ -20,7 +20,7 @@ Wrap your app (or the relevant subtree) with `ToastProvider`, then call `useToas
   language="tsx"
   code={`'use client';
 
-import { Button, ToastProvider, useToast } from '@venator/ui';
+import { Button, ToastProvider, useToast } from '@venator-ui/ui';
 
 function ToastTrigger() {
   const { toast } = useToast();

@@ -10,8 +10,6 @@ function isSupportedArchetype(name: string): name is Archetype {
   return (SUPPORTED_ARCHETYPES as readonly string[]).includes(name);
 }
 
-const TEMPLATES_DIR = path.resolve(__dirname, '../../archetypes/templates');
-
 function createSpinner(message: string): () => void {
   const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
   let i = 0;
@@ -26,6 +24,17 @@ function createSpinner(message: string): () => void {
 }
 
 export async function initCommand(archetype: string): Promise<void> {
+  let templatesDir: string;
+  try {
+    templatesDir = path.resolve(
+      path.dirname(require.resolve('@venator-ui/archetypes/package.json')),
+      'templates'
+    );
+  } catch {
+    console.error(pc.red('Could not locate @venator-ui/archetypes. Run npm install first.'));
+    process.exit(1);
+  }
+
   if (!isSupportedArchetype(archetype)) {
     console.error(
       pc.red(
@@ -67,7 +76,7 @@ export async function initCommand(archetype: string): Promise<void> {
     }
 
     const stopSpinner = createSpinner('Copying files...');
-    const templateDir = path.join(TEMPLATES_DIR, archetype);
+    const templateDir = path.join(templatesDir, archetype);
     await fs.copy(templateDir, destination);
     stopSpinner();
 

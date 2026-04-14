@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Badge, Card, CardContent } from '@venator/ui';
+import { Badge, Card, CardContent } from '@venator-ui/ui';
 
 export interface StatCardProps {
   title: string;

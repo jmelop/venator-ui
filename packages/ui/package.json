@@ -1,5 +1,5 @@
 {
-  "name": "@venator/ui",
+  "name": "@venator-ui/ui",
   "version": "0.0.0",
   "description": "Core UI components for the Venator library",
   "main": "./dist/index.js",
@@ -24,7 +24,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@venator/tokens": "*"
+    "@venator-ui/tokens": "*"
   },
   "devDependencies": {
     "@types/react": "^18.2.48",

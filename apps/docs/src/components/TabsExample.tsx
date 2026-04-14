@@ -1,6 +1,6 @@
 'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@venator/ui';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@venator-ui/ui';
 
 export function TabsExample() {
   return (

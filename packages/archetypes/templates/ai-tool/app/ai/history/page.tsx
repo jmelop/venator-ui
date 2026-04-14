@@ -1,5 +1,5 @@
-import { Card, CardContent, Separator } from '@venator/ui';
-import { PageHeader } from '@venator/patterns';
+import { Card, CardContent, Separator } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
 
 const historyItems = [
   { id: 1, title: 'What are the key principles of good software architecture?', timestamp: 'Today at 14:32' },

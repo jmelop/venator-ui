@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, ToastProvider, useToast } from '@venator/ui';
+import { Button, ToastProvider, useToast } from '@venator-ui/ui';
 
 function ToastTriggers() {
   const { toast } = useToast();

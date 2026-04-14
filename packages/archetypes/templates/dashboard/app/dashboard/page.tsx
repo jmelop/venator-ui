@@ -1,5 +1,5 @@
-import { ModuleGrid, PageHeader, StatCard } from '@venator/patterns';
-import { Card, CardContent, CardHeader } from '@venator/ui';
+import { ModuleGrid, PageHeader, StatCard } from '@venator-ui/patterns';
+import { Card, CardContent, CardHeader } from '@venator-ui/ui';
 
 export default function DashboardPage() {
   return (

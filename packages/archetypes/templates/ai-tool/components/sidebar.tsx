@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { SidebarNav } from '@venator/patterns';
+import { SidebarNav } from '@venator-ui/patterns';
 import Link from 'next/link';
 
 const sections = [

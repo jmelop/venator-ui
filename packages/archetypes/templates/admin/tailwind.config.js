@@ -1,4 +1,4 @@
-const { venatorPreset } = require('@venator/tokens');
+const { venatorPreset } = require('@venator-ui/tokens');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,8 +7,8 @@ module.exports = {
   content: [
     './app/**/*.{ts,tsx,md,mdx}',
     './components/**/*.{ts,tsx,md,mdx}',
-    './node_modules/@venator/ui/dist/**/*.{js,mjs}',
-    './node_modules/@venator/patterns/dist/**/*.{js,mjs}',
+    './node_modules/@venator-ui/ui/dist/**/*.{js,mjs}',
+    './node_modules/@venator-ui/patterns/dist/**/*.{js,mjs}',
   ],
   theme: {
     extend: {},

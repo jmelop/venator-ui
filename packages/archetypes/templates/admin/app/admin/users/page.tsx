@@ -1,4 +1,4 @@
-import { PageHeader } from '@venator/patterns';
+import { PageHeader } from '@venator-ui/patterns';
 import {
   Badge,
   Button,
@@ -11,7 +11,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@venator/ui';
+} from '@venator-ui/ui';
 
 type Role = 'Admin' | 'Editor' | 'Viewer';
 type Status = 'Active' | 'Pending' | 'Disabled';

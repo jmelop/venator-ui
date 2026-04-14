@@ -1,4 +1,4 @@
-# @venator/archetypes
+# @venator-ui/archetypes
 
 Complete application architectures deployed via the Venator CLI and owned entirely by the developer — not installed as a dependency.
 

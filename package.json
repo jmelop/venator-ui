@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "npm run dev --workspace=docs",
     "build": "npm run build:packages && npm run build --workspace=docs",
-    "build:packages": "npm run build --workspace=@venator/tokens && npm run build --workspace=@venator/ui && npm run build --workspace=@venator/patterns",
+    "build:packages": "npm run build --workspace=@venator-ui/tokens && npm run build --workspace=@venator-ui/ui && npm run build --workspace=@venator-ui/patterns",
     "lint": "npm run lint --workspaces --if-present",
     "type-check": "npm run type-check --workspaces --if-present",
     "clean": "npm run clean --workspaces --if-present"
