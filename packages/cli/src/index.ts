@@ -7,7 +7,7 @@ const program = new Command();
 
 program
   .name('venator')
-  .version('0.0.1')
+  .version('0.1.0')
   .description('CLI for deploying Venator archetypes and patterns');
 
 program

@@ -7,6 +7,9 @@ const PATTERNS_MAP = {
   'dashboard-layout': 'layouts/DashboardLayout.tsx',
   'page-header': 'components/PageHeader.tsx',
   'module-grid': 'components/ModuleGrid.tsx',
+  'sidebar-nav': 'components/SidebarNav.tsx',
+  'topbar': 'components/Topbar.tsx',
+  'stat-card': 'components/StatCard.tsx',
 } as const;
 
 type PatternSlug = keyof typeof PATTERNS_MAP;
