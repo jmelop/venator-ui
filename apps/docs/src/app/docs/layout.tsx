@@ -54,6 +54,7 @@ const sections = [
     items: [
       { label: 'Dashboard', href: '/docs/archetypes/dashboard' },
       { label: 'Admin', href: '/docs/archetypes/admin' },
+      { label: 'AI Tool', href: '/docs/archetypes/ai-tool' },
     ],
   },
 ];

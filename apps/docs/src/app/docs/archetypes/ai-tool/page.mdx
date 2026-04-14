@@ -1,0 +1,82 @@
+import { CodeBlock } from '@venator/ui';
+import { PageHeader } from '@venator/patterns';
+
+<PageHeader
+  title="AI Tool"
+  description="A deployable AI interface built for prompt-based products."
+/>
+
+## Overview
+
+The AI Tool archetype is a deployable Next.js application shell for prompt-based products. Running the deploy command copies the full file tree into your project — no black-box abstraction, no hidden config. Every file is yours to edit from day one.
+
+What's included:
+
+- A main AI page with a mock response, mode selector, and chat input
+- A history page with a list of previous prompts
+- A settings page with model selector and temperature input
+- `SidebarNav`, `Topbar`, and `DashboardLayout` pre-wired
+- Two local components: `ChatInput` and `ChatMessage`
+
+## Deploy
+
+<CodeBlock className="mt-6" language="bash" code={`npx venator init ai-tool`} />
+
+<p className="mt-4">Then:</p>
+
+<CodeBlock className="mt-6" language="bash" code={`cd my-ai-tool\nnpm install\nnpm run dev`} />
+
+## What's included
+
+<CodeBlock
+  className="mt-6"
+  language="bash"
+  code={`my-app/
+  app/
+    layout.tsx           # Root layout with ToastProvider
+    page.tsx             # Redirects to /ai
+    ai/
+      layout.tsx         # DashboardLayout with Sidebar and Header
+      page.tsx           # Main AI interface with prompt input and mock response
+      history/
+        page.tsx         # Previous prompts list
+      settings/
+        page.tsx         # Model and temperature settings
+  components/
+    chat-input.tsx       # Textarea + submit button
+    chat-message.tsx     # Card-based response display
+    sidebar.tsx          # SidebarNav with AI sections
+    header.tsx           # Topbar with dark mode toggle
+  tailwind.config.js     # Pre-configured with venatorPreset
+  package.json           # Required dependencies and scripts`}
+/>
+
+## Venator packages used
+
+- **`@venator/ui`** — `Button`, `Card`, `Input`, `Label`, `Select`, `Separator`
+- **`@venator/patterns`** — `DashboardLayout`, `SidebarNav`, `Topbar`, `PageHeader`
+- **`@venator/tokens`** — included via `venatorPreset` in `tailwind.config.js`
+
+## Use cases
+
+- AI assistants and chat-based tools
+- Internal copilots and analysis interfaces
+- Prompt-based workflows with configurable models
+
+## Customization
+
+All files are copied into your project and are fully yours. Common entry points:
+
+- Connect a real AI API in `app/ai/page.tsx` by replacing the mock response with a fetch call
+- Add conversation state and API integration in `app/ai/page.tsx` to turn the starter into a full chat workflow
+- Update `components/sidebar.tsx` sections with your own routes
+
+## Next steps
+
+<p className="mt-4">Add an individual pattern:</p>
+
+<CodeBlock className="mt-6" language="bash" code={`npx venator add page-header`} />
+
+<p className="mt-4">Install UI components directly:</p>
+
+<CodeBlock className="mt-6" language="bash" code={`npm install @venator/ui`} />
