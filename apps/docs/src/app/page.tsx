@@ -91,7 +91,7 @@ export default function Home() {
             Build fast. Scale correctly.
           </p>
           <p className="max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
-            A React + TypeScript UI system built from primitives to patterns to full application architectures.
+            Components, patterns and architectures in one system.
           </p>
           <div className="flex items-center gap-3 flex-wrap justify-center">
             <Link href="/docs/getting-started/introduction">
@@ -111,7 +111,7 @@ export default function Home() {
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
                   Deploy a complete dashboard architecture into your project.
                 </p>
-                <CodeBlock code="npx venator init dashboard" language="bash" />
+                <CodeBlock code="npx @venator-ui/cli init dashboard" language="bash" />
               </TabsContent>
               <TabsContent value="manual" className="mt-2">
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
@@ -145,6 +145,47 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Archetypes */}
+        <section className="px-6 py-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 text-center mb-2">
+              Deploy a complete architecture
+            </h2>
+            <p className="text-center text-neutral-500 dark:text-neutral-400 mb-10">
+              Three production-ready starting points, deployed in one command.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card>
+                <CardContent className="pt-6">
+                  <p className="font-semibold text-neutral-900 dark:text-neutral-100">Dashboard</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                    A modular dashboard with KPI cards, analytics and settings.
+                  </p>
+                  <CodeBlock className="mt-3" language="bash" code="npx @venator-ui/cli init dashboard" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <p className="font-semibold text-neutral-900 dark:text-neutral-100">Admin</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                    A backoffice interface with user table, roles and organization settings.
+                  </p>
+                  <CodeBlock className="mt-3" language="bash" code="npx @venator-ui/cli init admin" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <p className="font-semibold text-neutral-900 dark:text-neutral-100">AI Tool</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                    A prompt-based interface with chat input, history and model settings.
+                  </p>
+                  <CodeBlock className="mt-3" language="bash" code="npx @venator-ui/cli init ai-tool" />
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
