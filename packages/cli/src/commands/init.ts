@@ -12,6 +12,19 @@ function isSupportedArchetype(name: string): name is Archetype {
 
 const TEMPLATES_DIR = path.resolve(__dirname, '../../archetypes/templates');
 
+function createSpinner(message: string): () => void {
+  const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+  let i = 0;
+  process.stdout.write('\n');
+  const interval = setInterval(() => {
+    process.stdout.write(`\r${pc.cyan(frames[i++ % frames.length])} ${message}`);
+  }, 80);
+  return () => {
+    clearInterval(interval);
+    process.stdout.write('\r\x1b[K');
+  };
+}
+
 export async function initCommand(archetype: string): Promise<void> {
   if (!isSupportedArchetype(archetype)) {
     console.error(
@@ -37,29 +50,34 @@ export async function initCommand(archetype: string): Promise<void> {
     const destination = path.resolve(process.cwd(), dest);
 
     if (await fs.pathExists(destination)) {
-      const { overwrite } = await prompts({
-        type: 'confirm',
-        name: 'overwrite',
-        message: `${dest} already exists. Overwrite?`,
-        initial: false,
-      });
+      const entries = await fs.readdir(destination);
+      if (entries.length > 0) {
+        const { overwrite } = await prompts({
+          type: 'confirm',
+          name: 'overwrite',
+          message: 'Directory already exists. Overwrite? (y/N)',
+          initial: false,
+        });
 
-      if (!overwrite) {
-        process.exit(0);
+        if (!overwrite) {
+          console.log(pc.white('Aborted.'));
+          process.exit(0);
+        }
       }
     }
 
+    const stopSpinner = createSpinner('Copying files...');
     const templateDir = path.join(TEMPLATES_DIR, archetype);
     await fs.copy(templateDir, destination);
+    stopSpinner();
 
     const rel = path.relative(process.cwd(), destination);
+    console.log(pc.green(`✓ ${archetype} deployed to ${rel}`));
     console.log();
-    console.log(pc.green(`✓ Dashboard deployed to ${rel}`));
-    console.log();
-    console.log(`  next steps:`);
-    console.log(`    cd ${rel}`);
-    console.log(`    npm install`);
-    console.log(`    npm run dev`);
+    console.log(pc.white('  Next steps:'));
+    console.log(`    ${pc.cyan(`cd ${rel}`)}`);
+    console.log(`    ${pc.cyan('npm install')}`);
+    console.log(`    ${pc.cyan('npm run dev')}`);
     console.log();
   } catch (err) {
     console.error(pc.red(`Error: ${err instanceof Error ? err.message : String(err)}`));
