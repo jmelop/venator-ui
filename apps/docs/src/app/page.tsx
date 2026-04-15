@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
   Alert,
   AlertDescription,
@@ -22,20 +22,32 @@ import {
 
 function CopyCommand({ command }: { command: string }) {
   const [copied, setCopied] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
+
   return (
-    <div
-      className="flex items-center justify-between rounded-md bg-neutral-900 px-3 py-2 cursor-pointer group shrink-0"
-      onClick={() => {
-        navigator.clipboard.writeText(command);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
+    <button
+      type="button"
+      aria-label="Copy command"
+      className="flex items-center justify-between rounded-md bg-neutral-900 px-3 py-2 cursor-pointer group"
+      onClick={async () => {
+        if (!navigator.clipboard?.writeText) return;
+        try {
+          await navigator.clipboard.writeText(command);
+          if (timerRef.current) clearTimeout(timerRef.current);
+          setCopied(true);
+          timerRef.current = setTimeout(() => setCopied(false), 2000);
+        } catch {
+          // ignore
+        }
       }}
     >
       <span className="font-mono text-[11px] text-neutral-300">{command}</span>
       <span className="text-neutral-500 group-hover:text-neutral-300 transition-colors ml-2 shrink-0 text-xs">
         {copied ? '✓' : '⧉'}
       </span>
-    </div>
+    </button>
   );
 }
 
@@ -177,7 +189,7 @@ export default function Home() {
             <p className="text-center text-neutral-500 dark:text-neutral-400 mb-10">
               Three production-ready starting points, deployed in one command.
             </p>
-            <div className="max-w-2xl mx-auto flex flex-col divide-y divide-neutral-800">
+            <div className="max-w-2xl mx-auto flex flex-col divide-y divide-neutral-200 dark:divide-neutral-800">
               {[
                 {
                   title: 'Dashboard',
@@ -197,8 +209,8 @@ export default function Home() {
               ].map(({ title, description, command }) => (
                 <div key={title} className="flex items-start justify-between gap-8 py-6">
                   <div className="flex-1">
-                    <p className="text-sm font-semibold text-neutral-100 mb-1">{title}</p>
-                    <p className="text-sm text-neutral-400">{description}</p>
+                    <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-1">{title}</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
                   </div>
                   <CopyCommand command={command} />
                 </div>
