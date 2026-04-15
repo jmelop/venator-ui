@@ -207,12 +207,14 @@ export default function Home() {
                   command: 'npx @venator-ui/cli init ai-tool',
                 },
               ].map(({ title, description, command }) => (
-                <div key={title} className="flex items-start justify-between gap-8 py-6">
+                <div key={title} className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between py-6">
                   <div className="flex-1">
                     <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-1">{title}</p>
                     <p className="text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
                   </div>
-                  <CopyCommand command={command} />
+                  <div className="w-full md:w-auto">
+                    <CopyCommand command={command} />
+                  </div>
                 </div>
               ))}
             </div>

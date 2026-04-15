@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { SidebarNav, DashboardLayout } from '@venator-ui/patterns';
 
 const sections = [
@@ -141,6 +141,15 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
     return document.documentElement.classList.contains('dark');
   });
 
+  const ClosingLink = useCallback(
+    ({ href, children, ...props }: { href: string; children: React.ReactNode }) => (
+      <Link href={href} onClick={() => setMobileOpen(false)} {...props}>
+        {children}
+      </Link>
+    ),
+    [setMobileOpen]
+  );
+
   const toggleDark = () => {
     const next = !dark;
     setDark(next);
@@ -153,7 +162,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         <SidebarNav
           sections={sections}
           pathname={pathname}
-          linkComponent={Link}
+          linkComponent={ClosingLink}
           logo={<img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />}
           title="Venator UI"
           titleHref="/"
