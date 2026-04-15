@@ -20,6 +20,25 @@ import {
   TabsContent,
 } from '@venator-ui/ui';
 
+function CopyCommand({ command }: { command: string }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <div
+      className="flex items-center justify-between rounded-md bg-neutral-900 px-3 py-2 cursor-pointer group shrink-0"
+      onClick={() => {
+        navigator.clipboard.writeText(command);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }}
+    >
+      <span className="font-mono text-[11px] text-neutral-300">{command}</span>
+      <span className="text-neutral-500 group-hover:text-neutral-300 transition-colors ml-2 shrink-0 text-xs">
+        {copied ? '✓' : '⧉'}
+      </span>
+    </div>
+  );
+}
+
 const features = [
   {
     pkg: '@venator-ui/ui',
@@ -150,7 +169,7 @@ export default function Home() {
         </section>
 
         {/* Archetypes */}
-        <section className="px-6 py-16">
+        <section className="px-6 py-16 bg-neutral-50 dark:bg-neutral-950">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 text-center mb-2">
               Deploy a complete architecture
@@ -158,40 +177,38 @@ export default function Home() {
             <p className="text-center text-neutral-500 dark:text-neutral-400 mb-10">
               Three production-ready starting points, deployed in one command.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="flex flex-col">
-                <CardContent className="pt-6 flex flex-col flex-1">
-                  <p className="font-semibold text-neutral-900 dark:text-neutral-100">Dashboard</p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 flex-1">
-                    A modular dashboard with KPI cards, analytics and settings.
-                  </p>
-                  <CodeBlock language="bash" code="npx @venator-ui/cli init dashboard" className="mt-3" />
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col">
-                <CardContent className="pt-6 flex flex-col flex-1">
-                  <p className="font-semibold text-neutral-900 dark:text-neutral-100">Admin</p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 flex-1">
-                    A backoffice interface with user table, roles and organization settings.
-                  </p>
-                  <CodeBlock language="bash" code="npx @venator-ui/cli init admin" className="mt-3" />
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col">
-                <CardContent className="pt-6 flex flex-col flex-1">
-                  <p className="font-semibold text-neutral-900 dark:text-neutral-100">AI Tool</p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1 flex-1">
-                    A prompt-based interface with chat input, history and model settings.
-                  </p>
-                  <CodeBlock language="bash" code="npx @venator-ui/cli init ai-tool" className="mt-3" />
-                </CardContent>
-              </Card>
+            <div className="max-w-2xl mx-auto flex flex-col divide-y divide-neutral-800">
+              {[
+                {
+                  title: 'Dashboard',
+                  description: 'A modular dashboard with KPI cards, analytics and settings.',
+                  command: 'npx @venator-ui/cli init dashboard',
+                },
+                {
+                  title: 'Admin',
+                  description: 'A backoffice interface with user table, roles and organization settings.',
+                  command: 'npx @venator-ui/cli init admin',
+                },
+                {
+                  title: 'AI Tool',
+                  description: 'A prompt-based interface with chat input, history and model settings.',
+                  command: 'npx @venator-ui/cli init ai-tool',
+                },
+              ].map(({ title, description, command }) => (
+                <div key={title} className="flex items-start justify-between gap-8 py-6">
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-neutral-100 mb-1">{title}</p>
+                    <p className="text-sm text-neutral-400">{description}</p>
+                  </div>
+                  <CopyCommand command={command} />
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Component preview */}
-        <section className="px-6 py-16">
+        <section className="px-6 py-16 bg-white dark:bg-neutral-900">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 text-center mb-10">
               Component preview
