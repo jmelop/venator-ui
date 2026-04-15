@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import { createContext, useCallback, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
@@ -82,7 +83,9 @@ interface ToastViewportProps {
 }
 
 function ToastViewport({ toasts, dismiss }: ToastViewportProps) {
-  if (typeof document === 'undefined') return null;
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+  if (!mounted || typeof document === 'undefined') return null;
 
   return createPortal(
     <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2 w-80">
