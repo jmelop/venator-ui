@@ -1,21 +1,25 @@
 # @venator-ui/archetypes
 
-Complete application architectures deployed via the Venator CLI and owned entirely by the developer — not installed as a dependency.
+Complete application architectures deployed via the Venator CLI. Files are copied into your project. You own the output, with no runtime dependency.
 
-Each archetype is a full project scaffold: components, layouts, pages and configuration wired together and ready to extend.
+## Archetypes
 
-## Planned archetypes
-
-- **dashboard** — Modular admin dashboard with sidebar navigation, header and a grid-based module system
-- **landing** — Marketing landing page with hero, features section, and footer
-- **blog** — Content site with index and post pages, MDX support, and navigation
+- `dashboard` — Modular dashboard with KPI cards, analytics and settings
+- `admin` — Backoffice interface with user table, roles and organization settings
+- `ai-tool` — Prompt-based AI interface with chat input, history and model settings
 
 ## Usage
+
+Archetypes give you a complete starting point, so you can focus on building instead of setting things up.
 
 Archetypes are deployed via the CLI, not imported as a package:
 
 ```bash
-npx venator new dashboard
+npx @venator-ui/cli init dashboard
+npx @venator-ui/cli init admin
+npx @venator-ui/cli init ai-tool
 ```
 
-The CLI copies the archetype files into your project. You own the code from that point forward.
+## Docs
+
+[venator-ui-docs.vercel.app/docs/archetypes](https://venator-ui-docs.vercel.app/docs/archetypes)

@@ -1,6 +1,6 @@
 # @venator-ui/patterns
 
-Higher-level UI patterns and compositions for the Venator library.
+Structural layout compositions for React applications. Built on top of `@venator-ui/ui`.
 
 ## Installation
 
@@ -10,34 +10,30 @@ npm install @venator-ui/patterns
 
 ## Patterns
 
-### DashboardLayout
+- `DashboardLayout` — full-screen layout with collapsible sidebar and header slot
+- `SidebarNav` — composable sidebar navigation with sections and active state
+- `Topbar` — top navigation bar with left, center and right slots
+- `PageHeader` — page title, description, actions and breadcrumb slots
+- `ModuleGrid` — responsive CSS grid for dashboard modules
+- `StatCard` — KPI card with trend indicator and variant accents
 
-A foundational dashboard layout with sidebar and header.
+## Usage
 
 ```tsx
-import { DashboardLayout } from '@venator-ui/patterns';
+import { DashboardLayout, SidebarNav, PageHeader } from '@venator-ui/patterns';
 
-<DashboardLayout
-  sidebar={<Navigation />}
-  header={<Header />}
->
-  <DashboardContent />
-</DashboardLayout>
+export default function App() {
+  return (
+    <DashboardLayout
+      sidebar={<SidebarNav sections={sections} pathname={pathname} />}
+      header={<Header />}
+    >
+      <PageHeader title="Dashboard" description="Welcome back." />
+    </DashboardLayout>
+  );
+}
 ```
 
-#### Props
+## Docs
 
-- `sidebar`: `React.ReactNode` - Content for the sidebar
-- `header`: `React.ReactNode` - Content for the header
-- `children`: `React.ReactNode` - Main content area
-- `sidebarCollapsed`: `boolean` (default: `false`) - Whether the sidebar should be collapsed
-
-## Development
-
-```bash
-# Build the package
-npm run build
-
-# Watch mode
-npm run dev
-```
+[venator-ui-docs.vercel.app/docs/patterns](https://venator-ui-docs.vercel.app/docs/patterns)

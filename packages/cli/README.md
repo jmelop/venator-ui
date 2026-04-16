@@ -1,35 +1,36 @@
 # @venator-ui/cli
 
-CLI for deploying Venator archetypes and patterns into your project.
+CLI for deploying full application architectures and composing your UI system.
 
-## Commands
-
-### `venator init <archetype>`
-
-Deploys a complete application architecture into the current directory. The files are copied into your project and are fully owned by you — there is no runtime dependency on `@venator-ui/cli` after deployment.
-
-```bash
-venator init dashboard
-```
-
-### `venator add <pattern>`
-
-Adds a single Venator pattern to your project.
-
-```bash
-venator add DashboardLayout
-venator add PageHeader
-venator add ModuleGrid
-```
+Scaffold a complete app or add individual patterns in seconds.
 
 ## Usage
 
 ```bash
-# Run directly without installing
-npx venator init dashboard
+# Deploy a complete application architecture
+npx @venator-ui/cli init dashboard
+npx @venator-ui/cli init admin
+npx @venator-ui/cli init ai-tool
 
-# Or install globally
-npm install -g @venator-ui/cli
-venator init dashboard
-venator add PageHeader
+# Add a single pattern to an existing project
+npx @venator-ui/cli add dashboard-layout
+npx @venator-ui/cli add page-header
+npx @venator-ui/cli add sidebar-nav
+npx @venator-ui/cli add topbar
+npx @venator-ui/cli add stat-card
+npx @venator-ui/cli add module-grid
 ```
+
+## After deploying an archetype
+
+```bash
+cd my-app
+npm install
+npm run dev
+```
+
+Your project is now ready to run locally.
+
+## Docs
+
+[venator-ui-docs.vercel.app](https://venator-ui-docs.vercel.app)

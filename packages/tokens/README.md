@@ -1,6 +1,8 @@
 # @venator-ui/tokens
 
-Design tokens for the Venator UI library.
+Design tokens and Tailwind preset used internally by Venator UI.
+
+Provides the foundation for colors, spacing, typography and layout across Venator components.
 
 ## Installation
 
@@ -10,36 +12,31 @@ npm install @venator-ui/tokens
 
 ## Usage
 
-```tsx
-import { colors, spacing, typography } from '@venator-ui/tokens';
+### Tailwind preset
 
-const MyComponent = () => (
-  <div style={{
-    color: colors.primary[600],
-    padding: spacing[4],
-    fontFamily: typography.fontFamily.sans
-  }}>
-    Content
-  </div>
-);
+```js
+// tailwind.config.js
+const { venatorPreset } = require('@venator-ui/tokens');
+
+module.exports = {
+  darkMode: 'class',
+  presets: [venatorPreset],
+  content: ['./src/**/*.{ts,tsx}'],
+};
 ```
 
-## Available Tokens
+### Raw tokens
 
-- `colors` - Color palette with primary, neutral, success, warning, and error scales
-- `spacing` - Spacing scale from 0 to 24
-- `typography` - Font families, sizes, weights, and line heights
-- `borderRadius` - Border radius values
-- `shadows` - Box shadow presets
-- `breakpoints` - Responsive breakpoints
-- `zIndex` - Z-index scale for layering
+Use tokens directly if you want to extend or customize your design system.
 
-## Development
-
-```bash
-# Build the package
-npm run build
-
-# Watch mode
-npm run dev
+```ts
+import { colors, typography, borderRadius, shadows, breakpoints } from '@venator-ui/tokens';
 ```
+
+## Tokens
+
+- `colors` — primary, neutral (with 950), success, warning, error
+- `typography` — fontFamily, fontSize, fontWeight
+- `borderRadius` — sm, md, lg, full
+- `shadows` — sm, md, lg
+- `breakpoints` — sm, md, lg, xl, 2xl

@@ -1,6 +1,6 @@
 # @venator-ui/ui
 
-Core UI components for the Venator library.
+Typed React UI primitives built on Tailwind CSS. Dark mode supported.
 
 ## Installation
 
@@ -10,30 +10,31 @@ npm install @venator-ui/ui
 
 ## Components
 
-### Button
+Alert, Avatar, Badge, Breadcrumb, Button, Card, CodeBlock, Input, Label, Modal, Nav, Select, Separator, Skeleton, Switch, Table, Tabs, Toast, Toggle, Tooltip
 
-A foundational button component with multiple variants and sizes.
+## Usage
 
 ```tsx
-import { Button } from '@venator-ui/ui';
+import { Button, Card, CardContent, Badge } from '@venator-ui/ui';
 
-<Button variant="primary" size="md">
-  Click me
-</Button>
+export function Example() {
+  return (
+    <Card>
+      <CardContent>
+        <Badge variant="success">Live</Badge>
+        <Button variant="primary">Get started</Button>
+      </CardContent>
+    </Card>
+  );
+}
 ```
 
-#### Props
+## Requirements
 
-- `variant`: `'primary' | 'secondary' | 'outline' | 'ghost'` (default: `'primary'`)
-- `size`: `'sm' | 'md' | 'lg'` (default: `'md'`)
-- `fullWidth`: `boolean` (default: `false`)
+- React 18+
+- Tailwind CSS 3+ configured with `@venator-ui/tokens` preset
+- Next.js App Router: components include `'use client'` and work out of the box
 
-## Development
+## Docs
 
-```bash
-# Build the package
-npm run build
-
-# Watch mode
-npm run dev
-```
+[venator-ui-docs.vercel.app](https://venator-ui-docs.vercel.app)
