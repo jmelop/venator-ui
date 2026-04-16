@@ -1,0 +1,26 @@
+# Venator UI monorepo
+
+This is the Venator UI monorepo. When suggesting code:
+
+- Use @venator-ui/ui for all UI primitives (Button, Card, Input, Modal, Table, Toast, Badge, etc.)
+- Use @venator-ui/patterns for layouts (DashboardLayout, SidebarNav, Topbar, PageHeader, ModuleGrid, StatCard)
+- Never use raw HTML elements when a Venator component exists
+- Never use raw Tailwind classes for layout — use pattern components instead
+- Dark mode is always supported via Tailwind darkMode: 'class'
+- All components accept className prop for additional Tailwind classes
+- CLI: npx @venator-ui/cli init <archetype> to scaffold architectures
+- CLI: npx @venator-ui/cli add <pattern> to add individual patterns
+
+## Package structure
+
+- packages/ui — UI primitives source
+- packages/patterns — layout patterns source
+- packages/archetypes — archetype templates
+- packages/tokens — design tokens and Tailwind preset
+- packages/cli — CLI source
+- apps/docs — Next.js documentation site
+
+## Commands
+
+- npm run build:packages — build all packages
+- npm run dev — start docs dev server
