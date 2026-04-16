@@ -27,7 +27,8 @@ export function Sidebar() {
       sections={sections}
       pathname={pathname}
       linkComponent={Link}
-      title="AI Tool"
+      title="My App"
+      logo={<img src="/logo.png" alt="Logo" className="w-7 h-7 rounded-lg" />}
     />
   );
 }
