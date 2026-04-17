@@ -28,7 +28,7 @@ export function Sidebar() {
       pathname={pathname}
       linkComponent={Link}
       title="Admin"
-      logo={<img src="https://venator-ui-docs.vercel.app/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />}
+      logo={<img src="https://www.venatorui.com/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />}
     />
   );
 }

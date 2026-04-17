@@ -33,4 +33,4 @@ Your project is now ready to run locally.
 
 ## Docs
 
-[venator-ui-docs.vercel.app](https://venator-ui-docs.vercel.app)
+[www.venatorui.com](https://www.venatorui.com)

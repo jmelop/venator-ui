@@ -39,8 +39,8 @@ npm install @venator-ui/ui @venator-ui/patterns
 
 ## Docs
 
-- https://venator-ui-docs.vercel.app
-- https://venator-ui-docs.vercel.app/docs/getting-started/introduction
-- https://venator-ui-docs.vercel.app/docs/components/button
-- https://venator-ui-docs.vercel.app/docs/patterns/dashboard-layout
-- https://venator-ui-docs.vercel.app/docs/archetypes/dashboard
+- https://www.venatorui.com
+- https://www.venatorui.com/docs/getting-started/introduction
+- https://www.venatorui.com/docs/components/button
+- https://www.venatorui.com/docs/patterns/dashboard-layout
+- https://www.venatorui.com/docs/archetypes/dashboard

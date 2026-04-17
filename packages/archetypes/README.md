@@ -22,4 +22,4 @@ npx @venator-ui/cli init ai-tool
 
 ## Docs
 
-[venator-ui-docs.vercel.app/docs/archetypes](https://venator-ui-docs.vercel.app/docs/archetypes)
+[www.venatorui.com/docs/archetypes](https://www.venatorui.com/docs/archetypes)

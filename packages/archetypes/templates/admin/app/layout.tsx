@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'My App',
   description: 'Built with Venator',
   icons: {
-    icon: 'https://venator-ui-docs.vercel.app/venator-logo-icon.png',
+    icon: 'https://www.venatorui.com/venator-logo-icon.png',
   },
 };
 

@@ -36,4 +36,4 @@ export default function App() {
 
 ## Docs
 
-[venator-ui-docs.vercel.app/docs/patterns](https://venator-ui-docs.vercel.app/docs/patterns)
+[www.venatorui.com/docs/patterns](https://www.venatorui.com/docs/patterns)
