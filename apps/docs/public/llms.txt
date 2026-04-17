@@ -1,0 +1,46 @@
+# Venator UI
+
+> React + TypeScript UI system: primitives → patterns → deployable architectures.
+
+## Packages
+
+- @venator-ui/ui — UI primitives: Button, Card, Input, Modal, Table, Toast, Badge, Avatar, Breadcrumb, Alert, Select, Separator, Skeleton, Switch, Tabs, Toggle, Tooltip, CodeBlock, Nav, Label
+- @venator-ui/patterns — layout compositions: DashboardLayout, SidebarNav, Topbar, PageHeader, ModuleGrid, StatCard
+- @venator-ui/tokens — Tailwind CSS preset and design tokens
+- @venator-ui/cli — deploys archetypes and adds patterns to existing projects
+
+## Archetypes
+
+Full Next.js App Router projects, copied into your project via CLI. No runtime dependency.
+
+- dashboard — KPI cards, analytics, settings
+- admin — user table with roles and status, organization settings
+- ai-tool — chat input, response view, history, model settings
+
+## CLI
+
+```bash
+npx @venator-ui/cli init dashboard
+npx @venator-ui/cli init admin
+npx @venator-ui/cli init ai-tool
+npx @venator-ui/cli add dashboard-layout
+npx @venator-ui/cli add sidebar-nav
+npx @venator-ui/cli add page-header
+npx @venator-ui/cli add topbar
+npx @venator-ui/cli add stat-card
+npx @venator-ui/cli add module-grid
+```
+
+## Install
+
+```bash
+npm install @venator-ui/ui @venator-ui/patterns
+```
+
+## Docs
+
+- https://venator-ui-docs.vercel.app
+- https://venator-ui-docs.vercel.app/docs/getting-started/introduction
+- https://venator-ui-docs.vercel.app/docs/components/button
+- https://venator-ui-docs.vercel.app/docs/patterns/dashboard-layout
+- https://venator-ui-docs.vercel.app/docs/archetypes/dashboard

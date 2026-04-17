@@ -6,7 +6,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AI Tool',
+  title: 'My App',
   description: 'Built with Venator',
   icons: {
     icon: 'https://venator-ui-docs.vercel.app/venator-logo-icon.png',
