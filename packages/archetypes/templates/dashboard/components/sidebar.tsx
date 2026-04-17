@@ -27,7 +27,7 @@ export function Sidebar() {
       sections={sections}
       pathname={pathname}
       linkComponent={Link}
-      title="My App"
+      title="Dashboard"
     />
   );
 }
