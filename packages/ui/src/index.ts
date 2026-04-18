@@ -70,3 +70,6 @@ export type { KbdProps } from './components/Kbd';
 
 export { Terminal } from './components/Terminal';
 export type { TerminalProps, TerminalLine, TerminalLineType } from './components/Terminal';
+
+export { NavLink } from './components/NavLink';
+export type { NavLinkProps } from './components/NavLink';
