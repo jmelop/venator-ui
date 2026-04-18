@@ -58,3 +58,6 @@ export type { ToastData, ToastVariant } from './components/Toast';
 
 export { Checkbox } from './components/Checkbox';
 export type { CheckboxProps, CheckboxSize } from './components/Checkbox';
+
+export { Slider } from './components/Slider';
+export type { SliderProps } from './components/Slider';
