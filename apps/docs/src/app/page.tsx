@@ -711,7 +711,7 @@ export default function Home() {
 
           {/* Heading */}
           <div className="flex flex-col items-center gap-1">
-            <img src="/venator-logo-icon.png" alt="Venator" className="w-20 h-20 rounded-2xl mb-6" />
+            <img src="/venator-logo-icon.png" alt="Venator" className="w-40 h-40 rounded-2xl mb-6" />
             <h1 className="text-[clamp(56px,8vw,96px)] font-medium tracking-[-0.04em] leading-[0.95] text-white">
               Build fast.
             </h1>
