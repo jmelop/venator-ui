@@ -837,7 +837,7 @@ export default function Home() {
                   <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
                   <div className="w-3 h-3 rounded-full bg-green-500/70" />
                 </div>
-                <div className="flex-1 rounded-md px-3 py-1 font-mono text-[11.5px]" style={{ background: '#1a1d21', border: '1px solid rgba(255,255,255,0.08)', color: '#8a8f98' }}>
+                <div className="flex-1" style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', color: 'var(--fg-3)', borderRadius: 6, padding: '5px 10px', fontFamily: 'var(--font-geist-mono, monospace)', fontSize: 11.5 }}>
                   <span className="text-neutral-700">https://</span>dashboard.venator.app<span className="text-neutral-700">/analytics</span>
                 </div>
                 <div className="flex gap-2">
