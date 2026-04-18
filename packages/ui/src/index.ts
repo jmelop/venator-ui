@@ -55,3 +55,6 @@ export type { AlertProps, AlertVariant, AlertTitleProps, AlertDescriptionProps }
 
 export { ToastProvider, useToast } from './components/Toast';
 export type { ToastData, ToastVariant } from './components/Toast';
+
+export { Checkbox } from './components/Checkbox';
+export type { CheckboxProps, CheckboxSize } from './components/Checkbox';
