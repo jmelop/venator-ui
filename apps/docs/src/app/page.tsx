@@ -260,7 +260,7 @@ function ComponentsShowcase() {
           Every primitive you'll need.<br />
           <span className="text-neutral-400">None you won't.</span>
         </h2>
-        <p className="text-[15px] text-neutral-500 max-w-[560px] mb-12 leading-relaxed">
+        <p className="text-[15px] text-neutral-400 max-w-[560px] mb-12 leading-relaxed">
           Accessible, composable, typed primitives. Built with Tailwind CSS and design tokens.
         </p>
 
@@ -338,11 +338,11 @@ function ComponentsShowcase() {
           <div className="col-span-4 bg-neutral-900 border border-subtle rounded-xl p-5">
             <p className="font-mono text-[10.5px] text-neutral-600 uppercase tracking-wider mb-4">Progress</p>
             <div className="flex flex-col gap-3">
-              <div className="flex justify-between font-mono text-[11px] text-neutral-500 mb-1">
+              <div className="flex justify-between font-mono text-[11px] text-neutral-400 mb-1">
                 <span>Building</span><span>67%</span>
               </div>
               <Progress value={67} />
-              <div className="flex justify-between font-mono text-[11px] text-neutral-500 mb-1">
+              <div className="flex justify-between font-mono text-[11px] text-neutral-400 mb-1">
                 <span>Deploying</span><span>24%</span>
               </div>
               <Progress value={24} />
@@ -366,7 +366,7 @@ function ComponentsShowcase() {
                 )}
                 <Button variant="outline" size="sm">Hover me</Button>
               </div>
-              <div className="flex items-center gap-1 font-mono text-[11px] text-neutral-500">
+              <div className="flex items-center gap-1 font-mono text-[11px] text-neutral-400">
                 Press <Kbd className="mx-1">⌘</Kbd><Kbd>K</Kbd> to search
               </div>
             </div>
@@ -386,7 +386,7 @@ function ComponentsShowcase() {
                 </button>
               ))}
             </div>
-            <p className="font-mono text-[12px] text-neutral-500">
+            <p className="font-mono text-[12px] text-neutral-400">
               {['Primitives are accessible by default.', 'Import from @venator-ui/ui.', 'Tokens drive all visual properties.', 'All props are strictly typed.'][activeTab]}
             </p>
           </div>
@@ -411,7 +411,7 @@ function ComponentsShowcase() {
                 ].map(row => (
                   <tr key={row.pkg} className="border-b border-subtle last:border-0">
                     <td className="py-2 text-neutral-300">{row.pkg}</td>
-                    <td className="py-2 text-neutral-500">{row.version}</td>
+                    <td className="py-2 text-neutral-400">{row.version}</td>
                     <td className="py-2"><Badge variant={row.variant}>{row.status}</Badge></td>
                   </tr>
                 ))}
@@ -493,7 +493,7 @@ export default function Home() {
               Three layers.<br />
               <span className="text-neutral-400">Adopt any one of them.</span>
             </h2>
-            <p className="text-[15px] text-neutral-500 max-w-[560px] mb-12 leading-relaxed">
+            <p className="text-[15px] text-neutral-400 max-w-[560px] mb-12 leading-relaxed">
               A strict, one-way dependency chain: ui → patterns → architectures.
               Each layer works on its own. None of them force the next.
             </p>
@@ -533,7 +533,7 @@ export default function Home() {
                   <div>
                     <p className="font-mono text-[10.5px] text-neutral-600 mb-2">{pkg}</p>
                     <p className="text-[15px] font-medium text-neutral-100 mb-2 tracking-tight">{title}</p>
-                    <p className="text-[13.5px] text-neutral-500 leading-relaxed">{desc}</p>
+                    <p className="text-[13.5px] text-neutral-400 leading-relaxed">{desc}</p>
                   </div>
                   <div className="flex items-center justify-between mt-auto pt-2 border-t border-subtle">
                     <span className="font-mono text-[11px] text-neutral-600">{meta}</span>
@@ -554,7 +554,7 @@ export default function Home() {
             <h2 className="text-[clamp(28px,4vw,44px)] font-medium tracking-tight leading-tight text-neutral-50 mb-3">
               Run the CLI.<br /><span className="text-neutral-400">Ship this on Monday.</span>
             </h2>
-            <p className="text-[15px] text-neutral-500 max-w-[560px] mb-12 leading-relaxed">
+            <p className="text-[15px] text-neutral-400 max-w-[560px] mb-12 leading-relaxed">
               One command scaffolds a complete architecture. Sidebar navigation, header, module grid, tokens wired in. The output is yours — extend it, delete half of it, it's code, not config.
             </p>
             {/* Browser frame */}
