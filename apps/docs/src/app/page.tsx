@@ -111,6 +111,108 @@ const TERMINAL_LINES: import('@venator-ui/ui').TerminalLine[] = [
   { type: 'accent',  text: '→ cd apps/dashboard && npm run dev',           delay: 3900 },
 ];
 
+const LAYER_DATA = [
+  {
+    key: 'ui',
+    pkg: '@venator-ui/ui',
+    title: 'UI primitives',
+    desc: 'Accessible, typed React components.',
+    items: ['Button', 'Card', 'Input', 'Badge', 'Modal', 'Table'],
+    index: '01 / 03',
+  },
+  {
+    key: 'patterns',
+    pkg: '@venator-ui/patterns',
+    title: 'Structural patterns',
+    desc: 'Reusable compositional layouts.',
+    items: ['DashboardLayout', 'PageHeader', 'ModuleGrid'],
+    index: '02 / 03',
+  },
+  {
+    key: 'archetypes',
+    pkg: '@venator-ui/archetypes',
+    title: 'Architectures',
+    desc: 'Full app scaffolds deployed via CLI.',
+    items: ['dashboard', 'admin', 'ai-tool'],
+    index: '03 / 03',
+  },
+] as const;
+
+function LayersVisual() {
+  const [active, setActive] = useState(1);
+
+  useEffect(() => {
+    const id = setInterval(() => setActive(a => (a + 1) % LAYER_DATA.length), 3400);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="relative w-full h-[320px] overflow-hidden" style={{ perspective: '900px' }}>
+      {/* Grid background */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+        backgroundSize: '40px 40px',
+      }} />
+
+      {/* Planes */}
+      {LAYER_DATA.map((layer, i) => {
+        const offset = i - active;
+        const transform = `translate(-50%, -50%) translateX(${offset * 200}px) translateZ(${-Math.abs(offset) * 120}px) rotateY(${offset * -22}deg)`;
+        const opacity = i === active ? 1 : 0.45;
+        const zIndex = 10 - Math.abs(offset);
+        return (
+          <div
+            key={layer.key}
+            onClick={() => setActive(i)}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: 280,
+              transform,
+              zIndex,
+              opacity,
+              transition: 'transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease',
+              cursor: i !== active ? 'pointer' : 'default',
+            }}
+          >
+            <div className="rounded-xl border border-subtle p-5" style={{ background: '#0c0d10' }}>
+              <div className="flex items-center justify-between mb-3">
+                <span className="font-mono text-[10.5px] text-neutral-500">{layer.pkg}</span>
+                <span className="font-mono text-[10.5px] text-neutral-700">{layer.index}</span>
+              </div>
+              <p className="text-[15px] font-medium text-neutral-100 mb-1 tracking-tight">{layer.title}</p>
+              <p className="text-[12.5px] text-neutral-500 mb-4">{layer.desc}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {layer.items.map(item => (
+                  <span key={item} className="font-mono text-[11px] text-neutral-500 border border-subtle rounded-md px-2 py-0.5">{item}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Nav dots */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2" style={{ zIndex: 20 }}>
+        {LAYER_DATA.map((layer, i) => (
+          <button
+            key={layer.key}
+            onClick={() => setActive(i)}
+            className={`font-mono text-[11px] px-3 py-1 rounded-md transition-colors border ${
+              i === active
+                ? 'border-subtle text-neutral-300 bg-neutral-800'
+                : 'border-transparent text-neutral-600 hover:text-neutral-400'
+            }`}
+          >
+            {layer.key}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HeroVisual() {
   const [tab, setTab] = useState<'terminal' | 'layers'>('terminal');
 
@@ -157,8 +259,8 @@ function HeroVisual() {
           className="h-[420px] overflow-hidden"
         />
       ) : (
-        <div className="rounded-lg border border-subtle bg-neutral-900 p-8 min-h-[200px] flex items-center justify-center">
-          <p className="text-neutral-600 text-sm font-mono">Architecture view coming soon</p>
+        <div className="rounded-lg border border-subtle overflow-hidden" style={{ background: '#08090b' }}>
+          <LayersVisual />
         </div>
       )}
     </div>
