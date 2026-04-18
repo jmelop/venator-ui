@@ -100,7 +100,7 @@ export const Terminal = forwardRef<HTMLDivElement, TerminalProps>(
               )}
             </div>
           ))}
-          <span className="animate-pulse text-neutral-500">|</span>
+          <span className="inline-block w-2 h-4 bg-neutral-500 animate-pulse" />
         </div>
       </div>
     );
