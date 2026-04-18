@@ -258,7 +258,7 @@ function ComponentsShowcase() {
         <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-neutral-600 mb-4">Primitives · 03</p>
         <h2 className="text-[clamp(28px,4vw,44px)] font-medium tracking-tight leading-tight text-neutral-50 mb-3">
           Every primitive you'll need.<br />
-          <span className="text-neutral-600">None you won't.</span>
+          <span className="text-neutral-400">None you won't.</span>
         </h2>
         <p className="text-[15px] text-neutral-500 max-w-[560px] mb-12 leading-relaxed">
           Accessible, composable, typed primitives. Built with Tailwind CSS and design tokens.
@@ -491,7 +491,7 @@ export default function Home() {
             </p>
             <h2 className="text-[clamp(28px,4vw,44px)] font-medium tracking-tight leading-tight text-neutral-50 mb-3">
               Three layers.<br />
-              <span className="text-neutral-600">Adopt any one of them.</span>
+              <span className="text-neutral-400">Adopt any one of them.</span>
             </h2>
             <p className="text-[15px] text-neutral-500 max-w-[560px] mb-12 leading-relaxed">
               A strict, one-way dependency chain: ui → patterns → architectures.
@@ -552,7 +552,7 @@ export default function Home() {
           <div className="max-w-[1200px] mx-auto">
             <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-neutral-600 mb-4">Archetypes · 02</p>
             <h2 className="text-[clamp(28px,4vw,44px)] font-medium tracking-tight leading-tight text-neutral-50 mb-3">
-              Run the CLI.<br /><span className="text-neutral-600">Ship this on Monday.</span>
+              Run the CLI.<br /><span className="text-neutral-400">Ship this on Monday.</span>
             </h2>
             <p className="text-[15px] text-neutral-500 max-w-[560px] mb-12 leading-relaxed">
               One command scaffolds a complete architecture. Sidebar navigation, header, module grid, tokens wired in. The output is yours — extend it, delete half of it, it's code, not config.
