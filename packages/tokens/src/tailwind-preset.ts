@@ -1,4 +1,4 @@
-import { colors } from './colors';
+import { colors, border } from './colors';
 import { typography } from './typography';
 import { borderRadius, shadows, breakpoints } from './scales';
 
@@ -7,13 +7,14 @@ export const venatorPreset = {
     extend: {
       colors: {
         primary: colors.primary,
-        neutral: {
-          ...colors.neutral,
-          950: '#0a0a0a',
-        },
+        neutral: colors.neutral,
         success: colors.success,
         warning: colors.warning,
         error: colors.error,
+      },
+      borderColor: {
+        subtle:  border.subtle,
+        default: border.default,
       },
       fontFamily: {
         sans: [typography.fontFamily.sans],
