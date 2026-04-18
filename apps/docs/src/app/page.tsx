@@ -932,7 +932,7 @@ export default function Home() {
                   <img src="/venator-logo-icon.png" className="w-7 h-7 rounded-lg" />
                   <span className="font-semibold text-[15px] text-neutral-100">Venator UI</span>
                 </div>
-                <p className="text-[13.5px] text-neutral-500 max-w-[280px] leading-relaxed mb-5">
+                <p className="text-[13.5px] text-neutral-200 max-w-[280px] leading-relaxed mb-5">
                   A React + TypeScript UI system. From primitives to patterns to full application architectures — shipped via CLI.
                 </p>
                 <div className="flex gap-2">
@@ -955,7 +955,7 @@ export default function Home() {
                 <ul className="flex flex-col gap-2.5">
                   {['@venator-ui/tokens', '@venator-ui/ui', '@venator-ui/patterns', '@venator-ui/archetypes'].map(pkg => (
                     <li key={pkg}>
-                      <a href="#" className="text-[13.5px] text-neutral-400 hover:text-neutral-100 transition-colors font-mono">{pkg}</a>
+                      <a href="#" className="text-[13.5px] text-neutral-200 hover:text-neutral-100 transition-colors font-mono">{pkg}</a>
                     </li>
                   ))}
                 </ul>
@@ -972,7 +972,7 @@ export default function Home() {
                     { label: 'Changelog', href: '#' },
                   ].map(({ label, href }) => (
                     <li key={label}>
-                      <a href={href} className="text-[13.5px] text-neutral-400 hover:text-neutral-100 transition-colors">{label}</a>
+                      <a href={href} className="text-[13.5px] text-neutral-200 hover:text-neutral-100 transition-colors">{label}</a>
                     </li>
                   ))}
                 </ul>
@@ -989,7 +989,7 @@ export default function Home() {
                     { label: 'Contribute', href: '#' },
                   ].map(({ label, href }) => (
                     <li key={label}>
-                      <a href={href} className="text-[13.5px] text-neutral-400 hover:text-neutral-100 transition-colors">{label}</a>
+                      <a href={href} className="text-[13.5px] text-neutral-200 hover:text-neutral-100 transition-colors">{label}</a>
                     </li>
                   ))}
                 </ul>
