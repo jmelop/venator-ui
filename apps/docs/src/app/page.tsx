@@ -744,6 +744,10 @@ export default function Home() {
             </a>
           </div>
 
+          <div className="w-full max-w-md mx-auto mt-8">
+            <div className="border-t border-subtle" />
+          </div>
+
           <HeroVisual />
         </section>
 
