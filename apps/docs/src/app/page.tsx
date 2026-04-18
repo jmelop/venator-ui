@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import {
   Alert,
   AlertDescription,
@@ -73,44 +73,9 @@ const features = [
 ] as const;
 
 export default function Home() {
-  const [dark, setDark] = useState(() => {
-    if (typeof document === 'undefined') return false;
-    return document.documentElement.classList.contains('dark');
-  });
-
-  function toggleDark() {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle('dark', next);
-  }
-
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-950">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm border-b border-neutral-200 dark:border-neutral-800">
-        <Link href="/" className="flex items-center gap-2.5">
-          <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />
-          <span className="text-sm font-bold text-neutral-900 dark:text-neutral-100">Venator UI</span>
-        </Link>
-        <button
-          onClick={toggleDark}
-          aria-label="Toggle dark mode"
-          className="p-2 rounded-md text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-        >
-          {dark ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-            </svg>
-          )}
-        </button>
-      </header>
-
-      <div className="pt-16">
+      <div>
         {/* Hero */}
         <section className="flex-1 flex flex-col items-center justify-center text-center px-6 py-24 gap-4">
           <Badge variant="default">React · TypeScript · Tailwind CSS</Badge>
