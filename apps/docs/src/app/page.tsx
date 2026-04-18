@@ -497,7 +497,7 @@ export default function Home() {
               A strict, one-way dependency chain: ui → patterns → architectures.
               Each layer works on its own. None of them force the next.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-800 border border-subtle rounded-xl overflow-hidden">
+            <div className="grid grid-cols-3 gap-4">
               {[
                 {
                   pkg: '@venator-ui/ui',
@@ -505,6 +505,7 @@ export default function Home() {
                   desc: 'Typed, accessible, composable React components. Import what you need, extend with className. Nothing opinionated about composition.',
                   meta: '28 components · 0 dependencies',
                   index: '01',
+                  icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7L12 12l8.7-5M12 22V12"/></svg>,
                 },
                 {
                   pkg: '@venator-ui/patterns',
@@ -512,6 +513,7 @@ export default function Home() {
                   desc: 'Reusable compositions that define how UI is arranged into pages. Layout scaffolds, not content. You fill them in.',
                   meta: '9 patterns · 0 opinions',
                   index: '02',
+                  icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>,
                 },
                 {
                   pkg: '@venator-ui/archetypes',
@@ -519,19 +521,18 @@ export default function Home() {
                   desc: 'Complete architectures deployed via CLI. Once scaffolded the code is yours — no runtime dependency, no lock-in.',
                   meta: '3 archetypes · CLI-deployed',
                   index: '03',
+                  icon: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16.5 9.4l-9-5.2M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7L12 12l8.7-5M12 22V12"/></svg>,
                 },
-              ].map(({ pkg, title, desc, meta, index }) => (
-                <div key={pkg} className="bg-neutral-900 p-7 flex flex-col gap-4">
+              ].map(({ pkg, title, desc, meta, index, icon }) => (
+                <div key={pkg} className="bg-neutral-900 border border-subtle rounded-xl p-7 flex flex-col gap-4">
                   <div className="flex items-start justify-between">
                     <div className="w-8 h-8 border border-subtle rounded-md flex items-center justify-center text-neutral-500">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.3 7L12 12l8.7-5M12 22V12" />
-                      </svg>
+                      {icon}
                     </div>
                     <span className="font-mono text-[10.5px] text-neutral-700">{index}</span>
                   </div>
                   <div>
-                    <p className="font-mono text-[10.5px] text-neutral-600 mb-2">{pkg}</p>
+                    <p className="font-mono text-[12px] text-neutral-500 mb-2">{pkg}</p>
                     <p className="text-[15px] font-medium text-neutral-100 mb-2 tracking-tight">{title}</p>
                     <p className="text-[13.5px] text-neutral-400 leading-relaxed">{desc}</p>
                   </div>
