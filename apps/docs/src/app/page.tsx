@@ -153,7 +153,7 @@ function HeroVisual() {
           title="venator — zsh — 100×28"
           loop
           loopDelay={2000}
-          className="min-h-[280px]"
+          className="h-[320px] overflow-y-auto"
         />
       ) : (
         <div className="rounded-lg border border-subtle bg-neutral-900 p-8 min-h-[200px] flex items-center justify-center">
@@ -215,7 +215,7 @@ export default function Home() {
           </div>
 
           {/* Archetype CLI tabs */}
-          <div className="w-full max-w-[1200px] mt-2">
+          <div className="w-full max-w-md mx-auto mt-2">
             <ArchetypeCLI />
           </div>
 
