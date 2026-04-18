@@ -150,7 +150,7 @@ function LayersVisual() {
     <div className="relative w-full h-[480px] overflow-hidden" style={{ perspective: '900px' }}>
       {/* Grid background */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px)',
         backgroundSize: '40px 40px',
         maskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%)',
         WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 100%)',
@@ -179,7 +179,7 @@ function LayersVisual() {
               cursor: i !== active ? 'pointer' : 'default',
             }}
           >
-            <div className="rounded-xl border border-subtle p-5" style={{ background: '#0c0d10', minHeight: 260 }}>
+            <div className="rounded-xl border border-subtle p-5" style={{ background: 'var(--bg-1)', minHeight: 260 }}>
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-[10.5px] text-neutral-500">{layer.pkg}</span>
                 <span className="font-mono text-[10.5px] text-neutral-700">{layer.index}</span>
@@ -262,7 +262,7 @@ function HeroVisual() {
           className="h-[420px] overflow-hidden"
         />
       ) : (
-        <div className="rounded-lg border border-subtle overflow-hidden" style={{ background: '#08090b' }}>
+        <div className="rounded-lg border border-subtle overflow-hidden" style={{ background: 'var(--bg)' }}>
           <LayersVisual />
         </div>
       )}
@@ -270,7 +270,7 @@ function HeroVisual() {
   );
 }
 
-function Sparkline({ data, color = '#ffffff', height = 24, width = 60 }: { data: number[]; color?: string; height?: number; width?: number }) {
+function Sparkline({ data, color = 'var(--accent)', height = 24, width = 60 }: { data: number[]; color?: string; height?: number; width?: number }) {
   const max = Math.max(...data), min = Math.min(...data);
   const range = max - min || 1;
   const pts = data.map((v, i) => [
@@ -302,26 +302,26 @@ function AreaChart() {
     <svg width="100%" viewBox={`0 0 ${w} ${h}`} style={{ display: 'block' }}>
       <defs>
         <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#8a8f98" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#8a8f98" stopOpacity="0" />
+          <stop offset="0%" stopColor="var(--fg-3)" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="var(--fg-3)" stopOpacity="0" />
         </linearGradient>
       </defs>
       {[0, 0.25, 0.5, 0.75, 1].map((p, i) => (
-        <line key={i} x1="30" y1={10 + (h - 30) * p} x2={w - 10} y2={10 + (h - 30) * p} stroke="rgba(255,255,255,0.08)" strokeDasharray="2 4" />
+        <line key={i} x1="30" y1={10 + (h - 30) * p} x2={w - 10} y2={10 + (h - 30) * p} stroke="var(--line)" strokeDasharray="2 4" />
       ))}
       {[0, 0.25, 0.5, 0.75, 1].map((p, i) => (
-        <text key={i} x="24" y={10 + (h - 30) * (1 - p) + 3} fill="#5b6069" fontSize="9" fontFamily="monospace" textAnchor="end">{Math.round(p * max)}</text>
+        <text key={i} x="24" y={10 + (h - 30) * (1 - p) + 3} fill="var(--fg-4)" fontSize="9" fontFamily="monospace" textAnchor="end">{Math.round(p * max)}</text>
       ))}
       <path d={p2.fill} fill="url(#g2)" />
-      <path d={p2.line} fill="none" stroke="#8a8f98" strokeWidth="1.5" />
+      <path d={p2.line} fill="none" stroke="var(--fg-3)" strokeWidth="1.5" />
       <path d={p1.fill} fill="url(#g1)" />
-      <path d={p1.line} fill="none" stroke="#ffffff" strokeWidth="1.8" />
+      <path d={p1.line} fill="none" stroke="var(--accent)" strokeWidth="1.8" />
       {['Apr 01','Apr 05','Apr 09','Apr 13','Apr 17'].map((t, i) => (
-        <text key={i} x={30 + (i / 4) * (w - 40)} y={h - 4} fill="#5b6069" fontSize="9" fontFamily="monospace" textAnchor="middle">{t}</text>
+        <text key={i} x={30 + (i / 4) * (w - 40)} y={h - 4} fill="var(--fg-4)" fontSize="9" fontFamily="monospace" textAnchor="middle">{t}</text>
       ))}
     </svg>
   );
@@ -338,8 +338,8 @@ function BarChart() {
         const x = 10 + i * ((w - 20) / data.length) + 3;
         return (
           <g key={i}>
-            <rect x={x} y={10 + (h - 30) - bh} width={bw} height={bh} fill="#ffffff" opacity={0.2 + (v / max) * 0.5} rx="2" />
-            <text x={x + bw / 2} y={h - 4} fill="#5b6069" fontSize="9" fontFamily="monospace" textAnchor="middle">{'MTWTFSS'[i]}</text>
+            <rect x={x} y={10 + (h - 30) - bh} width={bw} height={bh} fill="var(--accent)" opacity={0.2 + (v / max) * 0.5} rx="2" />
+            <text x={x + bw / 2} y={h - 4} fill="var(--fg-4)" fontSize="9" fontFamily="monospace" textAnchor="middle">{'MTWTFSS'[i]}</text>
           </g>
         );
       })}
@@ -627,7 +627,7 @@ function Playground() {
             </div>
 
             {/* Preview */}
-            <div className="border-r border-subtle flex items-center justify-center p-8 bg-neutral-900" style={{ background: 'radial-gradient(400px 200px at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%), #0d0f12' }}>
+            <div className="border-r border-subtle flex items-center justify-center p-8 bg-neutral-900" style={{ background: 'radial-gradient(400px 200px at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%), var(--bg-1)' }}>
               <Button
                 variant={variant}
                 size={size === 'sm' ? 'sm' : undefined}
@@ -697,7 +697,7 @@ function Playground() {
 export default function Home() {
   return (
     <div className={`${geist.variable} ${geistMono.variable}`}>
-      <div className="min-h-screen bg-neutral-950 text-white font-[family-name:var(--font-geist)]">
+      <div className="min-h-screen font-[family-name:var(--font-geist)]" style={{ background: 'var(--bg)', color: 'var(--fg)' }}>
         {/* Hero */}
         <section className="flex flex-col items-center justify-center text-center px-6 pt-40 pb-28 gap-6">
           {/* Eyebrow */}
@@ -827,7 +827,7 @@ export default function Home() {
               One command scaffolds a complete architecture. Sidebar navigation, header, module grid, tokens wired in. The output is yours — extend it, delete half of it, it's code, not config.
             </p>
             {/* Browser frame */}
-            <div className="rounded-xl border border-subtle overflow-hidden" style={{ background: 'linear-gradient(180deg, #0b0c0e 0%, #070708 100%)', boxShadow: '0 60px 120px -40px rgba(0,0,0,0.7)' }}>
+            <div className="rounded-xl border border-subtle overflow-hidden" style={{ background: 'var(--bg)', boxShadow: '0 60px 120px -40px rgba(0,0,0,0.7)' }}>
               {/* Chrome bar */}
               <div className="flex items-center gap-3 px-4 py-2.5 border-b border-subtle">
                 <div className="flex gap-1.5">
@@ -850,7 +850,7 @@ export default function Home() {
               {/* Dashboard grid */}
               <div className="grid" style={{ gridTemplateColumns: '220px 1fr', minHeight: 560 }}>
                 {/* Sidebar */}
-                <aside className="border-r border-subtle p-3" style={{ background: 'rgba(12,13,16,0.7)' }}>
+                <aside className="border-r border-subtle p-3" style={{ background: 'color-mix(in srgb, var(--bg-1) 70%, transparent)' }}>
                   <div className="flex items-center gap-2 px-2 pb-3 mb-1 border-b border-subtle">
                     <div className="w-7 h-7 bg-neutral-800 rounded-md flex items-center justify-center">
                       <img src="/venator-logo-icon.png" className="w-4 h-4" />
@@ -900,19 +900,19 @@ export default function Home() {
                       { label: 'Sessions', value: '89,233', delta: '+4.7%', data: [20,22,18,24,28,24,30,28,34] },
                       { label: 'Conv. rate', value: '3.42%', delta: '-0.6%', down: true, data: [30,28,32,26,24,28,22,20,18] },
                     ].map(s => (
-                      <div key={s.label} className="border border-subtle rounded-lg p-3.5" style={{ background: '#0c0d10' }}>
+                      <div key={s.label} className="border border-subtle rounded-lg p-3.5" style={{ background: 'var(--bg-1)' }}>
                         <div className="font-mono text-[10.5px] text-neutral-600 uppercase tracking-wider mb-1">{s.label}</div>
                         <div className="text-[26px] font-medium tracking-tight text-neutral-100 mb-1">{s.value}</div>
                         <div className="flex items-center justify-between">
                           <span className={`font-mono text-[11.5px] ${s.down ? 'text-red-400' : 'text-emerald-400'}`}>{s.delta}</span>
-                          <Sparkline data={s.data} color={s.down ? '#f87171' : '#ffffff'} />
+                          <Sparkline data={s.data} color={s.down ? 'var(--danger)' : 'var(--accent)'} />
                         </div>
                       </div>
                     ))}
                   </div>
                   {/* Charts */}
                   <div className="grid gap-3" style={{ gridTemplateColumns: '2fr 1fr' }}>
-                    <div className="border border-subtle rounded-lg p-4" style={{ background: '#0c0d10' }}>
+                    <div className="border border-subtle rounded-lg p-4" style={{ background: 'var(--bg-1)' }}>
                       <div className="flex items-start justify-between mb-1">
                         <div>
                           <h4 className="text-[14px] font-medium text-neutral-200">Sessions over time</h4>
@@ -925,7 +925,7 @@ export default function Home() {
                       </div>
                       <AreaChart />
                     </div>
-                    <div className="border border-subtle rounded-lg p-4" style={{ background: '#0c0d10' }}>
+                    <div className="border border-subtle rounded-lg p-4" style={{ background: 'var(--bg-1)' }}>
                       <h4 className="text-[14px] font-medium text-neutral-200">Sign-ups / day</h4>
                       <p className="font-mono text-[12px] text-neutral-600 mb-3">Weekly average · 62</p>
                       <BarChart />
@@ -999,7 +999,7 @@ export default function Home() {
         <section className="border-t border-subtle px-6 py-36 text-center relative overflow-hidden">
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: 'radial-gradient(600px 300px at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%)' }}
+            style={{ background: 'radial-gradient(600px 300px at 50% 50%, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 70%)' }}
           />
           <div className="max-w-[1200px] mx-auto relative">
             <h2 className="text-[clamp(40px,6vw,72px)] font-medium tracking-[-0.04em] leading-none text-neutral-50 mb-5">

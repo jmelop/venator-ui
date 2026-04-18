@@ -17,6 +17,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            const stored = localStorage.getItem('venator-theme');
+            const theme = stored || 'dark';
+            if (theme === 'dark') {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+          })();
+        `}} />
+      </head>
       <body className={inter.className}>
         <LandingNav />
         <div className="pt-14">{children}</div>

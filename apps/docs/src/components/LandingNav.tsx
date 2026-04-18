@@ -20,14 +20,17 @@ const navLinks = [
 export function LandingNav() {
   const pathname = usePathname();
   const [dark, setDark] = useState(() => {
-    if (typeof document === 'undefined') return false;
-    return document.documentElement.classList.contains('dark');
+    if (typeof window === 'undefined') return true;
+    const stored = localStorage.getItem('venator-theme');
+    return stored ? stored === 'dark' : true;
   });
 
   function toggleDark() {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle('dark', next);
+    document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
+    localStorage.setItem('venator-theme', next ? 'dark' : 'light');
   }
 
   const left = (
@@ -120,5 +123,5 @@ export function LandingNav() {
     </div>
   );
 
-  return <Topbar left={left} center={center} right={right} position="fixed" bordered />;
+  return <Topbar left={left} center={center} right={right} position="fixed" bordered className="![background:var(--bg)] ![border-bottom-color:var(--line)]" />;
 }

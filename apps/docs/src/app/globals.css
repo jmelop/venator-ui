@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #08090b;
+  --bg-1: #0c0d10;
+  --bg-2: #111317;
+  --bg-3: #15181d;
+  --line: rgba(255,255,255,0.08);
+  --line-2: rgba(255,255,255,0.14);
+  --fg: #f5f6f7;
+  --fg-2: #c7cad1;
+  --fg-3: #8a8f98;
+  --fg-4: #5b6069;
+  --fg-5: #3a3e46;
+  --accent: #ffffff;
+  --accent-ink: #000000;
+  --success: #5eead4;
+  --danger: #f87171;
+}
+
+html.light, html[data-theme="light"] {
+  --bg: #fafafa;
+  --bg-1: #ffffff;
+  --bg-2: #f4f4f5;
+  --bg-3: #e9e9ec;
+  --line: rgba(0,0,0,0.08);
+  --line-2: rgba(0,0,0,0.14);
+  --fg: #0a0a0c;
+  --fg-2: #222428;
+  --fg-3: #5b6069;
+  --fg-4: #8a8f98;
+  --fg-5: #b5b8bf;
+  --accent: #0a0a0c;
+  --accent-ink: #ffffff;
+  --success: #059669;
+  --danger: #dc2626;
+}
+
 body {
-  @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  background: var(--bg);
+  color: var(--fg);
 }
