@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'accent';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
 
@@ -36,7 +36,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
       secondary: 'bg-neutral-600 text-white hover:bg-neutral-700 focus:ring-neutral-500',
       outline: 'border border-neutral-300 bg-transparent hover:bg-neutral-50 focus:ring-neutral-500 dark:border-neutral-600 dark:text-neutral-100 dark:hover:bg-neutral-800',
-      ghost: 'bg-transparent hover:bg-neutral-100 focus:ring-neutral-500 dark:text-neutral-100 dark:hover:bg-neutral-800',
+      ghost: 'bg-transparent text-[var(--fg,theme(colors.neutral.900))] border border-[var(--line-2,theme(colors.neutral.200))] dark:text-neutral-100 dark:border-neutral-700 hover:bg-[var(--bg-2,theme(colors.neutral.100))] dark:hover:bg-neutral-800 transition-colors',
+      accent: 'bg-[var(--accent)] text-[var(--accent-ink)] border border-[var(--accent)] hover:opacity-90 transition-opacity',
     };
 
     const sizeStyles = {
