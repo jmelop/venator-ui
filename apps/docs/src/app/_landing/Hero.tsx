@@ -108,7 +108,7 @@ function HeroVisual() {
 
 export function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center px-6 pt-32 pb-20 gap-6 relative overflow-hidden">
+    <section className="flex flex-col items-center justify-center text-center px-6 pt-20 md:pt-32 pb-20 gap-6 relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-[520px] pointer-events-none" style={{
         background: 'radial-gradient(600px 300px at 50% 0%, rgba(255,255,255,0.06) 0%, transparent 70%)',
       }} />

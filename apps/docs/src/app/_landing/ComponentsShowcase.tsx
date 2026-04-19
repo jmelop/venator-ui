@@ -31,7 +31,7 @@ export function ComponentsShowcase() {
 
         <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(12, 1fr)' }}>
           {/* Buttons */}
-          <div className="col-span-6 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-6 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Button</p>
             <div className="flex flex-wrap gap-2">
               <Button variant="primary" size="sm">Primary</Button>
@@ -42,7 +42,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Badges */}
-          <div className="col-span-6 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-6 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Badge</p>
             <div className="flex flex-wrap gap-2">
               <Badge variant="default">Default</Badge>
@@ -54,7 +54,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Input */}
-          <div className="col-span-4 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-4 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Input</p>
             <div className="flex flex-col gap-2">
               <Input placeholder="Search components..." />
@@ -63,7 +63,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Switch */}
-          <div className="col-span-4 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-4 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Switch</p>
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between">
@@ -78,7 +78,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Checkbox */}
-          <div className="col-span-4 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-4 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Checkbox</p>
             <div className="flex flex-col gap-2.5">
               {([['Accessible', ck1, setCk1], ['Composable', ck2, setCk2], ['Typed', ck3, setCk3]] as const).map(([label, val, set]) => (
@@ -90,7 +90,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Slider */}
-          <div className="col-span-4 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-4 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Slider</p>
             <Slider value={sliderVal} onValueChange={setSliderVal} />
             <div className="flex justify-between font-mono text-[11px] mt-2" style={{ color: 'var(--fg-4)' }}>
@@ -101,7 +101,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Progress */}
-          <div className="col-span-4 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-4 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Progress</p>
             <div className="flex flex-col gap-3">
               <div className="flex justify-between font-mono text-[11px] mb-1" style={{ color: 'var(--fg-4)' }}>
@@ -116,7 +116,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Kbd + Tooltip */}
-          <div className="col-span-4 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-4 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Kbd · Tooltip</p>
             <div className="flex flex-col gap-3">
               <div className="relative inline-block" onMouseEnter={() => setTooltip(true)} onMouseLeave={() => setTooltip(false)}>
@@ -136,7 +136,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Tabs */}
-          <div className="col-span-6 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-6 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Tabs</p>
             <div className="flex gap-6 mb-3" style={{ borderBottom: '1px solid var(--line)' }}>
               {['Overview', 'Usage', 'Theming', 'API'].map((t, i) => (
@@ -161,7 +161,7 @@ export function ComponentsShowcase() {
           </div>
 
           {/* Table */}
-          <div className="col-span-6 rounded-xl p-5" style={tileStyle}>
+          <div className="col-span-12 md:col-span-6 rounded-xl p-5" style={tileStyle}>
             <p className="font-mono text-[10.5px] uppercase tracking-wider mb-4" style={{ color: 'var(--fg-4)' }}>Table</p>
             <table className="w-full font-mono text-[12.5px] border-collapse">
               <thead>

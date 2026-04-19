@@ -60,9 +60,12 @@ export function Playground() {
           </div>
 
           {/* Body */}
-          <div className="grid" style={{ gridTemplateColumns: '280px 1fr 1fr', minHeight: 360 }}>
+          <div
+            className="flex flex-col md:grid"
+            style={{ minHeight: 360, gridTemplateColumns: '280px 1fr 1fr' }}
+          >
             {/* Controls */}
-            <div className="flex flex-col gap-5 p-5" style={{ borderRight: '1px solid var(--line)', background: 'var(--bg-1)' }}>
+            <div className="flex flex-col gap-5 p-5 order-2 md:order-1 border-t md:border-t-0 md:border-r" style={{ borderColor: 'var(--line)', background: 'var(--bg-1)' }}>
               {[
                 { label: 'variant', options: ['primary', 'ghost', 'outline'] as const, value: variant, set: setVariant },
                 { label: 'size', options: ['sm', 'md'] as const, value: size, set: setSize },
@@ -98,8 +101,8 @@ export function Playground() {
             </div>
 
             {/* Preview */}
-            <div className="flex items-center justify-center p-8"
-              style={{ borderRight: '1px solid var(--line)', background: 'var(--bg-2)', backgroundImage: 'radial-gradient(400px 200px at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%)' }}>
+            <div className="flex items-center justify-center p-8 order-1 md:order-2 md:[border-right:1px_solid_var(--line)]"
+              style={{ background: 'var(--bg-2)', backgroundImage: 'radial-gradient(400px 200px at 50% 50%, rgba(255,255,255,0.04) 0%, transparent 70%)' }}>
               <Button variant={variant} size={size === 'sm' ? 'sm' : undefined} disabled={disabled} className={fullWidth ? 'w-full' : ''}>
                 {withIcon && (
                   <span className="mr-1 flex items-center">
@@ -113,7 +116,7 @@ export function Playground() {
             </div>
 
             {/* JSX output */}
-            <div className="relative p-5 font-mono text-[12.5px] leading-relaxed overflow-auto" style={{ background: 'var(--bg-1)' }}>
+            <div className="relative p-5 font-mono text-[12.5px] leading-relaxed overflow-auto order-3" style={{ background: 'var(--bg-1)', minHeight: 180 }}>
               <Button variant="ghost" size="sm" onClick={copyJsx} className="absolute top-3 right-3">
                 {copied ? (
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>

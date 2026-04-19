@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--line)' }} className="px-6 py-16">
       <div className="max-w-[1200px] mx-auto">
-        <div className="grid gap-10" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr' }}>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
