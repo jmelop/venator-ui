@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { SidebarNav, DashboardLayout } from '@venator-ui/patterns';
 
 const sections = [
@@ -103,7 +103,7 @@ function SunIcon() {
   );
 }
 
-function Header({ dark, onToggleDark, onMenuOpen }: { dark: boolean; onToggleDark: () => void; onMenuOpen: () => void }) {
+function Header({ dark, mounted, onToggleDark, onMenuOpen }: { dark: boolean; mounted: boolean; onToggleDark: () => void; onMenuOpen: () => void }) {
   return (
     <div className="flex items-center justify-between w-full">
       <button
@@ -127,7 +127,7 @@ function Header({ dark, onToggleDark, onMenuOpen }: { dark: boolean; onToggleDar
         onClick={onToggleDark}
         className="p-2 rounded-md text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-100 dark:hover:bg-neutral-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
       >
-        {dark ? <SunIcon /> : <MoonIcon />}
+        {mounted ? (dark ? <SunIcon /> : <MoonIcon />) : <SunIcon />}
       </button>
     </div>
   );
@@ -136,10 +136,15 @@ function Header({ dark, onToggleDark, onMenuOpen }: { dark: boolean; onToggleDar
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dark, setDark] = useState(() => {
-    if (typeof document === 'undefined') return false;
-    return document.documentElement.classList.contains('dark');
-  });
+  const [dark, setDark] = useState(true); // match SSR default
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const stored = localStorage.getItem('venator-theme');
+    const isDark = stored ? stored === 'dark' : true;
+    setDark(isDark);
+  }, []);
 
   const ClosingLink = useCallback(
     ({ href, children, ...props }: { href: string; children: React.ReactNode }) => (
@@ -168,7 +173,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           titleHref="/"
         />
       }
-      header={<Header dark={dark} onToggleDark={toggleDark} onMenuOpen={() => setMobileOpen(true)} />}
+      header={<Header dark={dark} mounted={mounted} onToggleDark={toggleDark} onMenuOpen={() => setMobileOpen(true)} />}
       mobileOpen={mobileOpen}
       onMobileOpenChange={setMobileOpen}
     >
