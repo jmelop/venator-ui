@@ -116,7 +116,7 @@ export function Playground() {
             </div>
 
             {/* JSX output */}
-            <div className="relative p-5 font-mono text-[12.5px] leading-relaxed overflow-auto order-3" style={{ background: 'var(--bg-1)' }}>
+            <div className="relative p-5 font-mono text-[12.5px] leading-relaxed overflow-auto order-3" style={{ background: 'var(--bg-1)', minHeight: 180 }}>
               <Button variant="ghost" size="sm" onClick={copyJsx} className="absolute top-3 right-3">
                 {copied ? (
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
