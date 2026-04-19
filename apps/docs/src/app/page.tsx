@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LandingNav } from '../components/LandingNav';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import {
@@ -19,82 +19,6 @@ import {
 const geist = Inter({ subsets: ['latin'], variable: '--font-geist' });
 const geistMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-geist-mono' });
 
-function CopyCommand({ command }: { command: string }) {
-  const [copied, setCopied] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
-
-  return (
-    <button
-      type="button"
-      aria-label="Copy command"
-      className="flex items-center justify-between rounded-md bg-neutral-900 px-3 py-2 cursor-pointer group w-full" style={{ border: '1px solid var(--line-2)' }}
-      onClick={async () => {
-        if (!navigator.clipboard?.writeText) return;
-        try {
-          await navigator.clipboard.writeText(command);
-          if (timerRef.current) clearTimeout(timerRef.current);
-          setCopied(true);
-          timerRef.current = setTimeout(() => setCopied(false), 2000);
-        } catch {
-          // ignore
-        }
-      }}
-    >
-      <span className="flex items-center">
-        <span className="text-neutral-600 font-mono mr-2">$</span>
-        <span className="font-[family-name:var(--font-geist-mono)] text-[13px] text-neutral-100">{command}</span>
-      </span>
-      <span className="text-neutral-600 group-hover:text-neutral-200 transition-colors ml-2 shrink-0">
-        {copied ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-          </svg>
-        )}
-      </span>
-    </button>
-  );
-}
-
-const ARCHETYPES = [
-  { key: 'dashboard', cmd: 'npx @venator-ui/cli init dashboard' },
-  { key: 'admin',     cmd: 'npx @venator-ui/cli init admin' },
-  { key: 'ai-tool',  cmd: 'npx @venator-ui/cli init ai-tool' },
-] as const;
-
-function ArchetypeCLI() {
-  const [active, setActive] = useState<string>('dashboard');
-  const current = ARCHETYPES.find(a => a.key === active)!;
-
-  return (
-    <div className="flex flex-col gap-2">
-      <div className="flex items-center gap-1 bg-neutral-900 rounded-lg p-1" style={{ border: '1px solid var(--line)' }}>
-        {ARCHETYPES.map(a => (
-          <button
-            key={a.key}
-            type="button"
-            onClick={() => setActive(a.key)}
-            className={[
-              'flex-1 py-1.5 px-3 rounded-md text-sm font-medium transition-colors',
-              active === a.key
-                ? 'bg-neutral-800 border border-[var(--line-2)] text-white shadow-sm'
-                : 'text-neutral-400 hover:text-neutral-200',
-            ].join(' ')}
-          >
-            {a.key}
-          </button>
-        ))}
-      </div>
-      <CopyCommand command={current.cmd} />
-    </div>
-  );
-}
 
 
 const TERMINAL_LINES: import('@venator-ui/ui').TerminalLine[] = [
