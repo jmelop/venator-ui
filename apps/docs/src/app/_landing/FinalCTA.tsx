@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Button } from '@venator-ui/ui';
 
 export function FinalCTA() {
   return (
@@ -21,23 +22,17 @@ export function FinalCTA() {
         </p>
         <div className="flex items-center justify-center gap-3 flex-wrap">
           <Link href="/docs/getting-started/introduction">
-            <button
-              className="inline-flex items-center gap-2 font-medium text-[13.5px] px-4 h-9 rounded-md transition-colors"
-              style={{ background: 'var(--accent)', color: 'var(--accent-ink)' }}
-            >
+            <Button variant="accent" size="sm">
               Start with an archetype
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 6l6 6-6 6"/>
               </svg>
-            </button>
+            </Button>
           </Link>
           <Link href="/docs/getting-started/introduction">
-            <button
-              className="inline-flex items-center gap-2 font-medium text-[13.5px] px-4 h-9 rounded-md transition-colors"
-              style={{ border: '1px solid var(--line-2)', color: 'var(--fg)' }}
-            >
+            <Button variant="ghost" size="sm">
               Read the docs
-            </button>
+            </Button>
           </Link>
         </div>
       </div>
