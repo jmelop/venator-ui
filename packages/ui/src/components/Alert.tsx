@@ -30,11 +30,11 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
 );
 Alert.displayName = 'Alert';
 
-export interface AlertTitleProps extends HTMLAttributes<HTMLParagraphElement> {}
+export interface AlertTitleProps extends HTMLAttributes<HTMLDivElement> {}
 
-export const AlertTitle = forwardRef<HTMLParagraphElement, AlertTitleProps>(
+export const AlertTitle = forwardRef<HTMLDivElement, AlertTitleProps>(
   ({ className = '', ...props }, ref) => (
-    <p
+    <div
       ref={ref}
       className={`font-semibold text-sm leading-none tracking-tight mb-1 ${className}`}
       {...props}
@@ -43,11 +43,11 @@ export const AlertTitle = forwardRef<HTMLParagraphElement, AlertTitleProps>(
 );
 AlertTitle.displayName = 'AlertTitle';
 
-export interface AlertDescriptionProps extends HTMLAttributes<HTMLParagraphElement> {}
+export interface AlertDescriptionProps extends HTMLAttributes<HTMLDivElement> {}
 
-export const AlertDescription = forwardRef<HTMLParagraphElement, AlertDescriptionProps>(
+export const AlertDescription = forwardRef<HTMLDivElement, AlertDescriptionProps>(
   ({ className = '', ...props }, ref) => (
-    <p ref={ref} className={`text-sm opacity-90 ${className}`} {...props} />
+    <div ref={ref} className={`text-sm opacity-90 ${className}`} {...props} />
   ),
 );
 AlertDescription.displayName = 'AlertDescription';

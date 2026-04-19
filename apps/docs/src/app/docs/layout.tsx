@@ -125,9 +125,18 @@ function Header({ dark, mounted, onToggleDark, onMenuOpen }: { dark: boolean; mo
         type="button"
         aria-label="Toggle dark mode"
         onClick={onToggleDark}
+        suppressHydrationWarning
         className="p-2 rounded-md text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:text-neutral-100 dark:hover:bg-neutral-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
       >
-        {mounted ? (dark ? <SunIcon /> : <MoonIcon />) : <SunIcon />}
+        <span suppressHydrationWarning>
+          {!mounted ? (
+            <SunIcon />
+          ) : dark ? (
+            <SunIcon />
+          ) : (
+            <MoonIcon />
+          )}
+        </span>
       </button>
     </div>
   );
