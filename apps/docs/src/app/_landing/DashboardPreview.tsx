@@ -107,7 +107,7 @@ export function DashboardPreview() {
             <div className="flex-1 rounded-md px-3 py-1 font-mono text-[11.5px]" style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', color: 'var(--fg-3)' }}>
               <span style={{ color: 'var(--fg-4)' }}>https://</span>dashboard.venator.app<span style={{ color: 'var(--fg-4)' }}>/analytics</span>
             </div>
-            <div className="flex gap-2">
+            <div className="hidden md:flex gap-2">
               <Button variant="ghost" size="sm">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
               </Button>
@@ -214,6 +214,29 @@ export function DashboardPreview() {
                   <div className="font-mono text-[10px] mt-0.5" style={{ color: s.down ? '#f87171' : '#5eead4' }}>{s.delta}</div>
                 </div>
               ))}
+            </div>
+            <div className="mt-3 rounded-lg p-3" style={{ border: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+              <div className="font-mono text-[10px] mb-2" style={{ color: 'var(--fg-4)' }}>Sessions over time · Apr 01 – Apr 17</div>
+              <svg width="100%" viewBox="0 0 300 80" style={{ display: 'block' }}>
+                <defs>
+                  <linearGradient id="mg1" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stopColor="var(--fg)" stopOpacity="0.3"/>
+                    <stop offset="100%" stopColor="var(--fg)" stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0 70 L12 65 L25 60 L37 55 L50 48 L62 42 L75 38 L87 32 L100 28 L112 24 L125 20 L137 17 L150 14 L162 11 L175 9 L187 7 L200 5 L212 4 L225 3 L237 3 L250 2 L262 2 L275 2 L287 2 L300 1 L300 80 L0 80 Z"
+                  fill="url(#mg1)"
+                />
+                <path
+                  d="M0 70 L12 65 L25 60 L37 55 L50 48 L62 42 L75 38 L87 32 L100 28 L112 24 L125 20 L137 17 L150 14 L162 11 L175 9 L187 7 L200 5 L212 4 L225 3 L237 3 L250 2 L262 2 L275 2 L287 2 L300 1"
+                  fill="none"
+                  stroke="var(--fg)"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
           </div>
         </div>
