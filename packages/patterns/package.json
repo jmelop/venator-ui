@@ -1,6 +1,6 @@
 {
   "name": "@venator-ui/patterns",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Higher-level UI patterns and compositions for the Venator library",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
