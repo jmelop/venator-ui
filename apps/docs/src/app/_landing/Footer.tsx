@@ -59,10 +59,10 @@ export function Footer() {
                 { label: 'Documentation', href: '/docs/getting-started/introduction' },
                 { label: 'Components',    href: '/docs/components/button' },
                 { label: 'CLI Reference', href: '/docs/getting-started/introduction' },
-                { label: 'Changelog',     href: '#' },
-              ].map(({ label, href }) => (
+                { label: 'Changelog',     href: 'https://github.com/jmelop/venator-ui/releases', external: true },
+              ].map(({ label, href, external }) => (
                 <li key={label}>
-                  <a href={href} className="text-[13.5px] transition-colors hover:opacity-80" style={{ color: 'var(--fg-2)' }}>{label}</a>
+                  <a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="text-[13.5px] transition-colors hover:opacity-80" style={{ color: 'var(--fg-2)' }}>{label}</a>
                 </li>
               ))}
             </ul>

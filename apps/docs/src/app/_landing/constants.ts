@@ -111,5 +111,5 @@ export const NAV_LINKS = [
   { label: 'Components',  href: '/docs/components/button',            base: '/docs/components' },
   { label: 'Patterns',    href: '/docs/patterns/dashboard-layout',    base: '/docs/patterns' },
   { label: 'Archetypes',  href: '/docs/archetypes/dashboard',         base: '/docs/archetypes' },
-  { label: 'Changelog',   href: '#changelog',                          base: '#changelog' },
+  { label: 'Changelog',   href: 'https://github.com/jmelop/venator-ui/releases', base: 'https://github.com' },
 ] as const;

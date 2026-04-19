@@ -14,7 +14,7 @@ const navLinks = [
   { label: 'Components', href: '/docs/components/button', base: '/docs/components' },
   { label: 'Patterns', href: '/docs/patterns/dashboard-layout', base: '/docs/patterns' },
   { label: 'Archetypes', href: '/docs/archetypes/dashboard', base: '/docs/archetypes' },
-  { label: 'Changelog', href: '#changelog', base: '#changelog' },
+  { label: 'Changelog', href: 'https://github.com/jmelop/venator-ui/releases', base: 'https://github.com' },
 ] as const;
 
 export function LandingNav() {
@@ -47,11 +47,17 @@ export function LandingNav() {
 
   const center = (
     <nav className="hidden md:flex items-center gap-6">
-      {navLinks.map(({ label, href, base }) => (
-        <NavLink key={href} href={href} active={pathname.startsWith(base)}>
-          {label}
-        </NavLink>
-      ))}
+      {navLinks.map(({ label, href, base }) =>
+        href.startsWith('https://') ? (
+          <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors">
+            {label}
+          </a>
+        ) : (
+          <NavLink key={href} href={href} active={pathname.startsWith(base)}>
+            {label}
+          </NavLink>
+        )
+      )}
     </nav>
   );
 
