@@ -1,0 +1,5 @@
+import { redirect } from 'next/navigation';
+
+export default function PatternsPage() {
+  redirect('/docs/patterns/dashboard-layout');
+}

@@ -1,0 +1,128 @@
+import { Slider, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Slider"
+  description="A range input built from scratch with keyboard navigation, controlled and uncontrolled modes."
+/>
+
+## Default
+
+An uncontrolled slider with an initial value of 40.
+
+<Preview>
+  <Slider defaultValue={40} />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Slider defaultValue={40} />`}
+/>
+
+## Controlled
+
+Use `value` and `onValueChange` together for controlled mode. Because hooks require a client component, wire this up in your own component:
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`'use client';
+
+import { useState } from 'react';
+import { Slider } from '@venator-ui/ui';
+
+export function VolumeSlider() {
+  const [volume, setVolume] = useState(40);
+  return <Slider value={volume} onValueChange={setVolume} />;
+}`}
+/>
+
+## Min, max and step
+
+Use `min`, `max`, and `step` to constrain the range and snap increment.
+
+<Preview>
+  <Slider defaultValue={50} min={0} max={200} step={10} />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Slider defaultValue={50} min={0} max={200} step={10} />`}
+/>
+
+## Disabled
+
+Pass the `disabled` prop to prevent interaction.
+
+<Preview>
+  <Slider defaultValue={40} disabled />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Slider defaultValue={40} disabled />`}
+/>
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">value</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Controlled value</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">defaultValue</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">0</code></TableCell>
+      <TableCell>Initial uncontrolled value</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">onValueChange</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">(value: number) =&gt; void</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Called on change</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">min</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">0</code></TableCell>
+      <TableCell>Minimum value</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">max</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">100</code></TableCell>
+      <TableCell>Maximum value</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">step</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">1</code></TableCell>
+      <TableCell>Snap increment</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">disabled</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">false</code></TableCell>
+      <TableCell>Prevents interaction</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">''</code></TableCell>
+      <TableCell>Additional Tailwind classes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

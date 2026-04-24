@@ -1,0 +1,176 @@
+import { Terminal, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Terminal"
+  description="An animated terminal window that plays a sequence of lines with configurable delays and looping."
+/>
+
+## Default
+
+An animated sequence simulating a project init flow.
+
+<Preview>
+  <Terminal
+    lines={[
+      { type: 'command', text: 'venator init dashboard', delay: 0 },
+      { type: 'muted', text: 'Resolving dependencies...', delay: 800 },
+      { type: 'success', text: 'Dependencies resolved', delay: 1200 },
+      { type: 'success', text: 'Scaffold created in ./dashboard', delay: 1800 },
+      { type: 'accent', text: 'Ready. Run cd dashboard && npm run dev', delay: 2400 },
+    ]}
+  />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Terminal
+  lines={[
+    { type: 'command', text: 'venator init dashboard', delay: 0 },
+    { type: 'muted', text: 'Resolving dependencies...', delay: 800 },
+    { type: 'success', text: 'Dependencies resolved', delay: 1200 },
+    { type: 'success', text: 'Scaffold created in ./dashboard', delay: 1800 },
+    { type: 'accent', text: 'Ready. Run cd dashboard && npm run dev', delay: 2400 },
+  ]}
+/>`}
+/>
+
+## Line types
+
+All six `type` values rendered at `delay: 0` for immediate display.
+
+<Preview>
+  <Terminal
+    loop={false}
+    lines={[
+      { type: 'command', text: 'npm run build', delay: 0 },
+      { type: 'success', text: 'Build completed successfully', delay: 0 },
+      { type: 'error', text: 'Module not found: ./missing', delay: 0 },
+      { type: 'muted', text: 'Skipping optional peer deps...', delay: 0 },
+      { type: 'dim', text: '3 files unchanged', delay: 0 },
+      { type: 'accent', text: 'Deploy to production? (y/n)', delay: 0 },
+    ]}
+  />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Terminal
+  loop={false}
+  lines={[
+    { type: 'command', text: 'npm run build', delay: 0 },
+    { type: 'success', text: 'Build completed successfully', delay: 0 },
+    { type: 'error', text: 'Module not found: ./missing', delay: 0 },
+    { type: 'muted', text: 'Skipping optional peer deps...', delay: 0 },
+    { type: 'dim', text: '3 files unchanged', delay: 0 },
+    { type: 'accent', text: 'Deploy to production? (y/n)', delay: 0 },
+  ]}
+/>`}
+/>
+
+## No loop
+
+Set `loop={false}` to play the sequence once and stop.
+
+<Preview>
+  <Terminal
+    loop={false}
+    lines={[
+      { type: 'command', text: 'venator build', delay: 0 },
+      { type: 'success', text: 'Done in 1.2s', delay: 600 },
+    ]}
+  />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Terminal
+  loop={false}
+  lines={[
+    { type: 'command', text: 'venator build', delay: 0 },
+    { type: 'success', text: 'Done in 1.2s', delay: 600 },
+  ]}
+/>`}
+/>
+
+## Props
+
+### Terminal
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">lines</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">TerminalLine[]</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Sequence to animate</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">title</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'terminal'</code></TableCell>
+      <TableCell>Window title bar label</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">loop</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">true</code></TableCell>
+      <TableCell>Restarts animation after completion</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">loopDelay</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">2000</code></TableCell>
+      <TableCell>Ms to wait before restarting</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">''</code></TableCell>
+      <TableCell>Additional Tailwind classes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### TerminalLine
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">type</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'command' | 'success' | 'error' | 'muted' | 'dim' | 'accent'</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Visual style</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">text</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Line content</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">delay</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">0</code></TableCell>
+      <TableCell>Ms from start to show this line</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

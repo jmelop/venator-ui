@@ -1,0 +1,83 @@
+import { Kbd, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Kbd"
+  description="Renders keyboard key labels with a monospaced style matching OS conventions."
+/>
+
+## Default
+
+Individual key labels.
+
+<Preview>
+  <div className="flex gap-2 items-center">
+    <Kbd>⌘</Kbd>
+    <Kbd>K</Kbd>
+    <Kbd>Enter</Kbd>
+  </div>
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Kbd>⌘</Kbd>
+<Kbd>K</Kbd>
+<Kbd>Enter</Kbd>`}
+/>
+
+## Combinations
+
+Compose multiple `Kbd` elements with plain text to represent keyboard shortcuts.
+
+<Preview>
+  <div className="flex flex-col gap-3">
+    <div className="flex gap-1.5 items-center text-sm text-neutral-600 dark:text-neutral-400">
+      <Kbd>⌘</Kbd>
+      <span>+</span>
+      <Kbd>K</Kbd>
+    </div>
+    <div className="flex gap-1.5 items-center text-sm text-neutral-600 dark:text-neutral-400">
+      <Kbd>Ctrl</Kbd>
+      <span>+</span>
+      <Kbd>Shift</Kbd>
+      <span>+</span>
+      <Kbd>P</Kbd>
+    </div>
+  </div>
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Kbd>⌘</Kbd> + <Kbd>K</Kbd>
+
+<Kbd>Ctrl</Kbd> + <Kbd>Shift</Kbd> + <Kbd>P</Kbd>`}
+/>
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">children</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Key label or content</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">''</code></TableCell>
+      <TableCell>Additional Tailwind classes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

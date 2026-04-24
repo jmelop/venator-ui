@@ -1,0 +1,120 @@
+import { Checkbox, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Checkbox"
+  description="A controlled and uncontrolled checkbox with support for sizes and disabled state."
+/>
+
+## Default
+
+An uncontrolled checkbox with no initial value.
+
+<Preview>
+  <Checkbox />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Checkbox />`}
+/>
+
+## Checked
+
+Use `defaultChecked` to set the initial checked state in uncontrolled mode.
+
+<Preview>
+  <Checkbox defaultChecked />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Checkbox defaultChecked />`}
+/>
+
+## Sizes
+
+Use the `size` prop to control the checkbox dimensions. The default size is `md`.
+
+<Preview>
+  <div className="flex gap-4 items-center">
+    <Checkbox size="sm" />
+    <Checkbox size="md" />
+  </div>
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Checkbox size="sm" />
+<Checkbox size="md" />`}
+/>
+
+## Disabled
+
+Pass the `disabled` prop to prevent interaction.
+
+<Preview>
+  <div className="flex gap-4 items-center">
+    <Checkbox disabled />
+    <Checkbox defaultChecked disabled />
+  </div>
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Checkbox disabled />
+<Checkbox defaultChecked disabled />`}
+/>
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">checked</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Controlled checked state</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">defaultChecked</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">false</code></TableCell>
+      <TableCell>Initial uncontrolled state</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">onCheckedChange</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">(checked: boolean) =&gt; void</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Called when value changes</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">size</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'sm' | 'md'</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'md'</code></TableCell>
+      <TableCell>Controls dimensions</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">disabled</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">boolean</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">false</code></TableCell>
+      <TableCell>Prevents interaction</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">''</code></TableCell>
+      <TableCell>Additional Tailwind classes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

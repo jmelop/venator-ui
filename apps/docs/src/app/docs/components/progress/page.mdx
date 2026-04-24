@@ -1,0 +1,95 @@
+import { Progress, Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@venator-ui/ui';
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
+import { Preview } from '@/components/Preview';
+
+<PageHeader
+  title="Progress"
+  description="A horizontal progress bar that displays a value between 0 and 100."
+/>
+
+## Default
+
+A progress bar at 60%.
+
+<Preview>
+  <Progress value={60} />
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Progress value={60} />`}
+/>
+
+## Sizes
+
+Use the `size` prop to control the track height. The default size is `md`.
+
+<Preview>
+  <div className="flex flex-col gap-4 w-full">
+    <div className="flex flex-col gap-1">
+      <span className="text-xs text-neutral-500 dark:text-neutral-400">sm</span>
+      <Progress value={60} size="sm" />
+    </div>
+    <div className="flex flex-col gap-1">
+      <span className="text-xs text-neutral-500 dark:text-neutral-400">md</span>
+      <Progress value={60} size="md" />
+    </div>
+  </div>
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Progress value={60} size="sm" />
+<Progress value={60} size="md" />`}
+/>
+
+## Full and empty
+
+`value` is clamped between 0 and 100.
+
+<Preview>
+  <div className="flex flex-col gap-4 w-full">
+    <Progress value={0} />
+    <Progress value={100} />
+  </div>
+</Preview>
+
+<CodeBlock className="mt-6"
+  language="tsx"
+  code={`<Progress value={0} />
+<Progress value={100} />`}
+/>
+
+## Props
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Prop</TableHead>
+      <TableHead>Type</TableHead>
+      <TableHead>Default</TableHead>
+      <TableHead>Description</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">value</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Required. Clamped to 0–100</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">size</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'sm' | 'md'</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'md'</code></TableCell>
+      <TableCell>Track height</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">className</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">''</code></TableCell>
+      <TableCell>Additional Tailwind classes</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
