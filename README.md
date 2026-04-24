@@ -100,7 +100,7 @@ Complete project scaffolds deployed via CLI. Once deployed, the developer owns t
 
 ```bash
 # Deploy a complete architecture into your project
-npx venator init dashboard
+npx @venator-ui/cli init dashboard
 
 # Install UI primitives and patterns as dependencies
 npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens

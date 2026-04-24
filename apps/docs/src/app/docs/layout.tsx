@@ -150,7 +150,11 @@ function Header({ dark, mounted, onToggleDark, onMenuOpen }: { dark: boolean; mo
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dark, setDark] = useState(true); // match SSR default
+  const [dark, setDark] = useState(() => {
+    if (typeof document === 'undefined') return true;
+    const stored = localStorage.getItem('venator-theme');
+    return stored ? stored === 'dark' : true;
+  });
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
