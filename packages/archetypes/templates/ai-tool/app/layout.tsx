@@ -16,6 +16,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            try {
+              const stored = localStorage.getItem('venator-theme');
+              const theme = stored || 'dark';
+              document.documentElement.classList.toggle('dark', theme === 'dark');
+            } catch(e) {}
+          })();
+        `}} />
+      </head>
       <body className={inter.className}>
         <ToastProvider>{children}</ToastProvider>
       </body>

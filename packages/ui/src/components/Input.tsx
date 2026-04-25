@@ -52,14 +52,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       ? 'border-error-DEFAULT focus:border-error-DEFAULT focus:ring-error-DEFAULT'
       : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-500';
 
-    const disabledStyles = disabled
-      ? 'opacity-50 cursor-not-allowed bg-neutral-50 dark:bg-neutral-800'
-      : 'bg-white dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-700';
+    const colorStyles = 'bg-white dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500';
+    const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : '';
 
     const leftPad = leftIcon ? iconPaddingLeft[size] : '';
     const rightPad = rightIcon ? iconPaddingRight[size] : '';
 
-    const classes = `${base} ${stateStyles} ${disabledStyles} ${sizeStyles[size]} ${leftPad} ${rightPad} ${className}`.trim();
+    const classes = `${base} ${stateStyles} ${colorStyles} ${disabledStyles} ${sizeStyles[size]} ${leftPad} ${rightPad} ${className}`.trim();
 
     return (
       <div className="relative w-full">

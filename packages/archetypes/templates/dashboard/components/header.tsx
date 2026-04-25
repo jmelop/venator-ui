@@ -29,11 +29,16 @@ function SunIcon() {
 }
 
 export function Header() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => {
+    if (typeof document === 'undefined') return true;
+    const stored = localStorage.getItem('venator-theme');
+    return stored ? stored === 'dark' : true;
+  });
   const toggleDark = () => {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle('dark', next);
+    localStorage.setItem('venator-theme', next ? 'dark' : 'light');
   };
   return (
     <Topbar
