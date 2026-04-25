@@ -12,7 +12,7 @@ export default function SettingsPage() {
       <Card>
         <CardContent>
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 w-96">
               <Label htmlFor="model-select">Model</Label>
               <Select id="model-select" defaultValue="gpt-4o">
                 <option value="gpt-4o">GPT-4o</option>
@@ -21,7 +21,7 @@ export default function SettingsPage() {
               </Select>
             </div>
 
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5 w-96">
               <Label htmlFor="temperature">Temperature</Label>
               <Input
                 id="temperature"
