@@ -8,11 +8,11 @@ export default function SettingsPage() {
       <Card>
         <CardHeader title="General" description="Basic organization settings." />
         <CardContent className="mt-4 space-y-4">
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 w-96">
             <Label htmlFor="org-name">Organization name</Label>
             <Input id="org-name" placeholder="Acme Inc." defaultValue="Acme Inc." />
           </div>
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 w-96">
             <Label htmlFor="org-email">Email</Label>
             <Input id="org-email" type="email" placeholder="admin@acme.com" defaultValue="admin@acme.com" />
           </div>
