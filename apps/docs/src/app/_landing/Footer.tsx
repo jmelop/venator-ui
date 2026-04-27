@@ -8,7 +8,10 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/venator-logo-icon.png" className="w-7 h-7 rounded-lg" />
+              <span className="block w-7 h-7 flex-shrink-0">
+                <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg hidden dark:block" />
+                <img src="/venator-logo-icon-light.png" alt="Venator" className="w-7 h-7 rounded-lg block dark:hidden" />
+              </span>
               <span className="font-semibold text-[15px]" style={{ color: 'var(--fg)' }}>Venator UI</span>
             </div>
             <p className="text-[13.5px] max-w-[280px] leading-relaxed mb-5" style={{ color: 'var(--fg-3)' }}>
