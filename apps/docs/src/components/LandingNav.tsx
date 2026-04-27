@@ -39,7 +39,10 @@ export function LandingNav() {
 
   const left = (
     <Link href="/" className="flex items-center gap-2">
-      <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />
+      <span className="block w-7 h-7 flex-shrink-0">
+        <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg hidden dark:block" />
+        <img src="/venator-logo-icon-light.png" alt="Venator" className="w-7 h-7 rounded-lg block dark:hidden" />
+      </span>
       <span className="font-semibold text-sm text-neutral-900 dark:text-neutral-100">Venator UI</span>
       <span className="font-mono text-[11px] text-neutral-400 ml-1">v0.1</span>
     </Link>

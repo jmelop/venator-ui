@@ -177,6 +177,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle('dark', next);
+    localStorage.setItem('venator-theme', next ? 'dark' : 'light');
   };
 
   return (
@@ -186,7 +187,12 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           sections={sections}
           pathname={pathname}
           linkComponent={ClosingLink}
-          logo={<img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg" />}
+          logo={
+            <span className="block w-7 h-7 flex-shrink-0">
+              <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg hidden dark:block" />
+              <img src="/venator-logo-icon-light.png" alt="Venator" className="w-7 h-7 rounded-lg block dark:hidden" />
+            </span>
+          }
           title="Venator UI"
           titleHref="/"
         />
