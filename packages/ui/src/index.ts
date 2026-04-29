@@ -73,3 +73,12 @@ export type { TerminalProps, TerminalLine, TerminalLineType } from './components
 
 export { NavLink } from './components/NavLink';
 export type { NavLinkProps } from './components/NavLink';
+
+export { Sparkline } from './components/Sparkline';
+export type { SparklineProps } from './components/Sparkline';
+
+export { AreaChart } from './components/AreaChart';
+export type { AreaChartProps } from './components/AreaChart';
+
+export { BarChart } from './components/BarChart';
+export type { BarChartProps } from './components/BarChart';
