@@ -46,68 +46,69 @@ export function BarChart({
 
   const chartH = VIEW_H - PAD_TOP;
   const slotW = VIEW_W / data.length;
-  // gap = 20% of bar width  →  slot = bar + 0.2*bar = 1.2*bar
   const barW = slotW / 1.2;
 
   const barX = (i: number) => i * slotW + (slotW - barW) / 2;
   const barH = (value: number) => Math.max(((value - min) / range) * chartH, 1);
   const barY = (value: number) => VIEW_H - barH(value);
 
-  const svgH = showXAxis ? height + X_AXIS_H : height;
-  const viewBoxH = showXAxis ? VIEW_H + X_AXIS_H : VIEW_H;
+  const chartAreaHeight = height - (showXAxis ? X_AXIS_H : 0);
 
   return (
-    <svg
-      width="100%"
-      height={svgH}
-      viewBox={`0 0 ${VIEW_W} ${viewBoxH}`}
-      preserveAspectRatio="none"
-      className={className}
-      aria-hidden="true"
-    >
-      {showGrid &&
-        [25, 50, 75].map((pct) => {
-          const y = VIEW_H - (pct / 100) * chartH;
-          return (
-            <line
-              key={pct}
-              x1={0}
-              y1={y}
-              x2={VIEW_W}
-              y2={y}
-              stroke="currentColor"
-              strokeOpacity={0.15}
-              strokeWidth={0.5}
-              strokeDasharray="2 2"
-              vectorEffect="non-scaling-stroke"
+    <div className={`relative w-full ${className ?? ''}`} style={{ height }}>
+      <div className="absolute top-0 left-0 right-0" style={{ height: chartAreaHeight }}>
+        <svg
+          width="100%"
+          height={chartAreaHeight}
+          viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          {showGrid &&
+            [25, 50, 75].map((pct) => {
+              const y = VIEW_H - (pct / 100) * chartH;
+              return (
+                <line
+                  key={pct}
+                  x1={0} y1={y} x2={VIEW_W} y2={y}
+                  stroke="currentColor"
+                  strokeOpacity={0.15}
+                  strokeWidth={0.5}
+                  strokeDasharray="2 2"
+                  vectorEffect="non-scaling-stroke"
+                />
+              );
+            })}
+
+          {data.map((d, i) => (
+            <path
+              key={i}
+              d={roundedTopRect(barX(i), barY(d.value), barW, barH(d.value), BAR_RADIUS)}
+              fill={color}
+              fillOpacity={0.85}
             />
-          );
-        })}
+          ))}
+        </svg>
+      </div>
 
-      {data.map((d, i) => (
-        <path
-          key={i}
-          d={roundedTopRect(barX(i), barY(d.value), barW, barH(d.value), BAR_RADIUS)}
-          fill={color}
-          fillOpacity={0.85}
-        />
-      ))}
-
-      {showXAxis &&
-        data.map((d, i) => (
-          <text
-            key={i}
-            x={i * slotW + slotW / 2}
-            y={VIEW_H + X_AXIS_H - 4}
-            textAnchor="middle"
-            fontSize={7}
-            fill="currentColor"
-            fillOpacity={0.5}
-            vectorEffect="non-scaling-stroke"
-          >
-            {d.label}
-          </text>
-        ))}
-    </svg>
+      {showXAxis && (
+        <div className="absolute left-0 right-0" style={{ top: chartAreaHeight, height: X_AXIS_H }}>
+          <div className="relative w-full h-full">
+            {data.map((d, i) => {
+              const pct = data.length === 1 ? 50 : (i / (data.length - 1)) * 100;
+              return (
+                <span
+                  key={i}
+                  className="absolute text-neutral-400 dark:text-neutral-500 -translate-x-1/2"
+                  style={{ left: `${pct}%`, fontSize: 10, top: 4 }}
+                >
+                  {d.label}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
