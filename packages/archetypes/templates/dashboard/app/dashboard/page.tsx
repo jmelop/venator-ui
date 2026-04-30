@@ -46,7 +46,7 @@ export default function DashboardPage() {
         <ChartCard
           title="Sessions over time"
           description="Apr 01 – Apr 29 · Last 30 days"
-          chart={<AreaChart data={sessionData} showXAxis showGrid color="#3b82f6" height={140} />}
+          chart={<AreaChart data={sessionData} showXAxis showGrid height={140} />}
         />
         <Card>
           <CardHeader title="Quick actions" description="Common tasks." />
