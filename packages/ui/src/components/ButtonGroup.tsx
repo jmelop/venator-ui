@@ -2,18 +2,19 @@ import * as React from 'react';
 
 export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
   stackAt?: 'sm' | 'md' | 'lg' | 'never';
+  gap?: 'none' | 'sm' | 'md';
   children: React.ReactNode;
 }
 
-const stackStyles: Record<NonNullable<ButtonGroupProps['stackAt']>, string> = {
-  sm: 'flex-col sm:flex-row',
-  md: 'flex-col md:flex-row',
-  lg: 'flex-col lg:flex-row',
-  never: 'flex-row',
+const gapStyles = {
+  none: 'gap-0',
+  sm: 'gap-2',
+  md: 'gap-3',
 };
 
 export function ButtonGroup({
   stackAt = 'never',
+  gap = 'sm',
   className,
   children,
   ...props
@@ -21,19 +22,13 @@ export function ButtonGroup({
   return (
     <div
       className={[
-        'inline-flex',
-        stackStyles[stackAt],
-        '[&>*]:rounded-none',
-        '[&>*:first-child]:rounded-l-lg',
-        '[&>*:last-child]:rounded-r-lg',
-        '[&>*:first-child]:rounded-bl-none [&>*:first-child]:rounded-tl-lg',
-        'sm:[&>*:first-child]:rounded-l-lg sm:[&>*:first-child]:rounded-bl-none',
-        '[&>*+*]:-ml-px',
-        'sm:[&>*+*]:-ml-px sm:[&>*+*]:mt-0',
+        'inline-flex items-center',
+        stackAt === 'sm' ? 'flex-col sm:flex-row' :
+        stackAt === 'md' ? 'flex-col md:flex-row' :
+        stackAt === 'lg' ? 'flex-col lg:flex-row' : 'flex-row',
+        gapStyles[gap],
         className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
+      ].filter(Boolean).join(' ')}
       {...props}
     >
       {children}

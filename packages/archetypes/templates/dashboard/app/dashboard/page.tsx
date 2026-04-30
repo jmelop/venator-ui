@@ -49,8 +49,8 @@ export default function DashboardPage() {
         description="Welcome to your workspace."
         actions={
           <ButtonGroup>
-            <Button variant="outline" size="sm">Filter</Button>
-            <Button variant="outline" size="sm">Export</Button>
+            <Button variant="ghost" size="sm">Filter</Button>
+            <Button variant="ghost" size="sm">Export</Button>
             <Button variant="primary" size="sm">New report</Button>
           </ButtonGroup>
         }
@@ -65,12 +65,12 @@ export default function DashboardPage() {
         <ChartCard
           title="Sessions over time"
           description="Apr 01 – Apr 29 · Last 30 days"
-          chart={<AreaChart data={sessionData} showXAxis showGrid height={140} />}
+          chart={<AreaChart data={sessionData} showXAxis showYAxis showGrid height={220} />}
         />
         <ChartCard
           title="Sign-ups / day"
           description="Weekly average · 62"
-          chart={<BarChart data={signupData} color="#6b7280" showXAxis showGrid height={140} />}
+          chart={<BarChart data={signupData} color="#6b7280" showXAxis showGrid height={220} />}
         />
       </ModuleGrid>
       <Card>

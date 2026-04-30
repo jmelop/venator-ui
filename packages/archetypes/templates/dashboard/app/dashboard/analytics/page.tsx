@@ -21,8 +21,8 @@ export default function AnalyticsPage() {
         description="Last 30 days · updated just now"
         actions={
           <ButtonGroup>
-            <Button variant="outline" size="sm">Filter</Button>
-            <Button variant="outline" size="sm">Export</Button>
+            <Button variant="ghost" size="sm">Filter</Button>
+            <Button variant="ghost" size="sm">Export</Button>
             <Button variant="primary" size="sm">New report</Button>
           </ButtonGroup>
         }
