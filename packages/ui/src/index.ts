@@ -82,3 +82,6 @@ export type { AreaChartProps, AreaSeries } from './components/AreaChart';
 
 export { BarChart } from './components/BarChart';
 export type { BarChartProps } from './components/BarChart';
+
+export { ButtonGroup } from './components/ButtonGroup';
+export type { ButtonGroupProps } from './components/ButtonGroup';
