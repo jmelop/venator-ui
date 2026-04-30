@@ -7,6 +7,7 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?: BadgeVariant;
   size?: BadgeSize;
   dot?: boolean;
+  pill?: boolean;
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
@@ -30,12 +31,19 @@ const sizeStyles: Record<BadgeSize, string> = {
   md: 'text-sm px-2.5 py-0.5',
 };
 
+const plainStyles: Record<BadgeVariant, string> = {
+  default: 'text-neutral-500',
+  primary: 'text-primary-500',
+  success: 'text-green-500',
+  warning: 'text-yellow-500',
+  error: 'text-red-500',
+};
+
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ variant = 'default', size = 'md', dot = false, className, children, ...props }, ref) => {
+  ({ variant = 'default', size = 'md', dot = false, pill = true, className, children, ...props }, ref) => {
     const classes = [
-      'inline-flex items-center rounded-full font-medium',
-      variantStyles[variant],
-      sizeStyles[size],
+      'inline-flex items-center font-medium',
+      pill ? 'rounded-full ' + variantStyles[variant] + ' ' + sizeStyles[size] : plainStyles[variant],
       className,
     ]
       .filter(Boolean)
