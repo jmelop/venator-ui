@@ -22,3 +22,6 @@ export type { TopbarProps } from './components/Topbar';
 
 export { StatCard } from './components/StatCard';
 export type { StatCardProps } from './components/StatCard';
+
+export { ChartCard } from './components/ChartCard';
+export type { ChartCardProps } from './components/ChartCard';
