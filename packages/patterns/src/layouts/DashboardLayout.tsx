@@ -61,7 +61,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   );
 
   return (
-    <div className="flex h-screen bg-neutral-50 dark:bg-neutral-950">
+    <div className="flex h-screen bg-bg">
       {sidebar && (
         <>
           {isMobileOpen && (
@@ -74,7 +74,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
           <aside
             className={[
-              'bg-white dark:bg-neutral-900 border-r border-neutral-200 dark:border-neutral-800 transition-all duration-300',
+              'bg-bg-1 border-r border-[var(--border-subtle)] transition-all duration-300',
               // Desktop: static, respects sidebarCollapsed
               'lg:relative lg:translate-x-0 lg:flex lg:flex-col',
               sidebarCollapsed ? 'lg:w-16' : 'lg:w-64',
@@ -87,7 +87,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             <button
               type="button"
               aria-label="Close sidebar"
-              className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 lg:hidden"
+              className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-md text-fg-3 hover:text-fg-2 hover:bg-bg-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--border-subtle)] lg:hidden"
               onClick={() => setMobileOpen(false)}
             >
               <svg
@@ -114,7 +114,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
       <div className="flex-1 flex flex-col min-w-0">
         {header && (
-          <header className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-6 py-4">
+          <header className="bg-bg-1 border-b border-[var(--border-subtle)] px-6 py-4">
             {header}
           </header>
         )}

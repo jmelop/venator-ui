@@ -32,9 +32,9 @@ export const Topbar = React.forwardRef<HTMLDivElement, TopbarProps>(
     <div
       ref={ref}
       className={[
-        'w-full bg-white dark:bg-neutral-900 px-4 h-14 flex items-center justify-between gap-4 z-40',
+        'w-full bg-bg-1 px-4 h-14 flex items-center justify-between gap-4 z-40',
         positionStyles[position],
-        bordered ? 'border-b border-neutral-200 dark:border-neutral-800' : '',
+        bordered ? 'border-b border-[var(--border-subtle)]' : '',
         className,
       ]
         .filter(Boolean)
@@ -43,7 +43,7 @@ export const Topbar = React.forwardRef<HTMLDivElement, TopbarProps>(
       <div className="flex items-center gap-3 shrink-0">
         {left}
         {title && (
-          <span className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+          <span className="text-sm font-semibold text-fg">
             {title}
           </span>
         )}
