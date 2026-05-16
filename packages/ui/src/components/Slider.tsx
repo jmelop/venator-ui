@@ -104,10 +104,10 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         <div
           ref={trackRef}
           onMouseDown={handleTrackMouseDown}
-          className="relative w-full h-1.5 rounded-full bg-neutral-200 dark:bg-neutral-700 cursor-pointer"
+          className="relative w-full h-1.5 rounded-full bg-bg-3 cursor-pointer"
         >
           <div
-            className="absolute left-0 top-0 h-full rounded-full bg-primary-600"
+            className="absolute left-0 top-0 h-full rounded-full bg-accent"
             style={{ width: `${percent}%` }}
           />
           <div
@@ -117,7 +117,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
             aria-valuemax={max}
             tabIndex={disabled ? -1 : 0}
             onKeyDown={handleKeyDown}
-            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-primary-600 shadow-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-fg border-2 border-accent shadow-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
             style={{ left: `${percent}%` }}
           />
         </div>

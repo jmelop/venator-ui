@@ -8,7 +8,7 @@ export const Table = forwardRef<HTMLTableElement, TableProps>(
     <div className="w-full overflow-x-auto">
       <table
         ref={ref}
-        className={`w-full text-sm text-neutral-700 border-collapse ${className}`}
+        className={`w-full text-sm text-fg-2 border-collapse ${className}`}
         {...props}
       />
     </div>
@@ -38,7 +38,7 @@ export interface TableFooterProps extends HTMLAttributes<HTMLTableSectionElement
 
 export const TableFooter = forwardRef<HTMLTableSectionElement, TableFooterProps>(
   ({ className = '', ...props }, ref) => (
-    <tfoot ref={ref} className={`bg-neutral-50 font-medium dark:bg-neutral-800 ${className}`} {...props} />
+    <tfoot ref={ref} className={`bg-bg-2 font-medium ${className}`} {...props} />
   ),
 );
 TableFooter.displayName = 'TableFooter';
@@ -49,7 +49,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
   ({ className = '', ...props }, ref) => (
     <tr
       ref={ref}
-      className={`border-b border-neutral-200 transition-colors hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-800 ${className}`}
+      className={`border-b border-[var(--border-subtle)] transition-colors hover:bg-bg-2 ${className}`}
       {...props}
     />
   ),
@@ -62,7 +62,7 @@ export const TableHead = forwardRef<HTMLTableCellElement, TableHeadProps>(
   ({ className = '', ...props }, ref) => (
     <th
       ref={ref}
-      className={`px-4 py-3 text-left text-xs font-semibold text-neutral-500 uppercase tracking-wider bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-400 ${className}`}
+      className={`px-4 py-3 text-left text-xs font-semibold text-fg-4 uppercase tracking-wider bg-bg-2 ${className}`}
       {...props}
     />
   ),
@@ -73,7 +73,7 @@ export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
 
 export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
   ({ className = '', ...props }, ref) => (
-    <td ref={ref} className={`px-4 py-3 text-neutral-700 dark:text-neutral-300 ${className}`} {...props} />
+    <td ref={ref} className={`px-4 py-3 text-fg-2 ${className}`} {...props} />
   ),
 );
 TableCell.displayName = 'TableCell';
@@ -82,7 +82,7 @@ export interface TableCaptionProps extends HTMLAttributes<HTMLTableCaptionElemen
 
 export const TableCaption = forwardRef<HTMLTableCaptionElement, TableCaptionProps>(
   ({ className = '', ...props }, ref) => (
-    <caption ref={ref} className={`mt-4 text-sm text-neutral-500 ${className}`} {...props} />
+    <caption ref={ref} className={`mt-4 text-sm text-fg-4 ${className}`} {...props} />
   ),
 );
 TableCaption.displayName = 'TableCaption';
