@@ -36,10 +36,12 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       'w-full border rounded transition focus:outline-none focus:ring-2 focus:ring-offset-0 appearance-none bg-none';
 
     const stateStyles = error
-      ? 'border-error-DEFAULT focus:border-error-DEFAULT focus:ring-error-DEFAULT'
-      : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-500';
+      ? 'border-danger focus:border-danger focus:ring-danger'
+      : 'border-[var(--border-default)] focus:border-[var(--accent)] focus:ring-[var(--accent)]';
 
-    const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed bg-neutral-50 dark:bg-neutral-800' : 'bg-white dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-700';
+    const disabledStyles = disabled
+      ? 'opacity-50 cursor-not-allowed bg-bg-3'
+      : 'bg-bg-2 text-fg';
 
     const classes = [base, stateStyles, disabledStyles, sizeStyles[size], className]
       .filter(Boolean)
@@ -55,7 +57,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           )}
           {children}
         </select>
-        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-neutral-500">
+        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-fg-4">
           <ChevronDown />
         </span>
       </div>

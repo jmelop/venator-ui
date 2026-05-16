@@ -10,11 +10,11 @@ export interface NavLinkProps {
 
 const base = [
   'text-sm transition-colors',
-  'text-neutral-500 dark:text-neutral-400',
-  'hover:text-neutral-900 dark:hover:text-neutral-100',
+  'text-fg-3',
+  'hover:text-fg',
 ].join(' ');
 
-const activeClass = 'text-neutral-900 dark:text-neutral-100';
+const activeClass = 'text-fg';
 
 export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
   ({ href, active = false, children, className = '' }, ref) => (
