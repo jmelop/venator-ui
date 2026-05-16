@@ -19,7 +19,7 @@ const variantStyles: Record<BadgeVariant, string> = {
 };
 
 const dotStyles: Record<BadgeVariant, string> = {
-  default: 'bg-neutral-400',
+  default: 'bg-fg-3',
   primary: 'bg-primary-500',
   success: 'bg-success',
   warning: 'bg-warn',
