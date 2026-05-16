@@ -91,7 +91,7 @@ export default function DashboardPage() {
                   <TableCell className="font-medium">{event.user}</TableCell>
                   <TableCell>{event.action}</TableCell>
                   <TableCell><Badge variant={statusVariant[event.status]}>{event.status}</Badge></TableCell>
-                  <TableCell className="text-neutral-400">{event.time}</TableCell>
+                  <TableCell className="text-fg-3">{event.time}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
