@@ -22,13 +22,13 @@ export function CodeBlock({ code, language = 'tsx', filename, className }: CodeB
   return (
     <div className={`relative ${className ?? ''}`.trim()}>
       {filename && (
-        <div className="bg-neutral-800 px-4 py-2 text-xs text-neutral-400 rounded-t-lg border-b border-neutral-700">
+        <div className="bg-bg-2 px-4 py-2 text-xs text-fg-4 rounded-t-lg border-b border-[var(--border-subtle)]">
           {filename}
         </div>
       )}
       <pre
         className={[
-          'bg-neutral-900 text-neutral-100 overflow-x-auto text-sm font-mono p-4 whitespace-pre-wrap break-all',
+          'bg-bg text-fg overflow-x-auto text-sm font-mono p-4 whitespace-pre-wrap break-all border border-[var(--border-subtle)]',
           filename ? 'rounded-b-lg' : 'rounded-lg',
         ].join(' ')}
       >
@@ -37,7 +37,7 @@ export function CodeBlock({ code, language = 'tsx', filename, className }: CodeB
       <button
         onClick={handleCopy}
         aria-label={copied ? 'Copied' : 'Copy to clipboard'}
-        className="absolute top-2 right-2 p-1.5 rounded text-neutral-400 hover:text-neutral-100 hover:bg-neutral-700 transition-colors"
+        className="absolute top-2 right-2 p-1.5 rounded text-fg-4 hover:text-fg hover:bg-bg-2 transition-colors"
       >
         {copied ? (
           <svg
