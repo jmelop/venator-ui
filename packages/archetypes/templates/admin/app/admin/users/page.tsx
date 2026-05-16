@@ -65,7 +65,7 @@ export default function UsersPage() {
               {users.map((user) => (
                 <TableRow key={user.id}>
                   <TableCell className="font-medium">{user.name}</TableCell>
-                  <TableCell className="text-neutral-500">{user.email}</TableCell>
+                  <TableCell className="text-fg-3">{user.email}</TableCell>
                   <TableCell>{user.role}</TableCell>
                   <TableCell>
                     <Badge variant={statusVariant[user.status]}>{user.status}</Badge>
