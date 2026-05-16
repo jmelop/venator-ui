@@ -1,3 +1,36 @@
+export const bg = {
+  DEFAULT: '#08090b',
+  1: '#0c0d10',
+  2: '#111317',
+  3: '#15181d',
+} as const;
+
+export const fg = {
+  DEFAULT: '#f5f6f7',
+  2: '#c7cad1',
+  3: '#8a8f98',
+  4: '#8B9099',
+  5: '#3a3e46',
+} as const;
+
+export const accent = {
+  DEFAULT: '#ffffff',
+  ink: '#000000',
+} as const;
+
+export const semantic = {
+  success: '#5eead4',
+  warn:    '#fbbf24',
+  danger:  '#f87171',
+  info:    '#93c5fd',
+} as const;
+
+export const border = {
+  subtle:  'rgba(255,255,255,0.08)',
+  default: 'rgba(255,255,255,0.14)',
+} as const;
+
+// Legacy — keep temporarily for backward compat during migration
 export const colors = {
   primary: {
     50: '#f0f9ff',
@@ -16,7 +49,7 @@ export const colors = {
     100: '#e8eaed',
     200: '#c7cad1',
     300: '#a0a5b0',
-    400: '#8a8f98',
+    400: '#8B9099',
     500: '#6e7380',
     600: '#5b6069',
     700: '#3a3e46',
@@ -24,24 +57,7 @@ export const colors = {
     900: '#15181d',
     950: '#08090b',
   },
-  success: {
-    light: '#22c55e',
-    DEFAULT: '#16a34a',
-    dark: '#15803d',
-  },
-  warning: {
-    light: '#fbbf24',
-    DEFAULT: '#f59e0b',
-    dark: '#d97706',
-  },
-  error: {
-    light: '#ef4444',
-    DEFAULT: '#dc2626',
-    dark: '#b91c1c',
-  },
-} as const;
-
-export const border = {
-  subtle:  'rgba(255,255,255,0.08)',
-  default: 'rgba(255,255,255,0.14)',
+  success: { light: '#5eead4', DEFAULT: '#2dd4bf', dark: '#14b8a6' },
+  warning: { light: '#fbbf24', DEFAULT: '#f59e0b', dark: '#d97706' },
+  error:   { light: '#f87171', DEFAULT: '#ef4444', dark: '#dc2626' },
 } as const;
