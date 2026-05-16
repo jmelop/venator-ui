@@ -52,8 +52,8 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
           'inline-flex items-center justify-center rounded transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500',
           sizeMap[size],
           isChecked
-            ? 'bg-primary-600 border border-primary-600 text-white'
-            : 'border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-900',
+            ? 'bg-accent text-[var(--accent-ink)] border border-accent'
+            : 'border border-[var(--border-default)] bg-bg-2',
           disabled ? 'opacity-50 pointer-events-none' : '',
           className,
         ]

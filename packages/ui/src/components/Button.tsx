@@ -33,11 +33,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
 
     const variantStyles = {
-      primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
-      secondary: 'bg-neutral-600 text-white hover:bg-neutral-700 focus:ring-neutral-500',
-      outline: 'border border-neutral-300 bg-transparent hover:bg-neutral-50 focus:ring-neutral-500 dark:border-neutral-600 dark:text-neutral-100 dark:hover:bg-neutral-800',
-      ghost: 'bg-transparent text-[var(--fg,theme(colors.neutral.900))] border border-[var(--line-2,theme(colors.neutral.200))] dark:text-neutral-100 dark:border-neutral-700 hover:bg-[var(--bg-2,theme(colors.neutral.100))] dark:hover:bg-neutral-800 transition-colors',
-      accent: 'bg-[var(--accent)] text-[var(--accent-ink)] border border-[var(--accent)] hover:opacity-90 transition-opacity',
+      primary:   'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
+      secondary: 'bg-bg-3 text-fg hover:bg-bg-2 focus:ring-[var(--border-default)]',
+      outline:   'border border-[var(--border-default)] bg-transparent text-fg hover:bg-bg-2 focus:ring-[var(--border-default)]',
+      ghost:     'bg-transparent text-fg border border-[var(--border-subtle)] hover:bg-bg-2 transition-colors',
+      accent:    'bg-[var(--accent)] text-[var(--accent-ink)] border border-[var(--accent)] hover:opacity-90 transition-opacity',
     };
 
     const sizeStyles = {
