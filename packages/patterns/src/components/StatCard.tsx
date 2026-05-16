@@ -55,15 +55,15 @@ export const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
     <Card ref={ref} className={`${variantStyles[variant]} ${className}`.trim()}>
       <CardContent>
         <div className="flex items-start justify-between gap-2">
-          <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">{title}</p>
+          <p className="text-sm font-medium text-fg-3">{title}</p>
           {icon && (
-            <span className="text-neutral-400 dark:text-neutral-500 shrink-0">{icon}</span>
+            <span className="text-fg-3 shrink-0">{icon}</span>
           )}
         </div>
 
         <div className="mt-2 flex items-end justify-between gap-3">
           <div className="flex flex-col gap-2">
-            <p className="text-3xl font-bold text-neutral-900 dark:text-neutral-100">{value}</p>
+            <p className="text-3xl font-bold text-fg">{value}</p>
             {trend !== undefined && (
               <div className="flex items-center gap-1">
                 <Badge variant={trend >= 0 ? 'success' : 'error'}>
@@ -79,12 +79,12 @@ export const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
                   {Math.abs(trend)}%
                 </Badge>
                 {trendLabel && (
-                  <span className="text-xs text-neutral-400 dark:text-neutral-500">{trendLabel}</span>
+                  <span className="text-xs text-fg-3">{trendLabel}</span>
                 )}
               </div>
             )}
             {description && (
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">{description}</p>
+              <p className="text-sm text-fg-3">{description}</p>
             )}
           </div>
           {sparkline && sparkline.length > 0 && (

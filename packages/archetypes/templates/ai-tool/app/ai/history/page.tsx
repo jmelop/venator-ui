@@ -22,8 +22,8 @@ export default function HistoryPage() {
           {historyItems.map((item, index) => (
             <div key={item.id}>
               <div className="py-3">
-                <p className="text-sm font-medium text-neutral-900 dark:text-neutral-100">{item.title}</p>
-                <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">{item.timestamp}</p>
+                <p className="text-sm font-medium text-fg">{item.title}</p>
+                <p className="text-xs text-fg-3 mt-0.5">{item.timestamp}</p>
               </div>
               {index < historyItems.length - 1 && <Separator />}
             </div>

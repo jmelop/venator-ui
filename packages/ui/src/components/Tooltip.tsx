@@ -20,10 +20,10 @@ const bubblePosition: Record<TooltipSide, string> = {
 const arrowBase = 'absolute w-0 h-0 border-[4px] border-transparent';
 
 const arrowStyles: Record<TooltipSide, string> = {
-  top: 'top-full left-1/2 -translate-x-1/2 border-t-neutral-900 border-b-0',
-  bottom: 'bottom-full left-1/2 -translate-x-1/2 border-b-neutral-900 border-t-0',
-  left: 'left-full top-1/2 -translate-y-1/2 border-l-neutral-900 border-r-0',
-  right: 'right-full top-1/2 -translate-y-1/2 border-r-neutral-900 border-l-0',
+  top:    'top-full left-1/2 -translate-x-1/2 border-t-fg border-b-0',
+  bottom: 'bottom-full left-1/2 -translate-x-1/2 border-b-fg border-t-0',
+  left:   'left-full top-1/2 -translate-y-1/2 border-l-fg border-r-0',
+  right:  'right-full top-1/2 -translate-y-1/2 border-r-fg border-l-0',
 };
 
 export const Tooltip: React.FC<TooltipProps> = ({
@@ -59,7 +59,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
         <span
           role="tooltip"
           className={[
-            'absolute z-50 px-2 py-1 text-xs font-medium text-white bg-neutral-900 rounded whitespace-nowrap pointer-events-none',
+            'absolute z-50 px-2 py-1 text-xs font-medium text-[var(--accent-ink)] bg-fg rounded whitespace-nowrap pointer-events-none',
             bubblePosition[side],
           ].join(' ')}
         >

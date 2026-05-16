@@ -59,7 +59,7 @@ export const Modal: React.FC<ModalProps> = ({
           role="dialog"
           aria-modal="true"
           className={[
-            'w-full bg-white rounded-lg shadow-xl overflow-hidden',
+            'w-full bg-bg-1 rounded-lg shadow-xl overflow-hidden border border-[var(--border-subtle)]',
             sizeStyles[size],
             className,
           ]
@@ -101,19 +101,19 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
     <div
       ref={ref}
       className={[
-        'flex items-center justify-between px-6 py-4 border-b border-neutral-200',
+        'flex items-center justify-between px-6 py-4 border-b border-[var(--border-subtle)]',
         className,
       ]
         .filter(Boolean)
         .join(' ')}
       {...props}
     >
-      <h2 className="text-base font-semibold text-neutral-900">{title}</h2>
+      <h2 className="text-base font-semibold text-fg">{title}</h2>
       {onClose && (
         <button
           type="button"
           onClick={onClose}
-          className="text-neutral-400 hover:text-neutral-600 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded"
+          className="text-fg-4 hover:text-fg-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--border-default)] rounded"
           aria-label="Close"
         >
           <CloseIcon />
@@ -152,7 +152,7 @@ export const ModalFooter = React.forwardRef<HTMLDivElement, ModalFooterProps>(
     <div
       ref={ref}
       className={[
-        'flex items-center justify-end gap-3 px-6 py-4 border-t border-neutral-200',
+        'flex items-center justify-end gap-3 px-6 py-4 border-t border-[var(--border-subtle)]',
         className,
       ]
         .filter(Boolean)

@@ -47,7 +47,7 @@ export const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
   ({ className = '', ...props }, ref) => (
     <div
       ref={ref}
-      className={`inline-flex items-center gap-1 bg-neutral-100 p-1 rounded-lg ${className}`}
+      className={`inline-flex items-center gap-1 bg-bg-2 p-1 rounded-lg ${className}`}
       {...props}
     />
   ),
@@ -74,8 +74,8 @@ export const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>(
         className={[
           `px-3 py-1.5 text-sm font-medium rounded-md transition-colors focus:outline-none${disableFocusRing ? '' : ' focus:ring-2 focus:ring-primary-500'}`,
           isActive
-            ? 'bg-white text-neutral-900 shadow-sm'
-            : 'text-neutral-500 hover:text-neutral-700',
+            ? 'bg-bg-3 text-fg shadow-sm'
+            : 'text-fg-4 hover:text-fg-2',
           disabled ? 'opacity-50 pointer-events-none' : '',
           className,
         ]

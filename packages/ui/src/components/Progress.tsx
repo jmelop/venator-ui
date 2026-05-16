@@ -27,7 +27,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
         aria-valuemin={0}
         aria-valuemax={100}
         className={[
-          'w-full rounded-full bg-neutral-200 dark:bg-neutral-700',
+          'w-full rounded-full bg-bg-3',
           sizeMap[size],
           className,
         ]
@@ -35,7 +35,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
           .join(' ')}
       >
         <div
-          className="h-full rounded-full bg-primary-600 transition-all duration-300"
+          className="h-full rounded-full bg-accent transition-all duration-300"
           style={{ width: `${clamped}%` }}
         />
       </div>

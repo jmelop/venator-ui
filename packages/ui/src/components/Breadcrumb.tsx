@@ -42,8 +42,8 @@ export const BreadcrumbItem = forwardRef<HTMLAnchorElement | HTMLSpanElement, Br
   ({ href, active = false, children }, ref) => {
     const { separator } = useBreadcrumbContext();
 
-    const activeClasses = 'text-neutral-900 font-medium pointer-events-none';
-    const inactiveClasses = 'text-neutral-500 hover:text-neutral-700 transition-colors';
+    const activeClasses   = 'text-fg font-medium pointer-events-none';
+    const inactiveClasses = 'text-fg-3 hover:text-fg-2 transition-colors';
 
     const inner = href ? (
       <a
@@ -83,7 +83,7 @@ export interface BreadcrumbSeparatorProps {
 export function BreadcrumbSeparator({ children }: BreadcrumbSeparatorProps) {
   const { separator } = useBreadcrumbContext();
   return (
-    <span aria-hidden="true" className="text-neutral-400 mx-1.5 text-sm select-none">
+    <span aria-hidden="true" className="text-fg-5 mx-1.5 text-sm select-none">
       {children ?? separator}
     </span>
   );

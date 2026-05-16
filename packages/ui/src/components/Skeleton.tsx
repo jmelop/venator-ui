@@ -21,7 +21,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   ({ className = '', width, height, rounded = 'md', style, ...props }, ref) => (
     <div
       ref={ref}
-      className={`animate-pulse bg-neutral-200 ${roundedMap[rounded]} ${className}`}
+      className={`animate-pulse bg-bg-3 ${roundedMap[rounded]} ${className}`}
       style={{ width, height, ...style }}
       {...props}
     />

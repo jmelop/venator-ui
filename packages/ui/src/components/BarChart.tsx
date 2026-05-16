@@ -99,8 +99,8 @@ export function BarChart({
               return (
                 <span
                   key={i}
-                  className="absolute text-neutral-400 dark:text-neutral-500 -translate-x-1/2"
-                  style={{ left: `${pct}%`, fontSize: 10, top: 4 }}
+                  className="absolute -translate-x-1/2"
+                  style={{ left: `${pct}%`, fontSize: 10, top: 4, color: 'var(--fg-4)' }}
                 >
                   {d.label}
                 </span>

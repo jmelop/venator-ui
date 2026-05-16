@@ -20,11 +20,11 @@ export interface TerminalProps {
 
 const lineClass: Record<TerminalLineType, string> = {
   command: '',
-  success: 'text-green-400',
-  error: 'text-red-400',
-  muted: 'text-neutral-500',
-  dim: 'text-neutral-600',
-  accent: 'text-blue-400',
+  success: 'text-success',
+  error:   'text-danger',
+  muted:   'text-fg-4',
+  dim:     'text-fg-5',
+  accent:  'text-info',
 };
 
 export const Terminal = forwardRef<HTMLDivElement, TerminalProps>(
@@ -71,19 +71,19 @@ export const Terminal = forwardRef<HTMLDivElement, TerminalProps>(
       <div
         ref={ref}
         className={[
-          'rounded-lg border border-neutral-800 bg-neutral-950 overflow-hidden font-mono text-sm',
+          'rounded-lg border border-[var(--border-subtle)] bg-bg overflow-hidden font-mono text-sm',
           className,
         ]
           .filter(Boolean)
           .join(' ')}
       >
-        <div className="flex items-center justify-between px-4 py-2.5 border-b border-neutral-800 bg-neutral-900">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-[var(--border-subtle)] bg-bg-1">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-500" />
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
             <div className="w-3 h-3 rounded-full bg-green-500" />
           </div>
-          <span className="text-neutral-500 text-xs">{title}</span>
+          <span className="text-fg-4 text-xs">{title}</span>
           <div className="w-[52px]" />
         </div>
 
@@ -92,15 +92,15 @@ export const Terminal = forwardRef<HTMLDivElement, TerminalProps>(
             <div key={i}>
               {line.type === 'command' ? (
                 <>
-                  <span className="text-neutral-400 mr-2">$</span>
-                  <span className="text-neutral-100">{line.text}</span>
+                  <span className="text-fg-4 mr-2">$</span>
+                  <span className="text-fg">{line.text}</span>
                 </>
               ) : (
                 <span className={lineClass[line.type]}>{line.text}</span>
               )}
             </div>
           ))}
-          <span className="inline-block w-2 h-4 bg-neutral-500 animate-pulse" />
+          <span className="inline-block w-2 h-4 bg-fg-4 animate-pulse" />
         </div>
       </div>
     );

@@ -49,10 +49,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       'w-full border rounded transition focus:outline-none focus:ring-2 focus:ring-offset-0';
 
     const stateStyles = error
-      ? 'border-error-DEFAULT focus:border-error-DEFAULT focus:ring-error-DEFAULT'
-      : 'border-neutral-300 focus:border-primary-500 focus:ring-primary-500';
+      ? 'border-danger focus:border-danger focus:ring-danger'
+      : 'border-[var(--border-default)] focus:border-[var(--accent)] focus:ring-[var(--accent)]';
 
-    const colorStyles = 'bg-white dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-700 placeholder:text-neutral-400 dark:placeholder:text-neutral-500';
+    const colorStyles = 'bg-bg-2 text-fg border-[var(--border-default)] placeholder:text-fg-4';
     const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : '';
 
     const leftPad = leftIcon ? iconPaddingLeft[size] : '';
@@ -63,13 +63,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="relative w-full">
         {leftIcon && (
-          <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-neutral-500">
+          <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-fg-4">
             {leftIcon}
           </span>
         )}
         <input ref={ref} className={classes} disabled={disabled} {...props} />
         {rightIcon && (
-          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-neutral-500">
+          <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-fg-4">
             {rightIcon}
           </span>
         )}
@@ -83,11 +83,11 @@ export const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
   ({ required = false, className = '', children, ...props }, ref) => (
     <label
       ref={ref}
-      className={`text-sm font-medium text-neutral-700 dark:text-neutral-300 ${className}`.trim()}
+      className={`text-sm font-medium text-fg-2 ${className}`.trim()}
       {...props}
     >
       {children}
-      {required && <span className="ml-1 text-error-DEFAULT" aria-hidden="true">*</span>}
+      {required && <span className="ml-1 text-danger" aria-hidden="true">*</span>}
     </label>
   ),
 );

@@ -35,11 +35,11 @@ export function SidebarNav({
   return (
     <nav className={`flex flex-col gap-6 p-4 ${className}`.trim()}>
       {(logo || title) && (
-        <div className="px-3 py-4 border-b border-neutral-200 dark:border-neutral-800 mb-2">
+        <div className="px-3 py-4 border-b border-[var(--border-subtle)] mb-2">
           <LinkComponent href={titleHref} className="flex items-center gap-2.5">
             {logo}
             {title && (
-              <span className="text-base font-bold text-neutral-900 dark:text-neutral-100">
+              <span className="text-base font-bold text-fg">
                 {title}
               </span>
             )}

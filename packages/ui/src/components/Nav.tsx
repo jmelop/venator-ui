@@ -14,8 +14,8 @@ export interface NavItemProps {
 }
 
 const navItemBase = 'w-full flex items-center px-3 py-2.5 rounded-md text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-0';
-const navItemActive = 'bg-primary-50 text-primary-700 font-medium dark:bg-primary-900/30 dark:text-primary-400';
-const navItemInactive = 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100';
+const navItemActive   = 'bg-bg-3 text-fg font-medium';
+const navItemInactive = 'text-fg-3 hover:bg-bg-2 hover:text-fg transition-colors';
 const navItemDisabled = 'opacity-50 pointer-events-none';
 
 export const NavItem = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, NavItemProps>(
@@ -100,14 +100,14 @@ export const NavGroup: React.FC<NavGroupProps> = ({
   const [collapsed, setCollapsed] = React.useState(defaultCollapsed);
 
   const labelClasses =
-    'text-xs font-semibold text-neutral-400 uppercase tracking-wider px-3 mb-1';
+    'text-xs font-semibold text-fg-4 uppercase tracking-wider px-3 mb-1';
 
   if (collapsible) {
     return (
       <div>
         <button
           type="button"
-          className={`${labelClasses} w-full flex items-center justify-between hover:text-neutral-600 transition-colors focus:outline-none`}
+          className={`${labelClasses} w-full flex items-center justify-between hover:text-fg-2 transition-colors focus:outline-none`}
           onClick={() => setCollapsed((prev) => !prev)}
           aria-expanded={!collapsed}
         >

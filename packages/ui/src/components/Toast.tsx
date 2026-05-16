@@ -102,10 +102,10 @@ function ToastViewport({ toasts, dismiss }: ToastViewportProps) {
 // ---------------------------------------------------------------------------
 
 const variantMap: Record<ToastVariant, string> = {
-  default: 'border-neutral-200 text-neutral-800',
-  success: 'border-green-200 text-green-800',
-  warning: 'border-yellow-200 text-yellow-800',
-  error: 'border-red-200 text-red-800',
+  default: 'border-[var(--border-subtle)] text-fg',
+  success: 'border-success text-success',
+  warning: 'border-warn text-warn',
+  error:   'border-danger text-danger',
 };
 
 // ---------------------------------------------------------------------------
@@ -122,7 +122,7 @@ function Toast({ data, onDismiss }: ToastProps) {
 
   return (
     <div
-      className={`relative flex gap-3 items-start p-4 rounded-lg border shadow-md bg-white text-sm ${variantMap[variant]}`}
+      className={`relative flex gap-3 items-start p-4 rounded-lg border shadow-md bg-bg-1 text-sm ${variantMap[variant]}`}
     >
       <div className="flex-1 min-w-0">
         <p className="font-semibold leading-none tracking-tight mb-1">{title}</p>
@@ -132,7 +132,7 @@ function Toast({ data, onDismiss }: ToastProps) {
         type="button"
         aria-label="Dismiss"
         onClick={() => onDismiss(id)}
-        className="shrink-0 text-neutral-400 hover:text-neutral-700 transition-colors focus:outline-none"
+        className="shrink-0 text-fg-4 hover:text-fg-2 transition-colors focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

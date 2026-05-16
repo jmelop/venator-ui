@@ -59,8 +59,8 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
           'inline-flex items-center justify-center border rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500',
           toggleSizeMap[size],
           isPressed
-            ? 'bg-primary-100 text-primary-700 border-primary-200'
-            : 'bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50',
+            ? 'bg-bg-3 text-fg border-[var(--border-default)]'
+            : 'bg-transparent text-fg-3 border-[var(--border-subtle)] hover:bg-bg-2',
           disabled ? 'opacity-50 pointer-events-none' : '',
           className,
         ]
@@ -119,7 +119,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
           onClick={handleClick}
           className={[
             'relative inline-flex items-center w-10 h-6 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500',
-            isChecked ? 'bg-primary-600' : 'bg-neutral-200',
+            isChecked ? 'bg-accent' : 'bg-bg-3',
             disabled ? 'opacity-50 pointer-events-none' : '',
           ]
             .filter(Boolean)
@@ -127,13 +127,13 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
         >
           <span
             className={[
-              'bg-white rounded-full shadow-sm transition-transform w-4 h-4',
+              'bg-fg rounded-full shadow-sm transition-transform w-4 h-4',
               isChecked ? 'translate-x-4' : 'translate-x-1',
             ].join(' ')}
           />
         </button>
         {label && (
-          <span className="text-sm text-neutral-700 dark:text-neutral-300 select-none">{label}</span>
+          <span className="text-sm text-fg-2 select-none">{label}</span>
         )}
       </label>
     );
