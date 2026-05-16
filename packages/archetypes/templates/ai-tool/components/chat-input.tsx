@@ -12,7 +12,7 @@ export function ChatInput({ onSubmit }: { onSubmit?: (value: string) => void }) 
         onChange={(e) => setValue(e.target.value)}
         placeholder="Ask anything..."
         rows={3}
-        className="flex-1 resize-none rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-4 py-3 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+        className="flex-1 resize-none rounded-lg border border-[var(--border-subtle)] bg-bg-1 px-4 py-3 text-sm text-fg placeholder:text-fg-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
       />
       <Button variant="primary" onClick={() => { onSubmit?.(value); setValue(''); }}>
         Submit
