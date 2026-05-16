@@ -2,11 +2,11 @@ import { forwardRef } from 'react';
 import type { HTMLAttributes, ReactNode } from 'react';
 
 const variantMap = {
-  default: 'bg-neutral-50 border-neutral-200 text-neutral-800',
-  info: 'bg-primary-50 border-primary-200 text-primary-800',
-  success: 'bg-green-50 border-green-200 text-green-800',
-  warning: 'bg-yellow-50 border-yellow-200 text-yellow-800',
-  error: 'bg-red-50 border-red-200 text-red-800',
+  default: 'bg-bg-2 border-[var(--border-subtle)] text-fg-2',
+  info:    'bg-bg-2 border-[var(--info)] text-fg',
+  success: 'bg-bg-2 border-[var(--success)] text-fg',
+  warning: 'bg-bg-2 border-[var(--warn)] text-fg',
+  error:   'bg-bg-2 border-[var(--danger)] text-fg',
 } as const;
 
 export type AlertVariant = keyof typeof variantMap;

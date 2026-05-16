@@ -78,8 +78,7 @@ export function AreaChart({
           {[...yTicks].reverse().map((t) => (
             <span
               key={t}
-              className="text-neutral-400 dark:text-neutral-500"
-              style={{ fontSize: 10, lineHeight: 1 }}
+              style={{ fontSize: 10, lineHeight: 1, color: 'var(--fg-4)' }}
             >
               {t}
             </span>
@@ -155,8 +154,8 @@ export function AreaChart({
               return (
                 <span
                   key={i}
-                  className="absolute text-neutral-400 dark:text-neutral-500 -translate-x-1/2"
-                  style={{ left: `${pct}%`, fontSize: 10, top: 4 }}
+                  className="absolute -translate-x-1/2"
+                  style={{ left: `${pct}%`, fontSize: 10, top: 4, color: 'var(--fg-4)' }}
                 >
                   {labels[i]}
                 </span>

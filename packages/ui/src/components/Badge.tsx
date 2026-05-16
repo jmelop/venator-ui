@@ -11,19 +11,19 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
-  default: 'bg-neutral-100 text-neutral-700',
+  default: 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300',
   primary: 'bg-primary-100 text-primary-700',
-  success: 'bg-green-100 text-green-700',
-  warning: 'bg-yellow-100 text-yellow-700',
-  error: 'bg-red-100 text-red-700',
+  success: 'bg-green-950 text-success',
+  warning: 'bg-yellow-950 text-warn',
+  error:   'bg-red-950 text-danger',
 };
 
 const dotStyles: Record<BadgeVariant, string> = {
-  default: 'bg-neutral-500',
+  default: 'bg-neutral-400',
   primary: 'bg-primary-500',
-  success: 'bg-green-500',
-  warning: 'bg-yellow-500',
-  error: 'bg-red-500',
+  success: 'bg-success',
+  warning: 'bg-warn',
+  error:   'bg-danger',
 };
 
 const sizeStyles: Record<BadgeSize, string> = {
@@ -32,11 +32,11 @@ const sizeStyles: Record<BadgeSize, string> = {
 };
 
 const plainStyles: Record<BadgeVariant, string> = {
-  default: 'text-neutral-500',
-  primary: 'text-primary-500',
-  success: 'text-green-500',
-  warning: 'text-yellow-500',
-  error: 'text-red-500',
+  default: 'text-fg-3',
+  primary: 'text-primary-400',
+  success: 'text-success',
+  warning: 'text-warn',
+  error:   'text-danger',
 };
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(

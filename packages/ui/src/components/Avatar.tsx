@@ -29,7 +29,7 @@ const PlaceholderIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor"
-    className="w-[60%] h-[60%] text-neutral-400"
+    className="w-[60%] h-[60%] text-fg-4"
     aria-hidden="true"
   >
     <path
@@ -59,7 +59,7 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(
       'inline-flex items-center justify-center shrink-0 overflow-hidden',
       sizeStyles[size],
       shapeStyles[shape],
-      !src || imgError ? (fallback ? 'bg-primary-100 text-primary-700 font-medium' : 'bg-neutral-200') : '',
+      !src || imgError ? (fallback ? 'bg-bg-3 text-fg-2 font-medium' : 'bg-bg-3') : '',
       className,
     ]
       .filter(Boolean)
