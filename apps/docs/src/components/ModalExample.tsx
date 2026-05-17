@@ -14,7 +14,7 @@ export function ModalExample() {
       <Modal open={open} onClose={() => setOpen(false)}>
         <ModalHeader title="Confirm action" onClose={() => setOpen(false)} />
         <ModalContent>
-          <p className="text-sm text-neutral-600">
+          <p className="text-sm text-fg-3">
             Are you sure you want to proceed? This action cannot be undone.
           </p>
         </ModalContent>

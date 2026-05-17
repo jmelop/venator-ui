@@ -3,10 +3,10 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 const variantMap = {
   default: 'bg-bg-2 border-[var(--border-subtle)] text-fg-2',
-  info:    'bg-bg-2 border-[var(--info)] text-fg',
-  success: 'bg-bg-2 border-[var(--success)] text-fg',
-  warning: 'bg-bg-2 border-[var(--warn)] text-fg',
-  error:   'bg-bg-2 border-[var(--danger)] text-fg',
+  info:    'bg-[var(--info-bg)] border-[var(--info)] text-[var(--info-fg)]',
+  success: 'bg-[var(--success-bg)] border-[var(--success)] text-[var(--success-fg)]',
+  warning: 'bg-[var(--warn-bg)] border-[var(--warn)] text-[var(--warn-fg)]',
+  error:   'bg-[var(--danger-bg)] border-[var(--danger)] text-[var(--danger-fg)]',
 } as const;
 
 export type AlertVariant = keyof typeof variantMap;

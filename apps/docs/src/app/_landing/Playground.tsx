@@ -65,7 +65,7 @@ export function Playground() {
             style={{ minHeight: 360, gridTemplateColumns: '280px 1fr 1fr' }}
           >
             {/* Controls */}
-            <div className="flex flex-col gap-5 p-5 order-2 md:order-1 border-t md:border-t-0 md:border-r" style={{ borderColor: 'var(--line)', background: 'var(--bg-1)' }}>
+            <div className="flex flex-col gap-5 p-5 order-2 md:order-1 border-t md:border-t-0" style={{ borderColor: 'var(--line)', background: 'var(--bg-1)' }}>
               {[
                 { label: 'variant', options: ['primary', 'ghost', 'outline'] as const, value: variant, set: setVariant },
                 { label: 'size', options: ['sm', 'md'] as const, value: size, set: setSize },

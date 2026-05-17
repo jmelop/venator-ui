@@ -7,7 +7,7 @@ import { Topbar } from '@venator-ui/patterns';
 import { NavLink } from '@venator-ui/ui';
 
 const btnClass =
-  'p-1.5 text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors';
+  'p-1.5 text-fg-3 hover:text-fg transition-colors';
 
 const navLinks = [
   { label: 'Docs', href: '/docs/getting-started/introduction', base: '/docs/getting-started' },
@@ -43,8 +43,8 @@ export function LandingNav() {
         <img src="/venator-logo-icon.png" alt="Venator" className="w-7 h-7 rounded-lg hidden dark:block" />
         <img src="/venator-logo-icon-light.png" alt="Venator" className="w-7 h-7 rounded-lg block dark:hidden" />
       </span>
-      <span className="font-semibold text-sm text-neutral-900 dark:text-neutral-100">Venator UI</span>
-      <span className="font-mono text-[11px] text-neutral-400 ml-1">v0.1</span>
+      <span className="font-semibold text-sm text-fg">Venator UI</span>
+      <span className="font-mono text-[11px] text-fg-3 ml-1">v0.1</span>
     </Link>
   );
 
@@ -52,7 +52,7 @@ export function LandingNav() {
     <nav className="hidden md:flex items-center gap-6">
       {navLinks.map(({ label, href, base }) =>
         href.startsWith('https://') ? (
-          <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors">
+          <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-fg-3 hover:text-fg transition-colors">
             {label}
           </a>
         ) : (
@@ -138,5 +138,5 @@ export function LandingNav() {
     </div>
   );
 
-  return <Topbar left={left} center={center} right={right} position="fixed" bordered className="![background:var(--bg-2)] ![border-bottom-color:var(--line)]" />;
+  return <Topbar left={left} center={center} right={right} position="fixed" bordered={false} className="![background:var(--bg-2)]" />;
 }

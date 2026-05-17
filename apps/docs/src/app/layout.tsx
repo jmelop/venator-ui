@@ -42,15 +42,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            try {
-              const stored = localStorage.getItem('venator-theme');
-              const theme = stored || 'dark';
-              document.documentElement.classList.toggle('dark', theme === 'dark');
-              document.documentElement.setAttribute('data-theme', theme);
-            } catch(e) {}
-          })();
-        `}} />
+  (function() {
+    try {
+      const stored = localStorage.getItem('venator-theme');
+      const theme = stored || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch(e) {}
+  })();
+`}} />
       </head>
       <body className={inter.className} suppressHydrationWarning>
         <div>{children}</div>

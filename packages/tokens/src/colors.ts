@@ -2,7 +2,7 @@ export const bg = {
   DEFAULT: '#08090b',
   1: '#0c0d10',
   2: '#111317',
-  3: '#15181d',
+  3: '#1c2028',
 } as const;
 
 export const fg = {
