@@ -127,8 +127,9 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
         >
           <span
             className={[
-              'bg-fg rounded-full shadow-sm transition-transform w-4 h-4',
-              isChecked ? 'translate-x-4' : 'translate-x-1',
+              isChecked ? 'bg-bg' : 'bg-fg',
+              'rounded-full shadow-sm transition-transform w-4 h-4',
+              isChecked ? 'translate-x-5' : 'translate-x-1',
             ].join(' ')}
           />
         </button>
