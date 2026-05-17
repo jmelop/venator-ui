@@ -88,33 +88,33 @@ const id = /* returned id not directly exposed — use onValueChange pattern */;
   </TableHeader>
   <TableBody>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">id</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">id</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
       <TableCell>auto-generated</TableCell>
       <TableCell>Unique identifier for the toast</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">title</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">title</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
       <TableCell>—</TableCell>
       <TableCell>Main toast heading</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">description</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">description</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
       <TableCell>—</TableCell>
       <TableCell>Optional supporting text below the title</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">variant</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'default' | 'success' | 'warning' | 'error'</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">'default'</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">variant</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">'default' | 'success' | 'warning' | 'error'</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">'default'</code></TableCell>
       <TableCell>Color style conveying the toast type</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">duration</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">number</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">4000</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">duration</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">number</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">4000</code></TableCell>
       <TableCell>Time in milliseconds before the toast auto-dismisses</TableCell>
     </TableRow>
   </TableBody>
@@ -133,10 +133,10 @@ const id = /* returned id not directly exposed — use onValueChange pattern */;
   </TableHeader>
   <TableBody>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">children</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">children</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
       <TableCell>—</TableCell>
-      <TableCell>App or subtree that needs access to <code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">useToast</code></TableCell>
+      <TableCell>App or subtree that needs access to <code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">useToast</code></TableCell>
     </TableRow>
   </TableBody>
 </Table>
@@ -155,14 +155,16 @@ Returns `{ toast, dismiss }`:
   </TableHeader>
   <TableBody>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">toast</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">(data: Omit&lt;ToastData, 'id'&gt;) =&gt; void</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">toast</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">(data: Omit&lt;ToastData, 'id'&gt;) =&gt; void</code></TableCell>
       <TableCell>Adds a toast to the queue</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">dismiss</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded">(id: string) =&gt; void</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">dismiss</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">(id: string) =&gt; void</code></TableCell>
       <TableCell>Immediately removes a toast by id</TableCell>
     </TableRow>
   </TableBody>
 </Table>
+
+
