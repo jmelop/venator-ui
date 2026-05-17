@@ -70,6 +70,14 @@ export const venatorPreset = {
           '--info':    semantic.info,
           '--border-subtle':  border.subtle,
           '--border-default': border.default,
+          '--info-bg':    '#f0f9ff',
+          '--success-bg': '#f0fdf4',
+          '--warn-bg':    '#fffbeb',
+          '--danger-bg':  '#fef2f2',
+          '--info-fg':    '#225c75',
+          '--success-fg': '#166534',
+          '--warn-fg':    '#92400e',
+          '--danger-fg':  '#991b1b',
         },
         // Obsidian light
         ':root[data-theme="light"], html.light': {
@@ -90,6 +98,10 @@ export const venatorPreset = {
           '--info':    '#2563eb',
           '--border-subtle':  'rgba(0,0,0,0.08)',
           '--border-default': 'rgba(0,0,0,0.14)',
+          '--info-bg':    '#eff6ff',
+          '--success-bg': '#f0fdf4',
+          '--warn-bg':    '#fffbeb',
+          '--danger-bg':  '#fef2f2',
         },
         // Slate dark
         ':root[data-theme="slate-dark"]': {
@@ -110,6 +122,10 @@ export const venatorPreset = {
           '--info':    '#58a6ff',
           '--border-subtle':  'rgba(160,180,210,0.10)',
           '--border-default': 'rgba(160,180,210,0.18)',
+          '--info-bg':    '#0f1f35',
+          '--success-bg': '#0a1f14',
+          '--warn-bg':    '#1f1a08',
+          '--danger-bg':  '#1f0f0f',
         },
         // Slate light
         ':root[data-theme="slate-light"]': {
@@ -130,6 +146,10 @@ export const venatorPreset = {
           '--info':    '#2563eb',
           '--border-subtle':  'rgba(31,41,55,0.08)',
           '--border-default': 'rgba(31,41,55,0.16)',
+          '--info-bg':    '#eff6ff',
+          '--success-bg': '#f0fdf4',
+          '--warn-bg':    '#fffbeb',
+          '--danger-bg':  '#fef2f2',
         },
       });
     }),
