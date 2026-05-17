@@ -6,7 +6,7 @@ export interface PreviewProps {
 
 export function Preview({ children }: PreviewProps) {
   return (
-    <div className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 p-6">
+    <div className="rounded-lg border border-[var(--border-subtle)] bg-bg-1 p-6">
       {children}
     </div>
   );

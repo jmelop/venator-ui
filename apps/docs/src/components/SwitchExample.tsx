@@ -9,7 +9,7 @@ export function SwitchExample() {
   return (
     <div className="flex items-center gap-3">
       <Switch checked={checked} onCheckedChange={setChecked} />
-      <span className="text-sm text-neutral-500">{checked ? 'On' : 'Off'}</span>
+      <span className="text-sm text-fg-3">{checked ? 'On' : 'Off'}</span>
     </div>
   );
 }

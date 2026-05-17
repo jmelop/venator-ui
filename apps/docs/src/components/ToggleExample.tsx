@@ -11,7 +11,7 @@ export function ToggleExample() {
       <Toggle pressed={pressed} onPressedChange={setPressed}>
         Bold
       </Toggle>
-      <span className="text-sm text-neutral-500">
+      <span className="text-sm text-fg-3">
         {pressed ? 'On' : 'Off'}
       </span>
     </div>
