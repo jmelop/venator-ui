@@ -33,7 +33,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
 
     const variantStyles = {
-      primary:   'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
+      primary:   'bg-[var(--accent)] text-[var(--accent-ink)] hover:opacity-90 focus:ring-[var(--accent)]',
       secondary: 'bg-bg-3 text-fg hover:bg-bg-2 focus:ring-[var(--border-default)]',
       outline:   'border border-[var(--border-default)] bg-transparent text-fg hover:bg-bg-2 focus:ring-[var(--border-default)]',
       ghost:     'bg-transparent text-fg border border-[var(--border-subtle)] hover:bg-bg-2 transition-colors',
