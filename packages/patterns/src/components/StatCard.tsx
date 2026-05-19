@@ -11,6 +11,12 @@ export interface StatCardProps {
   sparkline?: number[];
   variant?: 'default' | 'primary' | 'success' | 'warning' | 'error';
   className?: string;
+  /** Additional classes applied to the title element */
+  titleClassName?: string;
+  /** Additional classes applied to the value element */
+  valueClassName?: string;
+  /** Decorative prefix rendered above the title (e.g. "01", "02") */
+  prefix?: string;
 }
 
 const variantSparklineColor: Record<NonNullable<StatCardProps['variant']>, string> = {
@@ -49,13 +55,21 @@ export const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
       sparkline,
       variant = 'default',
       className = '',
+      titleClassName = '',
+      valueClassName = '',
+      prefix,
     },
     ref,
   ) => (
     <Card ref={ref} className={`${variantStyles[variant]} ${className}`.trim()}>
       <CardContent>
         <div className="flex items-start justify-between gap-2">
-          <p className="text-sm font-medium text-fg-3">{title}</p>
+          <div className="flex flex-col gap-0.5">
+            {prefix && (
+              <span className="text-xs font-mono text-fg-5">{prefix}</span>
+            )}
+            <p className={['text-sm font-medium text-fg-3', titleClassName].filter(Boolean).join(' ')}>{title}</p>
+          </div>
           {icon && (
             <span className="text-fg-3 shrink-0">{icon}</span>
           )}
@@ -63,7 +77,7 @@ export const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
 
         <div className="mt-2 flex items-end justify-between gap-3">
           <div className="flex flex-col gap-2">
-            <p className="text-3xl font-bold text-fg">{value}</p>
+            <p className={['text-3xl font-bold text-fg', valueClassName].filter(Boolean).join(' ')}>{value}</p>
             {trend !== undefined && (
               <div className="flex items-center gap-1">
                 <Badge variant={trend >= 0 ? 'success' : 'error'}>
