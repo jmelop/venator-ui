@@ -21,6 +21,26 @@ npx @venator-ui/cli add stat-card
 npx @venator-ui/cli add module-grid
 ```
 
+## Themes
+
+Deploy an archetype with a specific theme using the `--theme` flag:
+
+```bash
+npx @venator-ui/cli init dashboard --theme slate
+npx @venator-ui/cli init dashboard --theme obsidian-light
+```
+
+Available themes:
+
+| Theme | Description |
+|---|---|
+| `obsidian` | Obsidian Dark — default, no attribute injected |
+| `obsidian-light` | Obsidian Light |
+| `slate` | Slate Dark |
+| `slate-light` | Slate Light |
+
+If `--theme` is omitted, the archetype deploys with Obsidian Dark.
+
 ## After deploying an archetype
 
 ```bash
