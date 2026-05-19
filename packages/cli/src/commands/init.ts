@@ -4,6 +4,13 @@ import prompts from 'prompts';
 import pc from 'picocolors';
 
 const SUPPORTED_ARCHETYPES = ['dashboard', 'admin', 'ai-tool'] as const;
+
+const THEME_MAP: Record<string, string | null> = {
+  'obsidian':       null,
+  'obsidian-light': 'light',
+  'slate':          'slate-dark',
+  'slate-light':    'slate-light',
+};
 type Archetype = (typeof SUPPORTED_ARCHETYPES)[number];
 
 function isSupportedArchetype(name: string): name is Archetype {
@@ -23,7 +30,7 @@ function createSpinner(message: string): () => void {
   };
 }
 
-export async function initCommand(archetype: string): Promise<void> {
+export async function initCommand(archetype: string, theme = 'obsidian'): Promise<void> {
   let templatesDir: string;
   try {
     templatesDir = path.resolve(
@@ -40,6 +47,13 @@ export async function initCommand(archetype: string): Promise<void> {
       pc.red(
         `Unknown archetype "${archetype}". Supported archetypes: ${SUPPORTED_ARCHETYPES.join(', ')}`,
       ),
+    );
+    process.exit(1);
+  }
+
+  if (!(theme in THEME_MAP)) {
+    console.error(
+      pc.red(`Unknown theme "${theme}". Supported themes: ${Object.keys(THEME_MAP).join(', ')}`)
     );
     process.exit(1);
   }
@@ -79,6 +93,16 @@ export async function initCommand(archetype: string): Promise<void> {
     const templateDir = path.join(templatesDir, archetype);
     await fs.copy(templateDir, destination);
     stopSpinner();
+
+    const dataTheme = THEME_MAP[theme] ?? null;
+    if (dataTheme !== null) {
+      const rootLayout = path.join(destination, 'app', 'layout.tsx');
+      if (await fs.pathExists(rootLayout)) {
+        let content = await fs.readFile(rootLayout, 'utf8');
+        content = content.replace(/<html([^>]*)>/, `<html$1 data-theme="${dataTheme}">`);
+        await fs.writeFile(rootLayout, content, 'utf8');
+      }
+    }
 
     const rel = path.relative(process.cwd(), destination);
     console.log(pc.green(`✓ ${archetype} deployed to ${rel}`));
