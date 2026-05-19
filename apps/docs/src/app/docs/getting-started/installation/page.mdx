@@ -28,11 +28,11 @@ Venator is optimised for use with Next.js 14+ (App Router).
 <CodeBlock className="mt-6"
   language="js"
   filename="tailwind.config.js"
-  code={`const { venatorPreset } = require('@venator-ui/tokens');
+  code={`const { venatorUIPreset } = require('@venator-ui/tokens');
 
 module.exports = {
   darkMode: 'class',
-  presets: [venatorPreset],
+  presets: [venatorUIPreset],
   content: [
     './src/**\/*.{ts,tsx,md,mdx}',
     './node_modules/@venator-ui/ui/dist/**\/*.{js,mjs}',

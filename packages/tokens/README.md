@@ -16,11 +16,11 @@ npm install @venator-ui/tokens
 
 ```js
 // tailwind.config.js
-const { venatorPreset } = require('@venator-ui/tokens');
+const { venatorUIPreset } = require('@venator-ui/tokens');
 
 module.exports = {
   darkMode: 'class',
-  presets: [venatorPreset],
+  presets: [venatorUIPreset],
   content: ['./src/**/*.{ts,tsx}'],
 };
 ```

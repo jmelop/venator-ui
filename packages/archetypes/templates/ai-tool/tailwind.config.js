@@ -1,8 +1,8 @@
-const { venatorPreset } = require('@venator-ui/tokens');
+const { venatorUIPreset } = require('@venator-ui/tokens');
 
 module.exports = {
   darkMode: 'class',
-  presets: [venatorPreset],
+  presets: [venatorUIPreset],
   content: [
     './app/**/*.{ts,tsx,md,mdx}',
     './components/**/*.{ts,tsx,md,mdx}',

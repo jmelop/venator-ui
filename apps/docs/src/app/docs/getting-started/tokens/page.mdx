@@ -15,7 +15,7 @@ Venator provides two independent palettes:
 
 ## Usage
 
-The `venatorPreset` injects all CSS variables via `addBase` when Tailwind processes your config. To activate a theme, set the `data-theme` attribute on your root element:
+The `venatorUIPreset` injects all CSS variables via `addBase` when Tailwind processes your config. To activate a theme, set the `data-theme` attribute on your root element:
 
 <CodeBlock className="mt-6"
   language="html"
@@ -31,7 +31,7 @@ Or from JS/React:
   code={`document.documentElement.setAttribute('data-theme', 'slate-dark');`}
 />
 
-The `venatorPreset` must be in your Tailwind config for themes to work — see{' '}
+The `venatorUIPreset` must be in your Tailwind config for themes to work — see{' '}
 <a href="/docs/getting-started/installation">Installation</a> for setup instructions.
 
 ## Token reference

@@ -3,7 +3,7 @@ import { typography } from './typography';
 import { borderRadius, shadows, breakpoints } from './scales';
 import plugin from 'tailwindcss/plugin';
 
-export const venatorPreset = {
+export const venatorUIPreset = {
   theme: {
     extend: {
       colors: {
@@ -158,4 +158,4 @@ export const venatorPreset = {
   ],
 };
 
-export type VenatorPreset = typeof venatorPreset;
+export type VenatorPreset = typeof venatorUIPreset;
