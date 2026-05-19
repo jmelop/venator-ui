@@ -18,6 +18,12 @@ export interface DashboardLayoutProps {
 
   /** Called when the component wants to open or close the mobile drawer */
   onMobileOpenChange?: (open: boolean) => void;
+
+  /** Additional className applied to the main content area */
+  contentClassName?: string;
+
+  /** Override the default padding of the main content area (e.g. 'p-0', 'p-8') */
+  contentPadding?: string;
 }
 
 /**
@@ -43,6 +49,8 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   sidebarCollapsed = false,
   mobileOpen,
   onMobileOpenChange,
+  contentClassName,
+  contentPadding = 'p-6 pb-16',
 }) => {
   const [internalMobileOpen, setInternalMobileOpen] = React.useState(false);
 
@@ -119,7 +127,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           </header>
         )}
 
-        <main className="flex-1 overflow-y-auto p-6 pb-16 bg-bg-1">
+        <main className={['flex-1 overflow-y-auto bg-bg-1', contentPadding, contentClassName].filter(Boolean).join(' ')}>
           {children}
         </main>
       </div>
