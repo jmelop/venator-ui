@@ -94,17 +94,19 @@ const CloseIcon = () => (
   </svg>
 );
 
-export interface ModalHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+export interface ModalHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+  title: React.ReactNode;
   onClose?: () => void;
   /** Optional subtitle rendered below the title */
   description?: string;
   /** Optional mono tag rendered before the title (e.g. "NEW ENTRY" / "EDIT") */
   tag?: string;
+  /** Optional icon rendered before the title */
+  icon?: React.ReactNode;
 }
 
 export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
-  ({ title, onClose, description, tag, className, ...props }, ref) => (
+  ({ title, onClose, description, tag, icon, className, ...props }, ref) => (
     <div
       ref={ref}
       className={[
@@ -119,7 +121,10 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         {tag && (
           <span className="text-xs font-mono text-fg-4 tracking-widest uppercase">{tag}</span>
         )}
-        <h2 className="text-base font-semibold text-fg">{title}</h2>
+        <div className="flex items-center gap-2">
+          {icon && <span className="shrink-0 text-fg-3">{icon}</span>}
+          <h2 className="text-base font-semibold text-fg">{title}</h2>
+        </div>
         {description && (
           <p className="text-sm text-fg-3">{description}</p>
         )}

@@ -3,7 +3,7 @@ import { Badge, Card, CardContent, Sparkline } from '@venator-ui/ui';
 
 export interface StatCardProps {
   title: string;
-  value: string | number;
+  value: React.ReactNode;
   description?: string;
   icon?: React.ReactNode;
   trend?: number;

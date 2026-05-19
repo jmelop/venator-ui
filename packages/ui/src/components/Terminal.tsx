@@ -2,7 +2,7 @@
 
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
-export type TerminalLineType = 'command' | 'success' | 'error' | 'muted' | 'dim' | 'accent';
+export type TerminalLineType = 'command' | 'success' | 'error' | 'muted' | 'dim' | 'accent' | 'warn';
 
 export interface TerminalLine {
   type: TerminalLineType;
@@ -25,6 +25,7 @@ const lineClass: Record<TerminalLineType, string> = {
   muted:   'text-fg-4',
   dim:     'text-fg-5',
   accent:  'text-info',
+  warn:    'text-warn',
 };
 
 export const Terminal = forwardRef<HTMLDivElement, TerminalProps>(

@@ -3,6 +3,8 @@ import * as React from 'react';
 export interface ModuleGridProps extends React.HTMLAttributes<HTMLDivElement> {
   columns?: 1 | 2 | 3 | 4;
   gap?: 'sm' | 'md' | 'lg';
+  /** Arbitrary Tailwind gap class (e.g. 'gap-2', 'gap-3'). Overrides `gap` when set. */
+  gapValue?: string;
 }
 
 // Static class maps — Tailwind requires full class names to be present at build time
@@ -20,10 +22,10 @@ const gapStyles: Record<NonNullable<ModuleGridProps['gap']>, string> = {
 };
 
 export const ModuleGrid = React.forwardRef<HTMLDivElement, ModuleGridProps>(
-  ({ columns = 3, gap = 'md', className = '', children, ...props }, ref) => (
+  ({ columns = 3, gap = 'md', gapValue, className = '', children, ...props }, ref) => (
     <div
       ref={ref}
-      className={`grid ${columnStyles[columns]} ${gapStyles[gap]} ${className}`.trim()}
+      className={['grid', columnStyles[columns], gapValue ?? gapStyles[gap], className].filter(Boolean).join(' ')}
       {...props}
     >
       {children}
