@@ -18,7 +18,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h3>
     ),
     p: ({ children }) => (
-      <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
+      <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed mt-4 mb-2">
         {children}
       </p>
     ),
