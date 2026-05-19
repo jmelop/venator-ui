@@ -37,19 +37,18 @@ const sizeStyles: Record<BadgeSize, string> = {
   md: 'text-sm px-2.5 py-0.5',
 };
 
-const plainStyles: Record<BadgeVariant, string> = {
-  default: 'text-fg-3',
-  primary: 'text-primary-400',
-  success: 'text-success',
-  warning: 'text-warn',
-  error:   'text-danger',
+const roundedStyles: Record<'pill' | 'rect', string> = {
+  pill: 'rounded-full',
+  rect: 'rounded',
 };
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   ({ variant = 'default', size = 'md', dot = false, pill = true, color, className, children, ...props }, ref) => {
     const classes = [
       'inline-flex items-center font-medium',
-      pill ? 'rounded-full ' + variantStyles[variant] + ' ' + sizeStyles[size] : plainStyles[variant],
+      variantStyles[variant],
+      sizeStyles[size],
+      pill ? roundedStyles.pill : roundedStyles.rect,
       className,
     ]
       .filter(Boolean)

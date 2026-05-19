@@ -7,6 +7,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
   /** Show a loading spinner and disable the button */
   isLoading?: boolean;
+
+  /** Renders a square button sized for a single icon — removes horizontal padding */
+  iconOnly?: boolean;
 }
 
 /**
@@ -25,6 +28,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     size = 'md',
     fullWidth = false,
     isLoading = false,
+    iconOnly = false,
     className = '',
     disabled,
     children,
@@ -46,15 +50,25 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'text-lg px-6 py-3 rounded-lg',
     };
 
+    const iconOnlyStyles = {
+      sm: 'w-7 h-7 p-0',
+      md: 'w-9 h-9 p-0',
+      lg: 'w-11 h-11 p-0',
+    };
+
     const spinnerSizeStyles = {
       sm: 'h-3 w-3',
       md: 'h-4 w-4',
       lg: 'h-5 w-5',
     };
 
-    const widthStyle = fullWidth ? 'w-full' : '';
-
-    const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${widthStyle} ${className}`.trim();
+    const classes = [
+      baseStyles,
+      variantStyles[variant],
+      iconOnly ? iconOnlyStyles[size] : sizeStyles[size],
+      fullWidth ? 'w-full' : '',
+      className,
+    ].filter(Boolean).join(' ');
 
     return (
       <button ref={ref} className={classes} disabled={isLoading || disabled} aria-busy={isLoading} {...props}>

@@ -24,6 +24,9 @@ export interface DashboardLayoutProps {
 
   /** Override the default padding of the main content area (e.g. 'p-0', 'p-8') */
   contentPadding?: string;
+
+  /** Override the sidebar width on desktop (e.g. '232px', 'w-48'). Defaults to 256px (lg:w-64). */
+  sidebarWidth?: string;
 }
 
 /**
@@ -51,6 +54,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   onMobileOpenChange,
   contentClassName,
   contentPadding = 'p-6 pb-16',
+  sidebarWidth = '256px',
 }) => {
   const [internalMobileOpen, setInternalMobileOpen] = React.useState(false);
 
@@ -85,12 +89,13 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               'bg-bg-1 border-r border-[var(--border-subtle)] transition-all duration-300',
               // Desktop: static, respects sidebarCollapsed
               'lg:relative lg:translate-x-0 lg:flex lg:flex-col',
-              sidebarCollapsed ? 'lg:w-16' : 'lg:w-64',
+              sidebarCollapsed ? 'lg:w-16' : '',
               // Mobile: fixed drawer
               'fixed inset-y-0 left-0 z-30 flex flex-col',
               isMobileOpen ? 'w-64 translate-x-0' : '-translate-x-full',
               'lg:translate-x-0',
-            ].join(' ')}
+            ].filter(Boolean).join(' ')}
+            style={!sidebarCollapsed ? { width: sidebarWidth } : undefined}
           >
             <button
               type="button"

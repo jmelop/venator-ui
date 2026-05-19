@@ -11,6 +11,8 @@ export interface NavItemProps {
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
   href?: string;
+  /** Right-aligned slot — used for counts, badges, or metadata */
+  trail?: React.ReactNode;
 }
 
 const navItemBase = 'w-full flex items-center px-3 py-2.5 rounded-md text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-0';
@@ -19,7 +21,7 @@ const navItemInactive = 'text-fg-3 hover:bg-bg-2 hover:text-fg transition-colors
 const navItemDisabled = 'opacity-50 pointer-events-none';
 
 export const NavItem = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, NavItemProps>(
-  ({ label, icon, active = false, disabled = false, onClick, href }, ref) => {
+  ({ label, icon, active = false, disabled = false, onClick, href, trail }, ref) => {
     const classes = [
       navItemBase,
       active ? navItemActive : navItemInactive,
@@ -32,6 +34,7 @@ export const NavItem = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, N
       <>
         {icon && <span className="mr-3 shrink-0">{icon}</span>}
         <span className="flex-1 text-left">{label}</span>
+        {trail && <span className="ml-2 shrink-0">{trail}</span>}
       </>
     );
 
