@@ -1,6 +1,6 @@
 {
   "name": "@venator-ui/tokens",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Design tokens for the Venator UI library",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
