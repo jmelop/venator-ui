@@ -8,6 +8,12 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   size?: BadgeSize;
   dot?: boolean;
   pill?: boolean;
+  /**
+   * Arbitrary CSS color applied to the text and dot.
+   * When set, overrides the variant color tokens.
+   * Pass any valid CSS color: hex, hsl(), or CSS variable.
+   */
+  color?: string;
 }
 
 const variantStyles: Record<BadgeVariant, string> = {
@@ -40,7 +46,7 @@ const plainStyles: Record<BadgeVariant, string> = {
 };
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ variant = 'default', size = 'md', dot = false, pill = true, className, children, ...props }, ref) => {
+  ({ variant = 'default', size = 'md', dot = false, pill = true, color, className, children, ...props }, ref) => {
     const classes = [
       'inline-flex items-center font-medium',
       pill ? 'rounded-full ' + variantStyles[variant] + ' ' + sizeStyles[size] : plainStyles[variant],
@@ -50,10 +56,11 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       .join(' ');
 
     return (
-      <span ref={ref} className={classes} {...props}>
+      <span ref={ref} className={classes} style={{ ...(color ? { color } : {}), ...props.style }} {...props}>
         {dot && (
           <span
-            className={`rounded-full w-1.5 h-1.5 mr-1.5 shrink-0 ${dotStyles[variant]}`}
+            className={`rounded-full w-1.5 h-1.5 mr-1.5 shrink-0 ${color ? '' : dotStyles[variant]}`}
+            style={color ? { backgroundColor: color } : undefined}
             aria-hidden="true"
           />
         )}
