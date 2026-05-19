@@ -1,9 +1,9 @@
-const { venatorPreset } = require('@venator-ui/tokens');
+const { venatorUIPreset } = require('@venator-ui/tokens');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  presets: [venatorPreset],
+  presets: [venatorUIPreset],
   content: [
     './src/**/*.{ts,tsx,md,mdx,css}',
     './mdx-components.tsx',

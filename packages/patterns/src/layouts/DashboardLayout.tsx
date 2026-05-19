@@ -18,6 +18,15 @@ export interface DashboardLayoutProps {
 
   /** Called when the component wants to open or close the mobile drawer */
   onMobileOpenChange?: (open: boolean) => void;
+
+  /** Additional className applied to the main content area */
+  contentClassName?: string;
+
+  /** Override the default padding of the main content area (e.g. 'p-0', 'p-8') */
+  contentPadding?: string;
+
+  /** Override the sidebar width on desktop (e.g. '232px', 'w-48'). Defaults to 256px (lg:w-64). */
+  sidebarWidth?: string;
 }
 
 /**
@@ -43,6 +52,9 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   sidebarCollapsed = false,
   mobileOpen,
   onMobileOpenChange,
+  contentClassName,
+  contentPadding = 'p-6 pb-16',
+  sidebarWidth = '256px',
 }) => {
   const [internalMobileOpen, setInternalMobileOpen] = React.useState(false);
 
@@ -77,12 +89,13 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               'bg-bg-1 border-r border-[var(--border-subtle)] transition-all duration-300',
               // Desktop: static, respects sidebarCollapsed
               'lg:relative lg:translate-x-0 lg:flex lg:flex-col',
-              sidebarCollapsed ? 'lg:w-16' : 'lg:w-64',
+              sidebarCollapsed ? 'lg:w-16' : '',
               // Mobile: fixed drawer
               'fixed inset-y-0 left-0 z-30 flex flex-col',
               isMobileOpen ? 'w-64 translate-x-0' : '-translate-x-full',
               'lg:translate-x-0',
-            ].join(' ')}
+            ].filter(Boolean).join(' ')}
+            style={!sidebarCollapsed ? { width: sidebarWidth } : undefined}
           >
             <button
               type="button"
@@ -119,7 +132,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           </header>
         )}
 
-        <main className="flex-1 overflow-y-auto p-6 pb-16 bg-bg-1">
+        <main className={['flex-1 overflow-y-auto bg-bg-1', contentPadding, contentClassName].filter(Boolean).join(' ')}>
           {children}
         </main>
       </div>

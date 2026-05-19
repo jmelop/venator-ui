@@ -7,5 +7,5 @@
 export * from './colors';
 export * from './typography';
 export * from './scales';
-export { venatorPreset } from './tailwind-preset';
+export { venatorUIPreset } from './tailwind-preset';
 export type { VenatorPreset } from './tailwind-preset';

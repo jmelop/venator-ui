@@ -1,16 +1,16 @@
 export const bg = {
-  DEFAULT: '#08090b',
-  1: '#0c0d10',
-  2: '#111317',
-  3: '#1c2028',
+  DEFAULT: '#090909',
+  1: '#111214',
+  2: '#17191d',
+  3: '#22252b',
 } as const;
 
 export const fg = {
-  DEFAULT: '#f5f6f7',
-  2: '#c7cad1',
-  3: '#8a8f98',
+  DEFAULT: '#f1f3f5',
+  2: '#c5cad2',
+  3: '#8a9099',
   4: '#8B9099',
-  5: '#3a3e46',
+  5: '#31353d',
 } as const;
 
 export const accent = {
@@ -19,15 +19,16 @@ export const accent = {
 } as const;
 
 export const semantic = {
-  success: '#5eead4',
-  warn:    '#fbbf24',
-  danger:  '#f87171',
-  info:    '#93c5fd',
+  success: '#52d1b2',
+  warn:    '#f0b53a',
+  danger:  '#ef7373',
+  info:    '#7eb6f3',
 } as const;
 
 export const border = {
-  subtle:  'rgba(255,255,255,0.08)',
-  default: 'rgba(255,255,255,0.14)',
+  subtle:  'rgba(255,255,255,0.06)',
+  default: 'rgba(255,255,255,0.11)',
+  strong:  'rgba(255,255,255,0.18)',
 } as const;
 
 // Legacy — keep temporarily for backward compat during migration

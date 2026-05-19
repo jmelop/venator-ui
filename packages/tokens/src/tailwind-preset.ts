@@ -3,7 +3,7 @@ import { typography } from './typography';
 import { borderRadius, shadows, breakpoints } from './scales';
 import plugin from 'tailwindcss/plugin';
 
-export const venatorPreset = {
+export const venatorUIPreset = {
   theme: {
     extend: {
       colors: {
@@ -36,6 +36,7 @@ export const venatorPreset = {
       borderColor: {
         subtle:  'var(--border-subtle)',
         default: 'var(--border-default)',
+        strong:  'var(--border-strong)',
       },
       fontFamily: {
         sans: [typography.fontFamily.sans],
@@ -70,14 +71,15 @@ export const venatorPreset = {
           '--info':    semantic.info,
           '--border-subtle':  border.subtle,
           '--border-default': border.default,
-          '--info-bg':    '#f0f9ff',
-          '--success-bg': '#f0fdf4',
-          '--warn-bg':    '#fffbeb',
-          '--danger-bg':  '#fef2f2',
-          '--info-fg':    '#225c75',
-          '--success-fg': '#166534',
-          '--warn-fg':    '#92400e',
-          '--danger-fg':  '#991b1b',
+          '--border-strong':  border.strong,
+          '--info-bg':    'rgba(122,184,245,0.09)',
+          '--success-bg': 'rgba(79,209,187,0.09)',
+          '--warn-bg':    'rgba(245,183,48,0.09)',
+          '--danger-bg':  'rgba(240,112,112,0.09)',
+          '--info-fg':    semantic.info,
+          '--success-fg': semantic.success,
+          '--warn-fg':    semantic.warn,
+          '--danger-fg':  semantic.danger,
         },
         // Obsidian light
         ':root[data-theme="light"], html.light': {
@@ -156,4 +158,4 @@ export const venatorPreset = {
   ],
 };
 
-export type VenatorPreset = typeof venatorPreset;
+export type VenatorPreset = typeof venatorUIPreset;

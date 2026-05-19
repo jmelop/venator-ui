@@ -157,6 +157,12 @@ export function DeleteDialog() {
       <TableCell>Additional Tailwind classes on the panel</TableCell>
     </TableRow>
     <TableRow>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">backdropClassName</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Additional classes applied to the backdrop overlay</TableCell>
+    </TableRow>
+    <TableRow>
       <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">children</code></TableCell>
       <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
       <TableCell>—</TableCell>
@@ -179,15 +185,33 @@ export function DeleteDialog() {
   <TableBody>
     <TableRow>
       <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">title</code></TableCell>
-      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
       <TableCell>—</TableCell>
-      <TableCell>Heading text rendered in the header</TableCell>
+      <TableCell>Heading rendered in the header</TableCell>
     </TableRow>
     <TableRow>
       <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">onClose</code></TableCell>
       <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">() =&gt; void</code></TableCell>
       <TableCell>—</TableCell>
       <TableCell>When provided, renders a close button in the top-right corner</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">icon</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">ReactNode</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Optional icon rendered before the title</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">tag</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Mono label rendered above the title (e.g. "NEW ENTRY" / "EDIT")</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">description</code></TableCell>
+      <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">string</code></TableCell>
+      <TableCell>—</TableCell>
+      <TableCell>Optional subtitle rendered below the title</TableCell>
     </TableRow>
     <TableRow>
       <TableCell><code className="text-xs font-mono bg-bg-2 px-1.5 py-0.5 rounded">className</code></TableCell>

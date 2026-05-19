@@ -13,8 +13,9 @@ program
 program
   .command('init <archetype>')
   .description('Deploy a complete application architecture into the current directory')
-  .action((archetype: string) => {
-    initCommand(archetype).catch((err: unknown) => {
+  .option('--theme <theme>', 'Set the default theme (obsidian | obsidian-light | slate | slate-light)', 'obsidian')
+  .action((archetype: string, options: { theme: string }) => {
+    initCommand(archetype, options.theme).catch((err: unknown) => {
       console.error(err);
       process.exit(1);
     });

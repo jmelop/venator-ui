@@ -6,6 +6,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 interface TabsContextValue {
   activeTab: string;
   setActiveTab: (value: string) => void;
+  variant: 'pill' | 'underline';
 }
 
 const TabsContext = createContext<TabsContextValue | null>(null);
@@ -21,9 +22,10 @@ export interface TabsProps {
   value?: string;
   onValueChange?: (value: string) => void;
   children: ReactNode;
+  variant?: 'pill' | 'underline';
 }
 
-export function Tabs({ defaultValue = '', value, onValueChange, children }: TabsProps) {
+export function Tabs({ defaultValue = '', value, onValueChange, children, variant = 'pill' }: TabsProps) {
   const [uncontrolled, setUncontrolled] = useState(defaultValue);
 
   const isControlled = value !== undefined;
@@ -35,7 +37,7 @@ export function Tabs({ defaultValue = '', value, onValueChange, children }: Tabs
   };
 
   return (
-    <TabsContext.Provider value={{ activeTab, setActiveTab }}>
+    <TabsContext.Provider value={{ activeTab, setActiveTab, variant }}>
       {children}
     </TabsContext.Provider>
   );
@@ -44,13 +46,22 @@ export function Tabs({ defaultValue = '', value, onValueChange, children }: Tabs
 export interface TabsListProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
-  ({ className = '', ...props }, ref) => (
-    <div
-      ref={ref}
-      className={`inline-flex items-center gap-1 bg-bg-2 p-1 rounded-lg ${className}`}
-      {...props}
-    />
-  ),
+  ({ className = '', ...props }, ref) => {
+    const { variant } = useTabsContext();
+    return (
+      <div
+        ref={ref}
+        className={[
+          'inline-flex items-center',
+          variant === 'pill'
+            ? 'gap-1 bg-bg-2 p-1 rounded-lg'
+            : 'gap-0 border-b border-[var(--border-subtle)]',
+          className,
+        ].filter(Boolean).join(' ')}
+        {...props}
+      />
+    );
+  },
 );
 TabsList.displayName = 'TabsList';
 
@@ -62,8 +73,16 @@ export interface TabsTriggerProps extends HTMLAttributes<HTMLButtonElement> {
 
 export const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>(
   ({ value, disabled = false, disableFocusRing = false, className = '', ...props }, ref) => {
-    const { activeTab, setActiveTab } = useTabsContext();
+    const { activeTab, setActiveTab, variant } = useTabsContext();
     const isActive = activeTab === value;
+
+    const pillStyles = isActive
+      ? 'bg-bg-3 text-fg shadow-sm rounded-md'
+      : 'text-fg-4 hover:text-fg-2 rounded-md';
+
+    const underlineStyles = isActive
+      ? 'text-fg border-b-2 border-[var(--accent)] -mb-px'
+      : 'text-fg-4 hover:text-fg-2 border-b-2 border-transparent -mb-px';
 
     return (
       <button
@@ -72,15 +91,12 @@ export const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>(
         disabled={disabled}
         onClick={() => setActiveTab(value)}
         className={[
-          `px-3 py-1.5 text-sm font-medium rounded-md transition-colors focus:outline-none${disableFocusRing ? '' : ' focus:ring-2 focus:ring-primary-500'}`,
-          isActive
-            ? 'bg-bg-3 text-fg shadow-sm'
-            : 'text-fg-4 hover:text-fg-2',
+          'px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none',
+          disableFocusRing ? '' : 'focus:ring-2 focus:ring-[var(--accent)]',
+          variant === 'pill' ? pillStyles : underlineStyles,
           disabled ? 'opacity-50 pointer-events-none' : '',
           className,
-        ]
-          .filter(Boolean)
-          .join(' ')}
+        ].filter(Boolean).join(' ')}
         {...props}
       />
     );

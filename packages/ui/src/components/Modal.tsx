@@ -9,6 +9,8 @@ export interface ModalProps {
   size?: ModalSize;
   children?: React.ReactNode;
   className?: string;
+  /** Additional classes applied to the backdrop overlay */
+  backdropClassName?: string;
 }
 
 const sizeStyles: Record<ModalSize, string> = {
@@ -25,6 +27,7 @@ export const Modal: React.FC<ModalProps> = ({
   size = 'md',
   children,
   className = '',
+  backdropClassName = '',
 }) => {
   React.useEffect(() => {
     if (!open) return;
@@ -50,7 +53,7 @@ export const Modal: React.FC<ModalProps> = ({
   return ReactDOM.createPortal(
     <>
       <div
-        className="fixed inset-0 z-40 bg-black/50"
+        className={['fixed inset-0 z-40 bg-black/50', backdropClassName].filter(Boolean).join(' ')}
         aria-hidden="true"
         onClick={onClose}
       />
@@ -59,7 +62,7 @@ export const Modal: React.FC<ModalProps> = ({
           role="dialog"
           aria-modal="true"
           className={[
-            'w-full bg-bg-1 rounded-lg shadow-xl overflow-hidden border border-[var(--border-subtle)]',
+            'w-full bg-bg-1 rounded-lg shadow-xl overflow-hidden',
             sizeStyles[size],
             className,
           ]
@@ -79,11 +82,6 @@ Modal.displayName = 'Modal';
 // ModalHeader
 // ---------------------------------------------------------------------------
 
-export interface ModalHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  onClose?: () => void;
-}
-
 const CloseIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -96,8 +94,19 @@ const CloseIcon = () => (
   </svg>
 );
 
+export interface ModalHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+  title: React.ReactNode;
+  onClose?: () => void;
+  /** Optional subtitle rendered below the title */
+  description?: string;
+  /** Optional mono tag rendered before the title (e.g. "NEW ENTRY" / "EDIT") */
+  tag?: string;
+  /** Optional icon rendered before the title */
+  icon?: React.ReactNode;
+}
+
 export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
-  ({ title, onClose, className, ...props }, ref) => (
+  ({ title, onClose, description, tag, icon, className, ...props }, ref) => (
     <div
       ref={ref}
       className={[
@@ -108,7 +117,18 @@ export const ModalHeader = React.forwardRef<HTMLDivElement, ModalHeaderProps>(
         .join(' ')}
       {...props}
     >
-      <h2 className="text-base font-semibold text-fg">{title}</h2>
+      <div className="flex flex-col gap-0.5">
+        {tag && (
+          <span className="text-xs font-mono text-fg-4 tracking-widest uppercase">{tag}</span>
+        )}
+        <div className="flex items-center gap-2">
+          {icon && <span className="shrink-0 text-fg-3">{icon}</span>}
+          <h2 className="text-base font-semibold text-fg">{title}</h2>
+        </div>
+        {description && (
+          <p className="text-sm text-fg-3">{description}</p>
+        )}
+      </div>
       {onClose && (
         <button
           type="button"

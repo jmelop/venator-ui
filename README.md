@@ -58,7 +58,7 @@ venator/
 Design tokens shared across all layers. Consumed by `@venator-ui/ui` and available as a Tailwind preset.
 
 - colors, spacing, typography, radius, shadows, breakpoints
-- `venatorPreset` for `tailwind.config.js`
+- `venatorUIPreset` for `tailwind.config.js`
 
 **@venator-ui/ui**
 

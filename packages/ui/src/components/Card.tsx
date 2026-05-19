@@ -9,6 +9,8 @@ export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   description?: string;
   /** Right-aligned slot for actions (buttons, badges, etc.) */
   action?: React.ReactNode;
+  /** Renders a bottom border separator between header and body */
+  separator?: boolean;
 }
 
 export interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -36,10 +38,14 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 Card.displayName = 'Card';
 
 export const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
-  ({ title, description, action, className = '', children, ...props }, ref) => (
+  ({ title, description, action, separator = false, className = '', children, ...props }, ref) => (
     <div
       ref={ref}
-      className={`flex items-start justify-between gap-4 ${className}`.trim()}
+      className={[
+        'flex items-start justify-between gap-4',
+        separator ? 'border-b border-[var(--border-subtle)] pb-4 mb-4' : '',
+        className,
+      ].filter(Boolean).join(' ')}
       {...props}
     >
       <div className="min-w-0">

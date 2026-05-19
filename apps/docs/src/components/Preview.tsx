@@ -6,7 +6,12 @@ export interface PreviewProps {
 
 export function Preview({ children }: PreviewProps) {
   return (
-    <div className="rounded-lg border border-[var(--border-subtle)] bg-bg-1 p-6">
+    <div
+      className="rounded-xl border border-[var(--border-subtle)] bg-bg-1 px-8 py-6"
+      style={{
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.022) 0%, rgba(255,255,255,0.006) 100%)',
+      }}
+    >
       {children}
     </div>
   );
