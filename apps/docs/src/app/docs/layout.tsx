@@ -11,6 +11,7 @@ const sections = [
     items: [
       { label: 'Introduction', href: '/docs/getting-started/introduction' },
       { label: 'Installation', href: '/docs/getting-started/installation' },
+      { label: 'Tokens', href: '/docs/getting-started/tokens' },
     ],
   },
   {

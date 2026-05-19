@@ -1,0 +1,52 @@
+import { CodeBlock } from '@venator-ui/ui';
+import { PageHeader } from '@venator-ui/patterns';
+
+<PageHeader
+  title="Tokens"
+  description="Venator ships two token systems — Obsidian and Slate — each with a dark and light variant. The active theme is set via a data-theme attribute on the root element."
+/>
+
+## Token systems
+
+Venator provides two independent palettes:
+
+- **Obsidian** — dark-first, high contrast, monochromatic accent (`#ffffff` / `#000000`). Default when no `data-theme` is set.
+- **Slate** — softer dark with an indigo accent (`#6366f1`). Better suited for productivity or data-heavy interfaces.
+
+## Usage
+
+The `venatorPreset` injects all CSS variables via `addBase` when Tailwind processes your config. To activate a theme, set the `data-theme` attribute on your root element:
+
+<CodeBlock className="mt-6"
+  language="html"
+  filename="index.html"
+  code={`<!-- Obsidian Dark (default) -->\n<html>\n\n<!-- Obsidian Light -->\n<html data-theme="light">\n\n<!-- Slate Dark -->\n<html data-theme="slate-dark">\n\n<!-- Slate Light -->\n<html data-theme="slate-light">`}
+/>
+
+Or from JS/React:
+
+<CodeBlock className="mt-6"
+  language="ts"
+  filename="theme.ts"
+  code={`document.documentElement.setAttribute('data-theme', 'slate-dark');`}
+/>
+
+The `venatorPreset` must be in your Tailwind config for themes to work — see{' '}
+<a href="/docs/getting-started/installation">Installation</a> for setup instructions.
+
+## Token reference
+
+All themes expose the same semantic variables:
+
+| Token | Role |
+|---|---|
+| `--bg` / `--bg-1` / `--bg-2` / `--bg-3` | Surface layers |
+| `--fg` / `--fg-2` / `--fg-3` / `--fg-4` / `--fg-5` | Text hierarchy |
+| `--accent` / `--accent-ink` | Primary action color + contrast text |
+| `--success` / `--warn` / `--danger` / `--info` | Semantic states |
+| `--border-subtle` / `--border-default` / `--border-strong` | Border hierarchy |
+| `--info-bg` / `--success-bg` / `--warn-bg` / `--danger-bg` | State backgrounds |
+
+## When to use each
+
+Use **Obsidian** for dark-first products, developer tools, and interfaces where the monochromatic accent fits your brand. Use **Slate** when you want a softer dark with a coloured accent, or when building productivity and data-heavy interfaces like dashboards or workout trackers.
