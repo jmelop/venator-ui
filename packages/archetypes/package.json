@@ -1,8 +1,10 @@
 {
   "name": "@venator-ui/archetypes",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Complete application architectures deployable via the Venator CLI",
-  "files": ["templates"],
+  "files": [
+    "templates"
+  ],
   "scripts": {
     "type-check": "tsc --noEmit"
   },
