@@ -44,7 +44,7 @@ function AreaChart() {
         </linearGradient>
       </defs>
       {[0, 0.25, 0.5, 0.75, 1].map((p, i) => (
-        <line key={i} x1="30" y1={10 + (h - 30) * p} x2={w - 10} y2={10 + (h - 30) * p} stroke="var(--line)" strokeDasharray="2 4" />
+        <line key={i} x1="30" y1={10 + (h - 30) * p} x2={w - 10} y2={10 + (h - 30) * p} stroke="var(--border-subtle)" strokeDasharray="2 4" />
       ))}
       {[0, 0.25, 0.5, 0.75, 1].map((p, i) => (
         <text key={i} x="24" y={10 + (h - 30) * (1 - p) + 3} fill="var(--fg-4)" fontSize="9" fontFamily="monospace" textAnchor="end">{Math.round(p * max)}</text>
@@ -82,7 +82,7 @@ function BarChart() {
 
 export function DashboardPreview() {
   return (
-    <section style={{ borderTop: '1px solid var(--line)' }} className="px-6 py-20">
+    <section style={{ borderTop: '1px solid var(--border-subtle)' }} className="px-6 py-20">
       <div className="max-w-[1200px] mx-auto">
         <p className="font-mono text-[11px] tracking-[0.08em] uppercase mb-4" style={{ color: 'var(--fg-4)' }}>
           Archetypes · 02
@@ -96,15 +96,15 @@ export function DashboardPreview() {
         </p>
 
         {/* Browser frame */}
-        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--line-2)', background: 'var(--bg-1)', boxShadow: '0 60px 120px -40px rgba(0,0,0,0.3)' }}>
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border-default)', background: 'var(--bg-1)', boxShadow: '0 60px 120px -40px rgba(0,0,0,0.3)' }}>
           {/* Chrome bar */}
-          <div className="flex items-center gap-3 px-4 py-2.5" style={{ borderBottom: '1px solid var(--line)' }}>
+          <div className="flex items-center gap-3 px-4 py-2.5" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-500/70" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <div className="w-3 h-3 rounded-full bg-green-500/70" />
             </div>
-            <div className="flex-1 rounded-md px-3 py-1 font-mono text-[11.5px]" style={{ background: 'var(--bg-2)', border: '1px solid var(--line)', color: 'var(--fg-3)' }}>
+            <div className="flex-1 rounded-md px-3 py-1 font-mono text-[11.5px]" style={{ background: 'var(--bg-2)', border: '1px solid var(--border-subtle)', color: 'var(--fg-3)' }}>
               <span style={{ color: 'var(--fg-4)' }}>https://</span>dashboard.venator.app<span style={{ color: 'var(--fg-4)' }}>/analytics</span>
             </div>
             <div className="hidden md:flex gap-2">
@@ -120,8 +120,8 @@ export function DashboardPreview() {
           {/* Desktop: full sidebar + main */}
           <div className="hidden md:grid" style={{ gridTemplateColumns: '220px 1fr', minHeight: 560 }}>
             {/* Sidebar */}
-            <aside style={{ borderRight: '1px solid var(--line)', background: 'var(--bg-1)', padding: 12 }}>
-              <div className="flex items-center gap-2 px-2 pb-3 mb-1" style={{ borderBottom: '1px solid var(--line)' }}>
+            <aside style={{ borderRight: '1px solid var(--border-subtle)', background: 'var(--bg-1)', padding: 12 }}>
+              <div className="flex items-center gap-2 px-2 pb-3 mb-1" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                 <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: 'var(--bg-3)' }}>
                   <img src="/venator-logo-icon.png" className="w-4 h-4" />
                 </div>
@@ -165,7 +165,7 @@ export function DashboardPreview() {
               {/* Stats */}
               <div className="grid grid-cols-4 gap-3 mb-4">
                 {STATS.map(s => (
-                  <div key={s.label} className="rounded-lg p-3.5" style={{ border: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+                  <div key={s.label} className="rounded-lg p-3.5" style={{ border: '1px solid var(--border-subtle)', background: 'var(--bg-2)' }}>
                     <div className="font-mono text-[10.5px] uppercase tracking-wider mb-1" style={{ color: 'var(--fg-4)' }}>{s.label}</div>
                     <div className="text-[26px] font-medium tracking-tight mb-1" style={{ color: 'var(--fg)' }}>{s.value}</div>
                     <div className="flex items-center justify-between">
@@ -178,7 +178,7 @@ export function DashboardPreview() {
 
               {/* Charts */}
               <div className="grid gap-3" style={{ gridTemplateColumns: '2fr 1fr' }}>
-                <div className="rounded-lg p-4" style={{ border: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+                <div className="rounded-lg p-4" style={{ border: '1px solid var(--border-subtle)', background: 'var(--bg-2)' }}>
                   <div className="flex items-start justify-between mb-1">
                     <div>
                       <h4 className="text-[14px] font-medium" style={{ color: 'var(--fg-2)' }}>Sessions over time</h4>
@@ -191,7 +191,7 @@ export function DashboardPreview() {
                   </div>
                   <AreaChart />
                 </div>
-                <div className="rounded-lg p-4" style={{ border: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+                <div className="rounded-lg p-4" style={{ border: '1px solid var(--border-subtle)', background: 'var(--bg-2)' }}>
                   <h4 className="text-[14px] font-medium" style={{ color: 'var(--fg-2)' }}>Sign-ups / day</h4>
                   <p className="font-mono text-[12px] mb-3" style={{ color: 'var(--fg-4)' }}>Weekly average · 62</p>
                   <BarChart />
@@ -208,14 +208,14 @@ export function DashboardPreview() {
             </div>
             <div className="grid grid-cols-2 gap-2">
               {STATS.map(s => (
-                <div key={s.label} className="rounded-lg p-3" style={{ border: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+                <div key={s.label} className="rounded-lg p-3" style={{ border: '1px solid var(--border-subtle)', background: 'var(--bg-2)' }}>
                   <div className="font-mono text-[9px] uppercase tracking-wider mb-1" style={{ color: 'var(--fg-4)' }}>{s.label}</div>
                   <div className="text-[20px] font-medium tracking-tight" style={{ color: 'var(--fg)' }}>{s.value}</div>
                   <div className="font-mono text-[10px] mt-0.5" style={{ color: s.down ? '#f87171' : '#5eead4' }}>{s.delta}</div>
                 </div>
               ))}
             </div>
-            <div className="mt-3 rounded-lg p-3" style={{ border: '1px solid var(--line)', background: 'var(--bg-2)' }}>
+            <div className="mt-3 rounded-lg p-3" style={{ border: '1px solid var(--border-subtle)', background: 'var(--bg-2)' }}>
               <div className="font-mono text-[10px] mb-2" style={{ color: 'var(--fg-4)' }}>Sessions over time · Apr 01 – Apr 17</div>
               <svg width="100%" viewBox="0 0 300 80" aria-hidden="true" focusable="false" style={{ display: 'block' }}>
                 <defs>
