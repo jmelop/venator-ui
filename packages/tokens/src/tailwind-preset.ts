@@ -80,6 +80,7 @@ export const venatorUIPreset = {
           '--success-fg': semantic.success,
           '--warn-fg':    semantic.warn,
           '--danger-fg':  semantic.danger,
+          '--shadow-card': '0 4px 24px rgba(255,255,255,0.10), 0 1px 4px rgba(255,255,255,0.06)',
         },
         // Obsidian light
         ':root[data-theme="light"], html.light': {
@@ -100,6 +101,7 @@ export const venatorUIPreset = {
           '--info':    '#2563eb',
           '--border-subtle':  'rgba(0,0,0,0.08)',
           '--border-default': 'rgba(0,0,0,0.14)',
+          '--shadow-card': '0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06)',
           '--info-bg':    '#eff6ff',
           '--success-bg': '#f0fdf4',
           '--warn-bg':    '#fffbeb',
@@ -124,6 +126,7 @@ export const venatorUIPreset = {
           '--info':    '#58a6ff',
           '--border-subtle':  'rgba(160,180,210,0.10)',
           '--border-default': 'rgba(160,180,210,0.18)',
+          '--shadow-card': '0 4px 24px rgba(160,180,210,0.10), 0 1px 4px rgba(160,180,210,0.06)',
           '--info-bg':    '#0f1f35',
           '--success-bg': '#0a1f14',
           '--warn-bg':    '#1f1a08',
@@ -148,6 +151,7 @@ export const venatorUIPreset = {
           '--info':    '#2563eb',
           '--border-subtle':  'rgba(31,41,55,0.08)',
           '--border-default': 'rgba(31,41,55,0.16)',
+          '--shadow-card': '0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06)',
           '--info-bg':    '#eff6ff',
           '--success-bg': '#f0fdf4',
           '--warn-bg':    '#fffbeb',

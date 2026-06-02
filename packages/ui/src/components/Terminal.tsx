@@ -72,13 +72,13 @@ export const Terminal = forwardRef<HTMLDivElement, TerminalProps>(
       <div
         ref={ref}
         className={[
-          'rounded-lg border border-[var(--border-subtle)] bg-bg overflow-hidden font-mono text-sm',
+          'rounded-lg bg-bg-1 overflow-hidden font-mono text-sm',
           className,
         ]
           .filter(Boolean)
           .join(' ')}
       >
-        <div className="flex items-center justify-between px-4 py-2.5 border-b border-[var(--border-subtle)] bg-bg-1">
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-[var(--border-subtle)] bg-bg-2">
           <div className="flex items-center gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-500" />
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
