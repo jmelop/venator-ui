@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Topbar } from '@venator-ui/patterns';
 import { Button } from '@venator-ui/ui';
 
@@ -29,15 +29,21 @@ function SunIcon() {
 }
 
 export function Header() {
-  const [dark, setDark] = useState(() => {
-    if (typeof document === 'undefined') return true;
+  const [dark, setDark] = useState(true);
+
+  useEffect(() => {
     const stored = localStorage.getItem('venator-theme');
-    return stored ? stored === 'dark' : true;
-  });
+    const isDark = stored ? stored === 'dark' : true;
+    setDark(isDark);
+    document.documentElement.classList.toggle('dark', isDark);
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  }, []);
+
   const toggleDark = () => {
     const next = !dark;
     setDark(next);
     document.documentElement.classList.toggle('dark', next);
+    document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
     localStorage.setItem('venator-theme', next ? 'dark' : 'light');
   };
   return (
