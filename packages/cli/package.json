@@ -1,6 +1,6 @@
 {
   "name": "@venator-ui/cli",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "CLI for deploying Venator archetypes and patterns",
   "bin": {
     "venator": "./dist/index.js"
@@ -13,9 +13,11 @@
     "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
     "prepublishOnly": "npm run build"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
-    "@venator-ui/archetypes": "0.1.14",
+    "@venator-ui/archetypes": "0.1.15",
     "@venator-ui/patterns": "*",
     "commander": "^12.0.0",
     "fs-extra": "^11.2.0",
