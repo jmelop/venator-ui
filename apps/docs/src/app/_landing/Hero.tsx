@@ -37,7 +37,7 @@ function LayersVisual() {
               transition: 'transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease',
               cursor: i !== active ? 'pointer' : 'default',
             }}>
-            <div className="rounded-xl p-5 h-full" style={{ background: 'var(--bg-1)', border: '1px solid var(--line-2)', minHeight: 260 }}>
+            <div className="rounded-xl p-5 h-full" style={{ background: 'var(--bg-1)', border: '1px solid var(--border-default)', minHeight: 260 }}>
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-[10.5px]" style={{ color: 'var(--fg-4)' }}>{layer.pkg}</span>
                 <span className="font-mono text-[10.5px]" style={{ color: 'var(--fg-5)' }}>{layer.index}</span>
@@ -47,7 +47,7 @@ function LayersVisual() {
               <div className="flex flex-wrap gap-1.5">
                 {layer.items.map(item => (
                   <span key={item} className="font-mono text-[11px] rounded-md px-2 py-0.5"
-                    style={{ color: 'var(--fg-4)', border: '1px solid var(--line)' }}>{item}</span>
+                    style={{ color: 'var(--fg-4)', border: '1px solid var(--border-subtle)' }}>{item}</span>
                 ))}
               </div>
             </div>
@@ -61,7 +61,7 @@ function LayersVisual() {
             style={{
               background: i === active ? 'var(--bg-3)' : 'transparent',
               color: i === active ? 'var(--fg-2)' : 'var(--fg-5)',
-              border: i === active ? '1px solid var(--line-2)' : '1px solid transparent',
+              border: i === active ? '1px solid var(--border-default)' : '1px solid transparent',
               cursor: 'pointer',
             }}>
             {layer.key}
@@ -96,9 +96,11 @@ function HeroVisual() {
         ))}
       </div>
       {tab === 'terminal' ? (
-        <Terminal lines={TERMINAL_LINES} title="venator — zsh — 100×28" loop loopDelay={2000} className="h-[420px] overflow-hidden" />
+        <div className="rounded-lg" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <Terminal lines={TERMINAL_LINES} title="venator — zsh — 100×28" loop loopDelay={2000} className="h-[420px] overflow-hidden" />
+        </div>
       ) : (
-        <div className="rounded-lg overflow-hidden" style={{ border: '1px solid var(--line)', background: 'var(--bg)' }}>
+        <div className="rounded-lg overflow-hidden" style={{ background: 'var(--bg-1)', boxShadow: 'var(--shadow-card)' }}>
           <LayersVisual />
         </div>
       )}
