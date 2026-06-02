@@ -22,7 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             try {
               const stored = localStorage.getItem('venator-theme');
               const theme = stored || 'dark';
-              document.documentElement.classList.toggle('dark', theme === 'dark');
+              const isDark = theme === 'dark';
+              document.documentElement.classList.toggle('dark', isDark);
+              document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
             } catch(e) {}
           })();
         `}} />
