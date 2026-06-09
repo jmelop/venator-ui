@@ -92,7 +92,7 @@ export function DashboardPreview() {
           <span style={{ color: 'var(--fg-4)' }}>Ship this on Monday.</span>
         </h2>
         <p className="text-[15px] max-w-[560px] mb-12 leading-relaxed" style={{ color: 'var(--fg-4)' }}>
-          One command scaffolds a complete architecture. Sidebar navigation, header, module grid, tokens wired in. The output is yours — extend it, delete half of it, it's code, not config.
+          One command scaffolds a complete architecture. Sidebar navigation, header, module grid, tokens wired in. The output is yours: extend it, delete half of it, it's code, not config.
         </p>
 
         {/* Browser frame */}
@@ -200,7 +200,7 @@ export function DashboardPreview() {
             </div>
           </div>
 
-          {/* Mobile: simplified view — chrome, stats, and sessions chart */}
+          {/* Mobile: simplified view with chrome, stats, and sessions chart */}
           <div className="md:hidden p-4" style={{ background: 'var(--bg-1)' }}>
             <div className="mb-3">
               <h3 className="text-[18px] font-medium tracking-tight" style={{ color: 'var(--fg)' }}>Analytics</h3>

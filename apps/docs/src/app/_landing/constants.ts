@@ -66,7 +66,7 @@ export const LAYERS = [
   {
     pkg: '@venator-ui/archetypes',
     title: 'Application architectures',
-    desc: 'Complete architectures deployed via CLI. Once scaffolded the code is yours — no runtime dependency, no lock-in.',
+    desc: 'Complete architectures deployed via CLI. Once scaffolded the code is yours: no runtime dependency, no lock-in.',
     meta: '3 archetypes · CLI-deployed',
     index: '03',
   },
@@ -91,7 +91,7 @@ export const FEATURES = [
   },
   {
     title: 'No lock-in',
-    desc: 'Archetypes are copied — the code is yours.',
+    desc: 'Archetypes are copied. The code is yours.',
   },
   {
     title: 'Accessible by default',

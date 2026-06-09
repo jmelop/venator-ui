@@ -97,7 +97,7 @@ function HeroVisual() {
       </div>
       {tab === 'terminal' ? (
         <div className="rounded-lg" style={{ boxShadow: 'var(--shadow-card)' }}>
-          <Terminal lines={TERMINAL_LINES} title="venator — zsh — 100×28" loop loopDelay={2000} className="h-[420px] overflow-hidden" />
+          <Terminal lines={TERMINAL_LINES} title="venator - zsh - 100×28" loop loopDelay={2000} className="h-[420px] overflow-hidden" />
         </div>
       ) : (
         <div className="rounded-lg overflow-hidden" style={{ background: 'var(--bg-1)', boxShadow: 'var(--shadow-card)' }}>
@@ -141,7 +141,7 @@ export function Hero() {
 
         {/* Subheading */}
         <p className="text-[17px] max-w-[480px] leading-relaxed m-0" style={{ color: 'var(--fg-4)' }}>
-          A React + TypeScript UI system. Primitives, structural patterns, and full application architectures — all layered, all opt-in, shipped via CLI.
+          A React + TypeScript UI system. Primitives, structural patterns, and full application architectures, all layered, all opt-in, shipped via CLI.
         </p>
 
         {/* CTAs */}

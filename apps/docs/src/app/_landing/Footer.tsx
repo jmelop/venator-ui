@@ -15,7 +15,7 @@ export function Footer() {
               <span className="font-semibold text-[15px]" style={{ color: 'var(--fg)' }}>Venator UI</span>
             </div>
             <p className="text-[13.5px] max-w-[280px] leading-relaxed mb-5" style={{ color: 'var(--fg-3)' }}>
-              A React + TypeScript UI system. From primitives to patterns to full application architectures — shipped via CLI.
+              A React + TypeScript UI system. From primitives to patterns to full application architectures, shipped via CLI.
             </p>
             <div className="flex gap-2">
               {[
