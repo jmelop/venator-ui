@@ -2,7 +2,7 @@
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)](https://www.typescriptlang.org/)
 
-# Venator: React Frontend System
+# Venator - React Frontend System
 
 Venator is a React + TypeScript frontend system for building consistent dashboards and internal tools fast. Adopt it as a component library, as a set of structural patterns, or as a full scaffolded architecture you own.
 
