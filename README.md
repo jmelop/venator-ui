@@ -20,6 +20,9 @@ npx @venator-ui/cli init dashboard
 
 # Or install the primitives and patterns as dependencies
 npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens
+
+# Generate an AI context file so your copilot builds aligned with Venator
+npx @venator-ui/cli manifest --target claude
 ```
 
 ## Demo
@@ -49,6 +52,24 @@ function App() {
   );
 }
 ```
+
+## AI context manifest
+
+The CLI can generate a context file that teaches AI coding tools how to use Venator. It introspects the Venator version installed in your project (design tokens, components, props, themes) and writes the result as a markdown manifest.
+
+```bash
+# Write to the file your AI tool reads
+npx @venator-ui/cli manifest --target claude   # CLAUDE.md
+npx @venator-ui/cli manifest --target cursor   # .cursorrules
+npx @venator-ui/cli manifest --target agents   # AGENTS.md
+
+# No target writes a neutral venator.md
+npx @venator-ui/cli manifest
+```
+
+If the output file already exists, the command refuses to overwrite it. Pass `--force` to overwrite.
+
+With the manifest in place, copilots generate Venator-aligned components without scanning the whole library.
 
 ## Designed for
 
