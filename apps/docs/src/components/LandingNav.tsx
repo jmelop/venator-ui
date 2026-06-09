@@ -44,7 +44,7 @@ export function LandingNav() {
         <img src="/venator-logo-icon-light.png" alt="Venator" className="w-7 h-7 rounded-lg block dark:hidden" />
       </span>
       <span className="font-semibold text-sm text-fg">Venator UI</span>
-      <span className="font-mono text-[11px] text-fg-3 ml-1">v0.1</span>
+      <span className="font-mono text-[11px] text-fg-3 ml-1">v0.2</span>
     </Link>
   );
 
