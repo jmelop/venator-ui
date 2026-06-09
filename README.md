@@ -1,44 +1,91 @@
-# Venator — React Frontend System
+[![npm version](https://img.shields.io/npm/v/@venator-ui/ui)](https://www.npmjs.com/package/@venator-ui/ui)
+[![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6)](https://www.typescriptlang.org/)
 
-Venator is a React + TypeScript frontend system designed to enable scalable, consistent, and maintainable application architectures.
+# Venator: React Frontend System
 
-It can be adopted at any level — as a UI component library, as a set of structural patterns, or as a complete frontend architecture system.
+Venator is a React + TypeScript frontend system for building consistent dashboards and internal tools fast. Adopt it as a component library, as a set of structural patterns, or as a full scaffolded architecture you own.
 
-At its core, Venator combines UI primitives built on design tokens, compositional patterns that define how UI is structured, and deployable application architectures scaffolded via CLI and fully owned by the developer.
+Its key distinction: archetypes are **deployed, not imported**. The CLI copies a complete application architecture into your project, and from that point the code is yours to extend. No runtime dependency, no black box.
 
-## Overview
+> It standardizes the structural decisions (design tokens, component primitives, layout conventions) you would otherwise re-solve on every project.
 
-Venator is built for teams and developers who need rapid setup with architectural discipline — not just a fast start, but a foundation that stays consistent as the codebase and team grow.
+**Start with components. Scale with patterns. Standardize with architecture.**
 
-It standardizes structural decisions that are otherwise made differently on every project — including design tokens, component primitives, and layout conventions. This reduces inconsistency across teams, lowers the cost of onboarding new developers, and makes it easier to maintain multiple applications that share the same architecture.
+## Quickstart
 
-Start with components. Scale with patterns. Standardize with architecture.
+```bash
+# Scaffold a complete architecture into your project
+npx @venator-ui/cli init dashboard
 
-Designed for:
+# Or install the primitives and patterns as dependencies
+npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens
+```
+
+## Demo
+
+![Venator dashboard archetype](docs/dashboard.png)
+
+## Example
+
+```tsx
+import { Button, Card, CardContent, CardHeader } from "@venator-ui/ui";
+import { DashboardLayout, PageHeader } from "@venator-ui/patterns";
+
+function App() {
+  return (
+    <DashboardLayout
+      sidebar={<Navigation />}
+      header={<Header />}
+    >
+      <PageHeader title="Dashboard" description="Welcome back." />
+      <Card>
+        <CardHeader title="Overview" />
+        <CardContent>
+          <Button variant="primary">Get started</Button>
+        </CardContent>
+      </Card>
+    </DashboardLayout>
+  );
+}
+```
+
+## Designed for
 
 - dashboards and internal tools
 - admin panels and data-driven interfaces
-- projects with rapidly evolving requirements where maintaining structural consistency is critical
-- multi-team environments where structural consistency matters
-- large-scale frontend applications with multiple surfaces
-- any project where you want structure without repeatedly solving the same architectural problems
+- projects with rapidly evolving requirements where structural consistency is critical
 
-Venator reduces the cost of building and maintaining frontend systems by making architectural decisions explicit, reusable, and consistent across projects.
+## Three layers
+
+Venator can be adopted incrementally, from a single component to a full application architecture.
+
+**1. @venator-ui/ui: UI primitives**
+
+Accessible, composable component primitives. Install as a dependency, import directly, extend with `className`.
+
+**2. @venator-ui/patterns: Structural patterns**
+
+Reusable structural abstractions that define how UI is composed into layouts. Use as a dependency, or as a reference for your own patterns.
+
+**3. @venator-ui/archetypes: Application architectures**
+
+Complete project scaffolds deployed via CLI. Once deployed, the developer owns the code. No runtime dependency on `@venator-ui/archetypes`.
 
 ## Architecture
 
-Venator is a monorepo using npm workspaces. The packages form a deliberate dependency chain:
+Venator is a monorepo using npm workspaces. The packages form a deliberate, one-directional dependency chain:
 
+```
 tokens → ui → patterns → archetypes
+```
 
 - **tokens** define the design system foundation
 - **ui** provides accessible and composable primitives
 - **patterns** define reusable structural composition
 - **archetypes** assemble everything into deployable application architectures
 
-This layered approach allows Venator to be used incrementally — from individual components to full application structures — while maintaining consistency across projects.
-
-The same conventions apply across every application built on Venator, making it straightforward to move between projects or onboard developers who are already familiar with the system.
+The same conventions apply across every application built on Venator, making it straightforward to move between projects or onboard developers already familiar with the system.
 
 ```
 venator/
@@ -68,43 +115,15 @@ UI primitives built with Tailwind CSS and design tokens. Typed, composable, acce
 
 **@venator-ui/patterns**
 
-Structural patterns that define how UI is composed into pages and views. Not full pages — architectural abstractions you fill with your own content.
+Structural patterns that define how UI is composed into pages and views. Not full pages, but architectural abstractions you fill with your own content.
 
-- `DashboardLayout` — sidebar + header shell, responsive (static on desktop, drawer on mobile)
-- `PageHeader` — consistent page title area with description, breadcrumb, and actions slots
-- `ModuleGrid` — responsive CSS grid for dashboard modules
+- `DashboardLayout`: sidebar + header shell, responsive (static on desktop, drawer on mobile)
+- `PageHeader`: consistent page title area with description, breadcrumb, and actions slots
+- `ModuleGrid`: responsive CSS grid for dashboard modules
 
 **@venator-ui/archetypes**
 
-Complete application architectures deployed via the Venator CLI and owned entirely by the developer. Not installed as a dependency — files are copied into your project and are yours to extend.
-
-- `dashboard` — modular dashboard with sidebar navigation, header, and grid-based module system
-- `landing` — marketing landing page with hero, features section, and footer *(planned)*
-- `blog` — content site with MDX support, index and post pages *(planned)*
-
-## Three layers
-
-**1. @venator-ui/ui — UI primitives**
-
-Accessible, composable component primitives. Install as a dependency, import directly, extend with `className`.
-
-**2. @venator-ui/patterns — Structural patterns**
-
-Reusable structural abstractions that define how UI is composed into layouts. Use as a dependency or as a reference for your own patterns.
-
-**3. @venator-ui/archetypes — Application architectures**
-
-Complete project scaffolds deployed via CLI. Once deployed, the developer owns the code. No runtime dependency on `@venator-ui/archetypes`.
-
-## CLI
-
-```bash
-# Deploy a complete architecture into your project
-npx @venator-ui/cli init dashboard
-
-# Install UI primitives and patterns as dependencies
-npm install @venator-ui/ui @venator-ui/patterns @venator-ui/tokens
-```
+Complete application architectures deployed via the Venator CLI and owned entirely by the developer. Not installed as a dependency: files are copied into your project and are yours to extend.
 
 ## Getting Started
 
@@ -138,42 +157,21 @@ npm run lint
 npm run clean
 ```
 
-## Example
+## Status
 
-```tsx
-import { Button, Card, CardContent, CardHeader } from "@venator-ui/ui";
-import { DashboardLayout, PageHeader } from "@venator-ui/patterns";
-
-function App() {
-  return (
-    <DashboardLayout
-      sidebar={<Navigation />}
-      header={<Header />}
-    >
-      <PageHeader title="Dashboard" description="Welcome back." />
-      <Card>
-        <CardHeader title="Overview" />
-        <CardContent>
-          <Button variant="primary">Get started</Button>
-        </CardContent>
-      </Card>
-    </DashboardLayout>
-  );
-}
-```
-
----
+- `@venator-ui/tokens`, `@venator-ui/ui`, `@venator-ui/patterns`: published, stable
+- `dashboard` archetype: working
+- `landing` archetype: planned
+- `blog` archetype: planned
 
 ## Design Goals
 
-- Three-layer architecture: primitives, patterns, archetypes — each independently adoptable.
+- Three-layer architecture (primitives, patterns, archetypes), each independently adoptable.
 - One-directional dependency chain: tokens → ui → patterns → archetypes.
 - All packages written in TypeScript with strict mode enabled.
-- Patterns define structure only — no content, no opinions on what goes inside.
-- Archetypes are deployed, not imported — the developer owns the output.
+- Patterns define structure only: no content, no opinions on what goes inside.
+- Archetypes are deployed, not imported. The developer owns the output.
 - Compatible with generative UI tools (v0, Lovable) as a structural target for generated components.
-
----
 
 ## License
 
