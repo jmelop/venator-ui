@@ -1,14 +1,21 @@
 #!/usr/bin/env node
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import { Command } from 'commander';
 import { initCommand } from './commands/init';
 import { addCommand } from './commands/add';
 import { manifestCommand } from './commands/manifest';
 
+// works from both src/ (tsx) and dist/ (tsup CJS build)
+const { version } = JSON.parse(
+  readFileSync(join(__dirname, '..', 'package.json'), 'utf8')
+) as { version: string };
+
 const program = new Command();
 
 program
   .name('venator')
-  .version('0.2.0')
+  .version(version)
   .description('CLI for deploying Venator archetypes and patterns');
 
 program
